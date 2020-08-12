@@ -38,7 +38,7 @@ client.on('message', message => {
             case 9:
             case 10:
                 region = "Kanto,Chugoku,Shikoku"
-                link = "[Servers](https://www.roblox.com/games/1469503587/Kanto-Region#!/game-instances),[Servers](https://www.roblox.com/games/2329809976/Chugoku-Region#!/game-instances),[Servers](https://www.roblox.com/games/561872248/Shikoku-Region#!/game-instances)"
+                link = "[Servers](https://www.roblox.com/games/1469503587/Kanto-Region#!/game-instances),[Servers](https://www.roblox.com/games/2329809976/Chugoku-Region#!/game-instances),[Servers](https://www.roblox.com/games/4620197176/Shikoku-Region#!/game-instances)"
                 break;
             case 5:
             case 6:
