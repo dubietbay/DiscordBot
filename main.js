@@ -17,7 +17,8 @@ client.on('message', message => {
         let date_ob = new Date();
         let hours = date_ob.getUTCHours();
         let minutes = date_ob.getUTCMinutes();
-        var content
+        var region
+        var link
         if(hours > 12) hours = hours - 12;
         const embed = new Discord.MessageEmbed();
         embed.setTitle('Current lotrs raids:');
@@ -27,30 +28,27 @@ client.on('message', message => {
         switch (hours) {
             case 1:
             case 2:
-                content = "Tohoku,Kansai"
+            case 7:
+            case 8:
+                region = "Tohoku,Kansai"
+                link = "[Servers](https://www.roblox.com/games/903142964/Tohoku-Region#!/game-instances),[Servers](https://www.roblox.com/games/561872248/Kansai-Region#!/game-instances)"
                 break;
             case 3:
             case 4:
-                content = "Kanto,Chugoku,Shikoku"
+            case 9:
+            case 10:
+                region = "Kanto,Chugoku,Shikoku"
+                link = "[Servers](https://www.roblox.com/games/1469503587/Kanto-Region#!/game-instances),[Servers](https://www.roblox.com/games/2329809976/Chugoku-Region#!/game-instances),[Servers](https://www.roblox.com/games/561872248/Shikoku-Region#!/game-instances)"
                 break;
             case 5:
             case 6:
-                content = "Chubu,Kyushu"
-                break;
-            case 7:
-            case 8:
-                content = "Tohoku,Kansai"
-                break;
-            case 9:
-            case 10:
-                content = "Kanto,Chugoku,Shikoku"
-                break;
             case 11:
             case 12:
-                content = "Chubu,Kyushu"
+                region = "Chubu,Kyushu"
+                link = "[Servers](https://www.roblox.com/games/554670851/Chubu-Region#!/game-instances),[Servers](https://www.roblox.com/games/1251162439/Kyushu-Region#!/game-instances)"
                 break;
             default:
-                content = "error"
+                region = "error"
         }
         embed.addField(content)
         message.channel.send(embed);
