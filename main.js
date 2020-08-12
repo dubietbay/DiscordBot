@@ -34,7 +34,7 @@ client.on('message', message => {
             case 9:
                 embed.addField("Tohoku","[Servers](https://www.roblox.com/games/903142964/Tohoku-Region#!/game-instances)",true)
                 embed.addField("Kansai","[Servers](https://www.roblox.com/games/561872248/Kansai-Region#!/game-instances)",true)
-                embed.addField("Time left and until: " + hour + " hour:" + minute + " minute","Upcomming raids:")
+                embed.addField("Time left and until: " + hour + minute + " minute","Upcomming raids:")
                 embed.addField("Kanto","[Servers](https://www.roblox.com/games/1469503587/Kanto-Region#!/game-instances)",true)
                 embed.addField("Chugoku","[Servers](https://www.roblox.com/games/2329809976/Chugoku-Region#!/game-instances)",true)
                 embed.addField("Shikoku","[Servers](https://www.roblox.com/games/4620197176/Shikoku-Region#!/game-instances)",true)
@@ -46,7 +46,7 @@ client.on('message', message => {
                 embed.addField("Kanto","[Servers](https://www.roblox.com/games/1469503587/Kanto-Region#!/game-instances)",true)
                 embed.addField("Chugoku","[Servers](https://www.roblox.com/games/2329809976/Chugoku-Region#!/game-instances)",true)
                 embed.addField("Shikoku","[Servers](https://www.roblox.com/games/4620197176/Shikoku-Region#!/game-instances)",true)
-                embed.addField("Time left and until: " + hour + " hour:" + minute + " minute","Upcomming raids:")
+                embed.addField("Time left and until: " + hour + minute + " minute","Upcomming raids:")
                 embed.addField("Chubu","[Servers](https://www.roblox.com/games/554670851/Chubu-Region#!/game-instances)",true)
                 embed.addField("Kyushu","[Servers](https://www.roblox.com/games/1251162439/Kyushu-Region#!/game-instances)",true)
                 break;
@@ -56,7 +56,7 @@ client.on('message', message => {
             case 1:
                 embed.addField("Chubu","[Servers](https://www.roblox.com/games/554670851/Chubu-Region#!/game-instances)",true)
                 embed.addField("Kyushu","[Servers](https://www.roblox.com/games/1251162439/Kyushu-Region#!/game-instances)",true)
-                embed.addField("Time left and until: " + hour + " hour:" + minute + " minute","Upcomming raids:")
+                embed.addField("Time left and until: " + hour + minute + " minute","Upcomming raids:")
                 embed.addField("Tohoku","[Servers](https://www.roblox.com/games/903142964/Tohoku-Region#!/game-instances)",true)
                 embed.addField("Kansai","[Servers](https://www.roblox.com/games/561872248/Kansai-Region#!/game-instances)",true)
                 break;
