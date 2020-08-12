@@ -26,26 +26,27 @@ client.on('message', message => {
         embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
         embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
         switch (hours) {
-            case 1:
             case 2:
-            case 7:
-            case 8:
-                region = "Tohoku,Kansai"
-                link = "[Servers](https://www.roblox.com/games/903142964/Tohoku-Region#!/game-instances),[Servers](https://www.roblox.com/games/561872248/Kansai-Region#!/game-instances)"
-                break;
             case 3:
-            case 4:
+            case 8:
             case 9:
-            case 10:
-                region = "Kanto,Chugoku,Shikoku"
-                link = "[Servers](https://www.roblox.com/games/1469503587/Kanto-Region#!/game-instances),[Servers](https://www.roblox.com/games/2329809976/Chugoku-Region#!/game-instances),[Servers](https://www.roblox.com/games/4620197176/Shikoku-Region#!/game-instances)"
+                embed.addField("Tohoku","[Servers](https://www.roblox.com/games/903142964/Tohoku-Region#!/game-instances)",true)
+                embed.addField("Kansai","[Servers](https://www.roblox.com/games/561872248/Kansai-Region#!/game-instances)",true)
                 break;
+            case 4:
             case 5:
-            case 6:
+            case 10:
             case 11:
+                embed.addField("Kanto","[Servers](https://www.roblox.com/games/1469503587/Kanto-Region#!/game-instances)",true)
+                embed.addField("Chugoku","[Servers](https://www.roblox.com/games/2329809976/Chugoku-Region#!/game-instances)",true)
+                embed.addField("Shikoku","[Servers](https://www.roblox.com/games/4620197176/Shikoku-Region#!/game-instances)",true)
+                break;
+            case 6:
+            case 7:
             case 12:
-                region = "Chubu,Kyushu"
-                link = "[Servers](https://www.roblox.com/games/554670851/Chubu-Region#!/game-instances),[Servers](https://www.roblox.com/games/1251162439/Kyushu-Region#!/game-instances)"
+            case 1:
+                embed.addField("Chubu","[Servers](https://www.roblox.com/games/554670851/Chubu-Region#!/game-instances)",true)
+                embed.addField("Kyushu","[Servers](https://www.roblox.com/games/1251162439/Kyushu-Region#!/game-instances)",true)
                 break;
             default:
                 region = "error"
