@@ -17,8 +17,6 @@ client.on('message', message => {
         let date_ob = new Date();
         let hours = date_ob.getUTCHours();
         let minutes = date_ob.getUTCMinutes();
-        var region
-        var link
         if(hours > 12) hours = hours - 12;
         const embed = new Discord.MessageEmbed();
         embed.setTitle('Current lotrs raids:');
@@ -49,9 +47,9 @@ client.on('message', message => {
                 embed.addField("Kyushu","[Servers](https://www.roblox.com/games/1251162439/Kyushu-Region#!/game-instances)",true)
                 break;
             default:
-                region = "error"
+                embed.addField("error")
         }
-        embed.addField(region,link)
+        embed.addField("\u200B","\u200B")
         message.channel.send(embed);
     }
 });
