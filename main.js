@@ -50,7 +50,7 @@ client.on('message', message => {
             default:
                 region = "error"
         }
-        embed.addField(content)
+        embed.addField(content,link)
         message.channel.send(embed);
     }
 });
