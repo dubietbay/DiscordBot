@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports = {
     name: 'raid',
     description: "this is a raid command!",
