@@ -26,8 +26,13 @@ client.on('message', message => {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
+            const amount = parseInt(args[1]);
+
+            if (isNaN(amount)) {
+		        return message.reply('that doesn\'t seem to be a valid number.');
+	        }
     
-        message.channel.send(`Command name: ${command}\nArguments: ${args}`);
+        message.channel.send(`First argument: ${args}`);
     }
 });
 
