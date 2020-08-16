@@ -22,8 +22,12 @@ client.on('message', message => {
     
     if(command === 'raid'){
         client.commands.get('raid').execute(message, args);
-    }else if(command === 'ping'){
-        client.commands.get('ping').execute(message, args);
+    }else if (command === 'args-info') {
+        if (!args.length) {
+            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        }
+    
+        message.channel.send(`Command name: ${command}\nArguments: ${args}`);
     }
 });
 
