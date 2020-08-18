@@ -14,6 +14,8 @@ client.once('ready', () => {
     console.log('checker is online!');
 });
 
+const ama = ['a','s','as','d'];
+
 client.on('message', message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -42,7 +44,7 @@ client.on('message', message => {
 		        return message.reply('that doesn\'t seem to be a valid number.');
 	        }
     
-        message.channel.send(`First argument: ${args}`);
+        message.channel.send(`First argument: ${ama}`);
     }
 });
 
