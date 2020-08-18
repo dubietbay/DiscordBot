@@ -27,6 +27,10 @@ client.on('message', message => {
     else if (command === 'help'){
         client.commands.get('help').execute(message, args);
     }
+
+    else if (command === 'hheeggeell'){
+        message.reply('DONT TOUCH MY WIFE >:(');
+    }
     
     else if (command === 'args-info') {
         if (!args.length) {
