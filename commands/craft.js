@@ -356,7 +356,9 @@ embed.setTitle('Item: '+itemin+' Amount: '+amountin);
 embed.setColor('#f4c871');
 embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
 embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
-embed.addField('testing','my pp');
+embed.addField('testing',combined.toString());
+embed.addField('testing',combined2.toString());
+embed.addField('testing',combined3.toString());
 message.channel.send(embed);
 
 }
