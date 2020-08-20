@@ -14,14 +14,12 @@ client.once('ready', () => {
     console.log('checker is online!');
 });
 
-const ama = ['a','s','as','d'];
-
 client.on('message', message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    
+        
     if(command === 'raid'){
         client.commands.get('raid').execute(message, args);
     }
@@ -34,7 +32,7 @@ client.on('message', message => {
         message.reply('DONT TOUCH MY WIFE >:(');
     }
     
-    else if (command === 'args-info') {
+    else if (command === 'craft') {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
@@ -44,7 +42,7 @@ client.on('message', message => {
 		        return message.reply('that doesn\'t seem to be a valid number.');
 	        }
     
-        message.channel.send(`First argument: ${ama}`);
+            client.commands.get('craft').execute(message, args)
     }
 });
 
