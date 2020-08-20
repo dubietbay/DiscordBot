@@ -251,8 +251,8 @@ const Recipe = [
 
 const Discord = require('discord.js');
 module.exports = {
-    name: 'help',
-    description: "this is a help command!",
+    name: 'craft',
+    description: "this is a craft command!",
     execute(message, args){
 
 
