@@ -351,11 +351,13 @@ function beautify(x) {
 }
 
 function ez(x) {
+  e = "";
   Recipe.forEach((item) => {
     if (item.NameCall == x) {
-      return item.Name
+      e = item.Name
     }
   })
+  return e
 }
 
 Recipe.forEach((item) => {
