@@ -383,7 +383,7 @@ if (!combined.length) {
   return message.reply('That item doesnt exist!')
 }
 const embed = new Discord.MessageEmbed();
-embed.setTitle('Item: '+ez(itemin)+' Amount: '+amountin);
+embed.setTitle('Item: '+ez(itemin)+' || Amount: '+amountin);
 embed.setColor('#f4c871');
 embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
 embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
