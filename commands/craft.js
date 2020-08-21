@@ -202,7 +202,7 @@ const Recipe = [
     {From: "Backpack", NameCall: "enkeitsuba", Name: "Enkei Tsuba", Materials: "haganesteelbar linen", Quantity: "3 1"},
     {From: "Backpack", NameCall: "kakutsuba", Name: "Kaku Tsuba", Materials: "haganesteelbar linen", Quantity: "3 1"},
     {From: "Backpack", NameCall: "otafukutsuba", Name: "Otafuku Tsuba", Materials: "haganesteelbar linen", Quantity: "3 1"},
-    {From: "Backpack", NameCall: "mokkotsuba", Name: "Mokko Tsuba", Materials: "haganesteelbar linen", Quantity: "3 1"},
+    {From: "Kai dms", NameCall: "mokkotsuba", Name: "Mokko Tsuba", Materials: "haganesteelbar linen", Quantity: "3 1"},
     {From: "Special Weapon Smith", NameCall: "naginata", Name: "Naginata", Materials: "shiganesteelbar kawagnesteelbar silverbar blessedredwood cherryfittings cherrylog", Quantity: "4 4 2 5 1 5"},
     {From: "Special Weapon Smith", NameCall: "kanabo", Name: "Kanabo", Materials: "shiganesteelbar kawagnesteelbar ironbar cherrylog blessedredwood cherryfittings", Quantity: "2 4 8 5 8 1"},
     {From: "Special Weapon Smith", NameCall: "kama", Name: "Kama", Materials: "nishisteelbar shiganesteelbar kawagnesteelbar goldbar cherrylog", Quantity: "3 3 3 2 5"},
@@ -434,6 +434,9 @@ mommycereal(combined3)
 
 if (!combined.length) {
  return  message.reply('Did you mean:'+'\n'+ac(itemin)) 
+}
+if (isNaN(parseInt(args[1]))) {
+  return message.reply('that doesn\'t seem to be a valid number.');
 }
 const embed = new Discord.MessageEmbed();
 embed.setTitle('Item: '+ez(itemin)+' || Amount: '+amountin);
