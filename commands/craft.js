@@ -433,7 +433,11 @@ mommycereal(combined3)
 };
 
 if (!combined.length) {
- return  message.reply('Did you mean:'+'\n'+ac(itemin)) 
+  if(!ac(itemin).length) {
+    return message.reply('I dont know that item (ꐦ ´͈ ᗨ `͈ )')
+  }else{
+    return  message.reply('Did you mean:'+'\n'+ac(itemin)) 
+  }
 }
 if (isNaN(parseInt(args[1]))) {
   return message.reply('that doesn\'t seem to be a valid number.');
