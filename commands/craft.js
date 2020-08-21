@@ -374,8 +374,8 @@ if(check(combined)){
 rescan(combined,combined2)
 mommycereal(combined2)
 if(check(combined2)){
-mommycereal(combined3) 
 rescan(combined2,combined3)
+mommycereal(combined3) 
 }
 };
 
