@@ -331,6 +331,25 @@ function mommycereal(x) {
   }
 }
 
+function beautify(x) {
+  idk = "";
+  base = [];
+  for (i = 0; i < x.length; i++) {
+    Recipe.forEach((eh) => {
+      if (eh.NameCall == x[i]) {
+        base.push(x[i-1])
+        base.push(eh.Name)
+      }
+    })
+  }
+  for (i = 0; i < base.length; i++) {
+    if (typeof base[i] == 'string') {
+      idk = idk + base[i-1] + " " + base[i] + "\n"
+    }
+  }
+  return idk
+}
+
 Recipe.forEach((item) => {
    if (item.NameCall == itemin) {
      M = item.Materials.split(/ +/)
@@ -358,11 +377,11 @@ embed.setTitle('Item: '+itemin+' Amount: '+amountin);
 embed.setColor('#f4c871');
 embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
 embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
-embed.addField('Step 1: ',combined.toString());
+embed.addField('Step 1: ',beautify(combined));
 if (combined2.length){
-embed.addField('Step 2: ',combined2.toString());
+embed.addField('Step 2: ',beautify(combined2));
 if (combined3.length){
-embed.addField('Step 3: ',combined3.toString());
+embed.addField('Step 3: ',beautify(combined3));
 }
 }
 message.channel.send(embed);
