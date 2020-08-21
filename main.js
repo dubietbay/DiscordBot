@@ -45,12 +45,16 @@ client.on('message', message => {
             client.commands.get('craft').execute(message, args)
     }
 
-    else if (command === 'search') {
+    else if (command === 'servers') {
        client.guilds.cache.forEach((guild) => {
         message.channel.send(
             `${guild.name} has a total of ${guild.memberCount} members`
           )
        }) 
+    }
+
+    else if (command === 'search') {
+        
     }
 });
 

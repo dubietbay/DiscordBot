@@ -396,6 +396,23 @@ function locations(x,y,z,q) {
   return base2
 }
 
+function ac(value) {
+  var tags = []
+  var result = ''
+  Recipe.forEach((item) => {
+    tags.push(item.NameCall)
+  })
+  var n= tags.length;
+  l=value.length;
+  for (var i = 0; i<n; i++) { 
+    if(((tags[i].toLowerCase()).indexOf(value.toLowerCase()))>-1) 
+    {
+      result = result + tags[i] + '\n'
+    } 
+  }
+  return result
+}
+
 Recipe.forEach((item) => {
    if (item.NameCall == itemin) {
      M = item.Materials.split(/ +/)
@@ -416,7 +433,7 @@ mommycereal(combined3)
 };
 
 if (!combined.length) {
-  return message.reply('That item doesnt exist!')
+ return  message.reply('Did you mean:'+'\n'+ac(itemin)) 
 }
 const embed = new Discord.MessageEmbed();
 embed.setTitle('Item: '+ez(itemin)+' || Amount: '+amountin);
