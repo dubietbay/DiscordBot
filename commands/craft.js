@@ -360,7 +360,7 @@ function ez(x) {
   return e
 }
 
-function locations(x,y,z) {
+function locations(x,y,z,q) {
   base = [];
   base2 = "";
   x.forEach((item) => {
@@ -383,6 +383,11 @@ function locations(x,y,z) {
         base.push(eh.From)
       }
     })
+  })
+  Recipe.forEach((eh) => {
+    if (q == eh.NameCall) {
+      base.push(eh.From)
+    }
   })
   base = [...new Set(base)]
   base.forEach((item) => {
@@ -425,7 +430,7 @@ if (combined3.length){
 embed.addField('⇧ ',beautify(combined3));
 }
 }
-embed.addField('Places to visit: ',locations(combined3,combined2,combined))
+embed.addField('Places to visit: ',locations(combined3,combined2,combined,itemin))
 message.channel.send(embed);
 }
 }
