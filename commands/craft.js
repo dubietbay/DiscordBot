@@ -353,7 +353,7 @@ rescan(combined2,combined3)
 if (!combined.length) {
   return message.reply('That item doesnt exist!')
 }
-if (itemin < 1 || idkman == false) {
+if (itemin < 1 || !idkman) {
   return message.reply('(ㆆ_ㆆ)')
 }
 
