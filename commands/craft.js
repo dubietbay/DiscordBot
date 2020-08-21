@@ -350,6 +350,14 @@ function beautify(x) {
   return idk
 }
 
+function ez(x) {
+  Recipe.forEach((item) => {
+    if (item.NameCall == x) {
+      return item.Name
+    }
+  })
+}
+
 Recipe.forEach((item) => {
    if (item.NameCall == itemin) {
      M = item.Materials.split(/ +/)
@@ -373,15 +381,15 @@ if (!combined.length) {
   return message.reply('That item doesnt exist!')
 }
 const embed = new Discord.MessageEmbed();
-embed.setTitle('Item: '+itemin+' Amount: '+amountin);
+embed.setTitle('Item: '+ez(itemin)+' Amount: '+amountin);
 embed.setColor('#f4c871');
 embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
 embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
 embed.addField('Material need: ',beautify(combined));
 if (combined2.length){
-embed.addField('^\n| ',beautify(combined2));
+embed.addField('⇧ ',beautify(combined2));
 if (combined3.length){
-embed.addField('^\n| ',beautify(combined3));
+embed.addField('⇧ ',beautify(combined3));
 }
 }
 message.channel.send(embed);
