@@ -36,6 +36,7 @@ client.on('message', message => {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
+            client.commands.get('craft').execute(message, args)
     }
 
     else if (command === 'servers') {
