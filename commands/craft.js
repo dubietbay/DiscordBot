@@ -261,7 +261,7 @@ const itemin = args[0];
 const combined = [];
 const combined2 = [];
 const combined3 = [];
-
+const idkman = Number.isInteger(amountin);
 
 function combiner(Quantity,Materials,amount,output) {
   a = -1
@@ -353,8 +353,8 @@ rescan(combined2,combined3)
 if (!combined.length) {
   return message.reply('That item doesnt exist!')
 }
-if (itemin < 1 || Number.isInteger(amountin) == false) {
-  return message.reply('¯\_(ツ)_/¯')
+if (itemin < 1 || idkman == false) {
+  return message.reply('(ㆆ_ㆆ)')
 }
 
 const embed = new Discord.MessageEmbed();
