@@ -257,7 +257,7 @@ module.exports = {
 
 
 const amountin = args[1];
-const itemin = args[0];
+const itemin = args[0].toLowerCase();
 const combined = [];
 const combined2 = [];
 const combined3 = [];
