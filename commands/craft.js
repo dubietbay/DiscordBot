@@ -360,6 +360,37 @@ function ez(x) {
   return e
 }
 
+function locations(x,y,z) {
+  base = [];
+  base2 = "";
+  x.forEach((item) => {
+    Recipe.forEach((eh) => {
+      if (item == eh.NameCall) {
+        base.push(eh.From)
+      }
+    })
+  })
+  y.forEach((item) => {
+    Recipe.forEach((eh) => {
+      if (item == eh.NameCall) {
+        base.push(eh.From)
+      }
+    })
+  })
+  z.forEach((item) => {
+    Recipe.forEach((eh) => {
+      if (item == eh.NameCall) {
+        base.push(eh.From)
+      }
+    })
+  })
+  base = [...new Set(base)]
+  base.forEach((item) => {
+    base2 = base2 + item + "\n"
+  })
+  return base2
+}
+
 Recipe.forEach((item) => {
    if (item.NameCall == itemin) {
      M = item.Materials.split(/ +/)
@@ -394,8 +425,8 @@ if (combined3.length){
 embed.addField('⇧ ',beautify(combined3));
 }
 }
+embed.addField('Places to visit: ',locations(combined3,combined2,combined))
 message.channel.send(embed);
-
 }
 }
 
