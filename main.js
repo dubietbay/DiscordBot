@@ -12,6 +12,7 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('checker is online!');
+    client.user.setActivity('use: ?help')
 });
 
 client.on('message', message => {
