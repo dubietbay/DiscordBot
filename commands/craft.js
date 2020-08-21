@@ -261,7 +261,7 @@ const itemin = args[0];
 const combined = [];
 const combined2 = [];
 const combined3 = [];
-const idkman = Number.isInteger(amountin);
+
 
 function combiner(Quantity,Materials,amount,output) {
   a = -1
@@ -353,20 +353,16 @@ rescan(combined2,combined3)
 if (!combined.length) {
   return message.reply('That item doesnt exist!')
 }
-if (itemin < 1 || !idkman) {
-  return message.reply('(ㆆ_ㆆ)')
-}
-
 const embed = new Discord.MessageEmbed();
 embed.setTitle('Item: '+itemin+' Amount: '+amountin);
 embed.setColor('#f4c871');
 embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
 embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
-embed.addField('testing',combined.toString());
+embed.addField('Step 1: ',combined.toString());
 if (combined2.length){
-embed.addField('testing',combined2.toString());
+embed.addField('Step 2: ',combined2.toString());
 if (combined3.length){
-embed.addField('testing',combined3.toString());
+embed.addField('Step 3: ',combined3.toString());
 }
 }
 message.channel.send(embed);
