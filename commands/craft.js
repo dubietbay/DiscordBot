@@ -353,9 +353,10 @@ rescan(combined2,combined3)
 if (!combined.length) {
   return message.reply('That item doesnt exist!')
 }
-if (!Number.isInteger(amountin) && !amountin > 0) {
+if (itemin < 1 || Number.isInteger(amountin) == false) {
   return message.reply('¯\_(ツ)_/¯')
 }
+
 const embed = new Discord.MessageEmbed();
 embed.setTitle('Item: '+itemin+' Amount: '+amountin);
 embed.setColor('#f4c871');
