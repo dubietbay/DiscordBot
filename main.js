@@ -48,29 +48,8 @@ client.on('message', message => {
        }) 
     }
 
-    else if (command === 'peepee') {
-        const guild = client.guilds.cache.find(g => g.name === "Ashikaga Shogunate (Akizuki F.)");
-        if(!guild || !guild.available) return message.channel.send("Can't find guild");
-        const channel = guild.channels
-        message.channel.send(channel)
-    }
-
     else if (command === 'search') {
-        const guild = client.guilds.cache.find(g => g.name === "Ashikaga Shogunate (Akizuki F.)");
-        if(!guild || !guild.available) return message.channel.send("Can't find guild");
-        const channel = guild.channels.cache.find(c => c.name === args[0]);
-        if(!channel) return message.channel.send("No channel found");
-        if(!channel.viewable) return message.channel.send("Can't view the channel");
-        channel.createInvite()
-        .then(inv => {
-        //guild.name will only work if you used the first method
-        console.log(`${guild.name} | ${inv.url}`);
-        message.channel.send(`${guild.name} | ${inv.url}`);
-})
-.catch(err => {
-    console.error(err);
-    message.channel.send("Don't have permission");
-});
+
     }
 });
 
