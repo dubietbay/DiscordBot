@@ -51,7 +51,7 @@ client.on('message', message => {
     else if (command === 'peepee') {
         const guild = client.guilds.cache.find(g => g.name === "Ashikaga Shogunate (Akizuki F.)");
         if(!guild || !guild.available) return message.channel.send("Can't find guild");
-        const channel = guild.channels.cache
+        const channel = guild.channels
         message.channel.send(channel)
     }
 
