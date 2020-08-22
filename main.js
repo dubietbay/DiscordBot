@@ -49,16 +49,21 @@ client.on('message', message => {
     }
 
     else if (command === 'search') {
-        let invite = message.channel.createInvite(
-            {
-              maxAge: 10 * 60 * 1000, // maximum time for the invite, in milliseconds
-              maxUses: 1 // maximum times it can be used
-            },
-            `Requested with command by ${message.author.tag}`
-          )
-          .catch(console.log);
-          
-            message.reply(invite ? `Here's your invite: ${invite}` : "There has been an error during the creation of the invite."); 
+        const guild = client.guilds.cache.find(g => g.name === "Ashikaga Shogunate (Akizuki F.)");
+        if(!guild || !guild.available) return message.channel.send("Can't find guild");
+        const channel = guild.channels.cache.find(c => c.name === args[0]);
+        if(!channel) return message.channel.send("No channel found");
+        if(!channel.viewable) return message.channel.send("Can't view the channel");
+        channel.createInvite()
+        .then(inv => {
+        //guild.name will only work if you used the first method
+        console.log(`${guild.name} | ${inv.url}`);
+        message.channel.send(`${guild.name} | ${inv.url}`);
+})
+.catch(err => {
+    console.error(err);
+    message.channel.send("Don't have permission");
+});
     }
 });
 
