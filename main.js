@@ -49,7 +49,7 @@ client.on('message', message => {
     }
 
     else if (command === 'search') {
-        let invite = await message.channel.createInvite(
+        let invite = message.channel.createInvite(
             {
               maxAge: 10 * 60 * 1000, // maximum time for the invite, in milliseconds
               maxUses: 1 // maximum times it can be used
