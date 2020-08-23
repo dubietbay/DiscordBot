@@ -12,7 +12,7 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('checker is online!');
-    client.user.setActivity('use: ?help')
+    client.user.setActivity('Prefix: 3=D')
 });
 
 client.on('message', message => {
