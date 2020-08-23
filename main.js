@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '3=D';
+const prefix = '>';
 const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -12,7 +12,7 @@ for(const file of commandFiles){
 
 client.once('ready', () => {
     console.log('checker is online!');
-    client.user.setActivity('Prefix: 3=D')
+    client.user.setActivity('Prefix: >')
 });
 
 client.on('message', message => {
