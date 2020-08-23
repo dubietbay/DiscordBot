@@ -434,7 +434,7 @@ mommycereal(combined3)
 
 if (!combined.length) {
   if(!ac(itemin).length) {
-    return message.reply('I dont know that item (ꐦ ´͈ ᗨ `͈ )')
+    return message.reply('I dont know that item (ꐦ ´͈ ᗨ `͈ ) (try short name of the item maybe)')
   }else{
     return  message.reply('Did you mean:'+'\n'+ac(itemin)) 
   }
