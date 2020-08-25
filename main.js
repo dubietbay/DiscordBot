@@ -37,7 +37,7 @@ client.on('message', message => {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
-            client.commands.get('craft').execute(message, args)
+        client.commands.get('craft').execute(message, args)
     }
 
     else if (command === 'servers') {
@@ -49,8 +49,12 @@ client.on('message', message => {
     }
 
     else if (command === 'search') {
-
+        if (!args.length) {
+            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        }
+        client.commands.get('search').execute(message, args)        
     }
 });
 
 client.login(process.env.token);
+//client.login('NzQ3Mjg1MjM4MDY5MDY3ODI2.X0MpnA.Vvq0qUNikCqZnFfq1kmW4lZ1tC4');

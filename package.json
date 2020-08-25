@@ -9,6 +9,8 @@
   "author": "Dub",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.2.0",
+    "jsdom": "^16.4.0",
+    "node-fetch": "^2.6.0"
   }
 }
