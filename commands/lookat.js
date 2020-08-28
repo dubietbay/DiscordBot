@@ -47,15 +47,6 @@ module.exports = {
             return list
         }
 
-        function sleep(milliseconds) {
-            var start = new Date().getTime();
-            for (var i = 0; i < 1e7; i++) {
-              if ((new Date().getTime() - start) > milliseconds){
-                break;
-              }
-            }
-          }
-
         function dostuff(id) {
             fetch(`https://games.roblox.com/v1/games/${id}/servers/Public?limit=100&sortOrder=Asc`)
                 .then(r => {
@@ -79,7 +70,6 @@ module.exports = {
                             }
                         }
                             getplr(server.playerIds, cb) 
-                            sleep(3000)
                     })
                 })
         }
