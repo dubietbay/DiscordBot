@@ -68,9 +68,11 @@ module.exports = {
                                 plrlist.splice(0, 999999);
                             }
                         }
-                        getplr(server.playerIds, cb) 
                         message.channel.send('Getting my glasses pls gib me 3 sec :flushed: ...')
-                            .then(sentMessage => sentMessage.delete({ timeout: 3000 }))
+                        .then(sentMessage => {
+                            getplr(server.playerIds, cb) 
+                            sentMessage.delete({ timeout: 3000 })
+                        })
                     })
                 })
         }
