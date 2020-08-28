@@ -47,6 +47,15 @@ module.exports = {
             return list
         }
 
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            for (var i = 0; i < 1e7; i++) {
+              if ((new Date().getTime() - start) > milliseconds){
+                break;
+              }
+            }
+          }
+
         function dostuff(id) {
             fetch(`https://games.roblox.com/v1/games/${id}/servers/Public?limit=100&sortOrder=Asc`)
                 .then(r => {
@@ -63,6 +72,7 @@ module.exports = {
                                 embed.setColor('#f4c871');
                                 embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
                                 embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
+                                embed.setTimestamp()
                                 embed.addField(`Average player's ping in server:`,`${server.ping}`)
                                 embed.addField(`Server ${servernumber} have ${server.playerIds.length} players:`,tostring(r));
                                 message.channel.send(embed)
@@ -70,6 +80,7 @@ module.exports = {
                             }
                         }
                             getplr(server.playerIds, cb) 
+                            sleep(3000)
                     })
                 })
         }
