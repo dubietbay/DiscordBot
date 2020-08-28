@@ -1,44 +1,20 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
+const nbx = require("noblox.js");
 module.exports = {
     name: 'search',
     description: "this is a search command!",
-    execute(message, args){     
-        function getCurrentUser() {
-            let element = document.getElementsByName("user-data")[0];
-            if (element) {
-                return [element.getAttribute("data-userid"), element.getAttribute("data-name").toLowerCase()];
-            }
-        
-            return [];
-        }
+    execute(message, args){ 
+        const locations = ['561872248','554670851','903142964','1469503587','2329809976','2763010111','1251162439','4620197176','554664625'];
+        const locationsname = ['Kyoto/Kansai','Chubu','Tohoku','Kanto','Chugoku','Mura','Kyushu','Shikoku','Menu screen'];
 
-        function getUserIdFromName(name){
-            return new Promise((res, rej)=>{
-                fetch(`https://www.roblox.com/users/profile?username=${name}`)
-                    .then(r => {
-                        if(!r.ok) throw new error('Invalid response');
-                        return r.url.match(/\d+/)[0];
-                    })
-                    .then(id => {
-                        let data = getCurrentUser();
-                        if (name.toLowerCase() != data[1] && id.toString() == data[0]){
-                            isLoading = false;
-                            rej('Error occured while fetching username: username does not exist');
-                        } else {
-                            res(id);
-                        }
-                    }).catch(e => {
-                        console.error(e);
-                        isLoading = false;
-                        rej('Error occured while fetching username!');
-                    })
-            });
+
+        
+        async function startApp (message, args) {
+            let userid = await nbx.getIdFromUsername(args[0])
+            let av = await fetch(`https://www.roblox.com/headshot-thumbnail/image?userId=${userid}&width=420&height=420&format=png`)
+            
         }
-        getUserIdFromName(args[0]).then(id => {
-            message.channel.send(id)
-        }).catch(er => {
-            message.channel.send(er)
-        })
+        startApp (message, args)
     }
 }

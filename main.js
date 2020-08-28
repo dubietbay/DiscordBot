@@ -48,6 +48,13 @@ client.on('message', message => {
        }) 
     }
 
+    else if (command === 'lookat') {
+        if (!args.length) {
+            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        }
+        client.commands.get('lookat').execute(message, args)
+    }
+
     else if (command === 'search') {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
