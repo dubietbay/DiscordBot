@@ -65,6 +65,7 @@ module.exports = {
                     return r.json()
                 })
                 .then(e => {
+                    if (e.data.length < 1) throw message.channel.send('no server found')
                     e.data.forEach(server => {
                         let servernumber = e.data.indexOf(server) + 1
                         let cb = (r) => {
@@ -80,7 +81,7 @@ module.exports = {
                             plrlist.splice(0, 999999);
                         }
                             getplr(server.playerIds, cb) 
-                            sleep(1525)
+                            sleep(2000)
                     })
                 })
         }
