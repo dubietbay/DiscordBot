@@ -26,15 +26,17 @@ module.exports = {
             }).catch(console.error)
         }
 
-        function combiner(input, output, cb) {
+        function combiner(input, output, cb, length) {
             output.push(input)
-            cb(output)
+            if (output.length == length) {
+                cb(output)
+            }
         }
 
         function getplr(ids, callback) { 
             ids.forEach(e => {
                 findname(e, (output) => {
-                    combiner(output, plrlist, callback)  
+                    combiner(output, plrlist, callback, ids.length)  
                 })
             });
         }
@@ -66,18 +68,16 @@ module.exports = {
                     e.data.forEach(server => {
                         let servernumber = e.data.indexOf(server) + 1
                         let cb = (r) => {
-                            if (r.length == server.playerIds.length){
-                                const embed = new Discord.MessageEmbed();
-                                embed.setTitle(`${itemin}`);
-                                embed.setColor('#f4c871');
-                                embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
-                                embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
-                                embed.setTimestamp()
-                                embed.addField(`Average player's ping in server:`,`${server.ping}`)
-                                embed.addField(`Server ${servernumber} have ${server.playerIds.length} players:`,tostring(r));
-                                message.channel.send(embed)
-                                plrlist.splice(0, 999999);
-                            }
+                            const embed = new Discord.MessageEmbed();
+                            embed.setTitle(`${itemin}`);
+                            embed.setColor('#f4c871');
+                            embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
+                            embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
+                            embed.setTimestamp()
+                            embed.addField(`Average player's ping in server:`,`${server.ping}`)
+                            embed.addField(`Server ${servernumber} have ${server.playerIds.length} players:`,tostring(r));
+                            message.channel.send(embed)
+                            plrlist.splice(0, 999999);
                         }
                             getplr(server.playerIds, cb) 
                             sleep(1525)

@@ -52,6 +52,7 @@ client.on('message', message => {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
+        message.channel.send('if it didnt send any info do the cmd again (idk why this happen :pensive: )')
         client.commands.get('lookat').execute(message, args)
     }
 
