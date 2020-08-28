@@ -80,7 +80,7 @@ module.exports = {
                             }
                         }
                             getplr(server.playerIds, cb) 
-                            sleep(3000)
+                            sleep(1525)
                     })
                 })
         }
