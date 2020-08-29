@@ -74,7 +74,7 @@ module.exports = {
                             embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
                             embed.setTimestamp()
                             embed.addField(`Average player's ping in server:`,`${server.ping}`)
-                            embed.addField(`Server ${servernumber} have ${server.playerIds.length} players:`,tostring(r));
+                            embed.addField(`Server ${servernumber} have ${server.playing} players:`,tostring(r));
                             message.channel.send(embed)
                             plrlist.splice(0, 999999);
                         }
