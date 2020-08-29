@@ -29,7 +29,6 @@ module.exports = {
         function combiner(input, cb, length) {
             plrlist.push(input)
             if (plrlist.length == length) {
-                console.log(plrlist)
                 cb(plrlist)
             }
         }
