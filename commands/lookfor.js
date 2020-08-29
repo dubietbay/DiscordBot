@@ -43,14 +43,14 @@ module.exports = {
                                 }
                             });
                         });
-                    })
+                    }).catch(er => console.error)
             });
         }
         
         function startApp () {
             nbx.getIdFromUsername(args[0])
                 .then(r => {
-                    if(!r) throw message.channel.send('user not exist!')
+                    if(!r) throw message.channel.send('user not exist! (wrong name prob)')
                     finder(r)
                 })
         }
