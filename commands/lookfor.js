@@ -18,14 +18,42 @@ module.exports = {
             {Name: 'shikoku', ID: '4620197176'},
             {Name: 'menu', ID: '554664625'},
         ];
-
-
-        
-        async function startApp (message, args) {
-            let userid = await nbx.getIdFromUsername(args[0])
-
-            
+        var first = true
+        function a(a) {
+            if (first) {
+                first = false
+                message.channel.send(a);
+            }
         }
-        startApp (message, args)
+
+        function finder(id) {
+            locations.forEach(el => {
+                fetch(`https://games.roblox.com/v1/games/${el.ID}/servers/Public?limit=100&sortOrder=Asc`)
+                    .then(r => {
+                        if(!r.ok) throw 'invalid response!';
+                        return r.json()
+                    })
+                    .then(e => {
+                        e.data.forEach(server => {
+                            server.playerIds.forEach(ids => {
+                                if (id == ids) {
+                                    a(`${itemin} FOUND AT: ${el.Name} :face_with_monocle: \n ${itemin} is in server  have ${server.playing} players and ${server.ping} avg ping`) 
+                                }else if (el.Name == 'menu' && server.playerIds.length == server.playerIds.indexOf(ids) + 1) {
+                                    a('plr not found on lotrs')
+                                }
+                            });
+                        });
+                    })
+            });
+        }
+        
+        function startApp () {
+            nbx.getIdFromUsername(args[0])
+                .then(r => {
+                    if(!r) throw message.channel.send('user not exist!')
+                    finder(r)
+                })
+        }
+        startApp()
     }
 }
