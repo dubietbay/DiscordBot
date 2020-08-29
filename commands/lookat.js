@@ -18,24 +18,23 @@ module.exports = {
             {Name: 'shikoku', ID: '4620197176'},
             {Name: 'menu', ID: '554664625'},
         ];
-        const plrlist = []
-        function findname(id, callback, length) {
+        function findname(id, callback, length, output) {
             nbx.getUsernameFromId(id)
             .then(name => {
-                combiner(name, callback, length)  
+                combiner(name, callback, length, output)  
             }).catch(console.error)
         }
 
-        function combiner(input, cb, length) {
+        function combiner(input, cb, length, plrlist) {
             plrlist.push(input)
             if (plrlist.length == length) {
                 cb(plrlist)
             }
         }
 
-        function getplr(ids, callback) { 
+        function getplr(ids, callback, output) { 
             ids.forEach(e => {
-                findname(e, callback, ids.length)
+                findname(e, callback, ids.length, output)
             });
         }
 
@@ -65,6 +64,7 @@ module.exports = {
                 .then(e => {
                     if (e.data.length < 1) throw message.channel.send('no server found')
                     e.data.forEach(async server => {
+                        const plrlist = []
                         let servernumber =  await e.data.indexOf(server) + 1
                         let cb = (r) => {
                             const embed = new Discord.MessageEmbed();
@@ -76,9 +76,8 @@ module.exports = {
                             embed.addField(`Average player's ping in server:`,`${server.ping}`)
                             embed.addField(`Server ${servernumber} have ${server.playing} players:`,tostring(r));
                             message.channel.send(embed)
-                            plrlist.splice(0, 999999);
                         }
-                            getplr(server.playerIds, cb) 
+                            getplr(server.playerIds, cb, plrlist) 
                     })
                 })
         }
