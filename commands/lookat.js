@@ -5,6 +5,7 @@ module.exports = {
     name: 'lookat',
     description: "this is a lookat command!",
     execute(message, args){
+        const embed = new Discord.MessageEmbed();
         const itemin = args[0].toLowerCase();
         const locations = [
             {Name: 'kyoto', ID: '561872248'},
@@ -18,6 +19,7 @@ module.exports = {
             {Name: 'shikoku', ID: '4620197176'},
             {Name: 'menu', ID: '554664625'},
         ];
+
         function findname(id, callback, length, output) {
             nbx.getUsernameFromId(id)
             .then(name => {
@@ -46,49 +48,70 @@ module.exports = {
             return list
         }
 
-        function sleep(milliseconds) {
-            var start = new Date().getTime();
-            for (var i = 0; i < 1e7; i++) {
-              if ((new Date().getTime() - start) > milliseconds){
-                break;
-              }
-            }
-          }
-
-        async function dostuff(id) {
-            await fetch(`https://games.roblox.com/v1/games/${id}/servers/Public?limit=100&sortOrder=Asc`)
-                .then(r => {
-                    if(!r.ok) throw 'Invalid response!';
-                    return r.json()
-                })
-                .then(e => {
-                    if (e.data.length < 1) throw message.channel.send('no server found')
-                    e.data.forEach(async server => {
-                        const plrlist = []
-                        let servernumber =  await e.data.indexOf(server) + 1
-                        let cb = (r) => {
-                            const embed = new Discord.MessageEmbed();
+        function getregioninfo() {
+            locations.forEach(el => {
+                if (el.Name == itemin) {
+                    fetch(`https://games.roblox.com/v1/games/${el.ID}/servers/Public?limit=100&sortOrder=Asc`)
+                        .then(r => {
+                            if(!r.ok) throw 'Invalid response!';
+                            return r.json()
+                        })
+                        .then(e => {
+                            if (e.data.length < 1) throw message.channel.send('region empty no server found')
                             embed.setTitle(`${itemin}`);
                             embed.setColor('#f4c871');
                             embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
                             embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
                             embed.setTimestamp()
-                            embed.addField(`Average player's ping in server:`,`${server.ping}`)
-                            embed.addField(`Server ${servernumber} have ${server.playing} players:`,tostring(r));
+                            e.data.forEach(server => {
+                                let servernumber =  e.data.indexOf(server) + 1
+                                embed.addField(`Server ${servernumber}`,`Players count: ${server.playing} \n Average player's ping: ${server.ping} \n ________ \n >lookat ${itemin} ${servernumber} (for more info)`)
+                            });
                             message.channel.send(embed)
-                        }
-                            getplr(server.playerIds, cb, plrlist) 
-                    })
-                })
-        }
-
-        function starter() {
-            locations.forEach(e => {
-                if (e.Name == itemin) {
-                    dostuff(e.ID)
+                        }).catch(er => console.error)
                 }
             });
         }
-        starter()
+
+        function getserverinfo()  {
+            locations.forEach(el => {
+                if (el.Name == itemin) {
+                    fetch(`https://games.roblox.com/v1/games/${el.ID}/servers/Public?limit=100&sortOrder=Asc`)
+                        .then(r => {
+                            if(!r.ok) throw 'invalid response!';
+                            return r.json()
+                        })
+                        .then(e => {
+                            const plrlist = []
+                            if (e.data.length < 1) throw message.channel.send('region empty no server found')
+                            e.data.forEach(server => {
+                                let cb = (r) => {
+                                    embed.setTitle(`${itemin}`);
+                                    embed.setColor('#f4c871');
+                                    embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
+                                    embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
+                                    embed.setTimestamp()
+                                    embed.addField(`Average player's ping in server:`,`${server.ping}`)
+                                    embed.addField(`Server ${servernumber} have ${server.playing} players:`,tostring(r));
+                                    message.channel.send(embed)
+                                }
+                                let servernumber =  e.data.indexOf(server) + 1
+                                if(servernumber == args[1]) {
+                                    getplr(server.playerIds, cb, plrlist)
+                                }
+                            })
+                        }).catch(er => console.error)
+                }
+            })
+        }
+
+        if (args[1]) {
+            if (isNaN(parseInt(args[1]))) {
+                return message.reply('that doesn\'t seem to be a valid number.');
+            }
+            getserverinfo()
+        }else {
+            getregioninfo()
+        }
     }
 }
