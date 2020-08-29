@@ -12,32 +12,31 @@ module.exports = {
             {Name: 'chubu', ID: '554670851'},
             {Name: 'tohoku', ID: '903142964'},
             {Name: 'kanto', ID: '1469503587'},
-            {Name: 'chugoku', ID: '2329809976'},          //TODO TURN FOREACH TO FOR I AND AWAI GETPLR
+            {Name: 'chugoku', ID: '2329809976'},          
             {Name: 'mura', ID: '2763010111'},
             {Name: 'kyushu', ID: '1251162439'},
             {Name: 'shikoku', ID: '4620197176'},
             {Name: 'menu', ID: '554664625'},
         ];
         const plrlist = []
-        function findname(id, callback) {
+        function findname(id, callback, length) {
             nbx.getUsernameFromId(id)
             .then(name => {
-                callback(name)
+                combiner(name, callback, length)  
             }).catch(console.error)
         }
 
-        function combiner(input, output, cb, length) {
-            output.push(input)
-            if (output.length == length) {
-                cb(output)
+        function combiner(input, cb, length) {
+            plrlist.push(input)
+            if (plrlist.length == length) {
+                console.log(plrlist)
+                cb(plrlist)
             }
         }
 
         function getplr(ids, callback) { 
             ids.forEach(e => {
-                findname(e, (output) => {
-                    combiner(output, plrlist, callback, ids.length)  
-                })
+                findname(e, callback, ids.length)
             });
         }
 
@@ -58,16 +57,16 @@ module.exports = {
             }
           }
 
-        function dostuff(id) {
-            fetch(`https://games.roblox.com/v1/games/${id}/servers/Public?limit=100&sortOrder=Asc`)
+        async function dostuff(id) {
+            await fetch(`https://games.roblox.com/v1/games/${id}/servers/Public?limit=100&sortOrder=Asc`)
                 .then(r => {
                     if(!r.ok) throw 'Invalid response!';
                     return r.json()
                 })
                 .then(e => {
                     if (e.data.length < 1) throw message.channel.send('no server found')
-                    e.data.forEach(server => {
-                        let servernumber = e.data.indexOf(server) + 1
+                    e.data.forEach(async server => {
+                        let servernumber =  await e.data.indexOf(server) + 1
                         let cb = (r) => {
                             const embed = new Discord.MessageEmbed();
                             embed.setTitle(`${itemin}`);
@@ -81,7 +80,6 @@ module.exports = {
                             plrlist.splice(0, 999999);
                         }
                             getplr(server.playerIds, cb) 
-                            sleep(2000)
                     })
                 })
         }

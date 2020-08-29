@@ -56,11 +56,11 @@ client.on('message', message => {
         client.commands.get('lookat').execute(message, args)
     }
 
-    else if (command === 'search') {
+    else if (command === 'lookfor') {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
-        client.commands.get('search').execute(message, args)        
+        client.commands.get('lookfor').execute(message, args)        
     }
 });
 
