@@ -42,7 +42,7 @@ module.exports = {
                         e.data.forEach(server => {
                             server.playerIds.forEach(ids => {
                                 if (id == ids) {
-                                    a(`${itemin} FOUND AT: ${el.Name} :face_with_monocle:`, `${itemin} is in server  have ${server.playing} players and ${server.ping} avg ping`) 
+                                    a(`${itemin} FOUND AT: ${el.Name} :face_with_monocle:`, `${itemin}'s server  have ${server.playing} players and ${server.ping} avg ping`) 
                                 }else if (el.Name == 'Menu Screen' && server.playerIds.length == server.playerIds.indexOf(ids) + 1) {
                                     a('plr not found on lotrs',`gl next time`)
                                 }
