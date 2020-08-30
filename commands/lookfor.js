@@ -15,7 +15,7 @@ module.exports = {
             {Name: 'Mura', ID: '2763010111'},
             {Name: 'Kyushu', ID: '1251162439'},
             {Name: 'Shikoku', ID: '4620197176'},
-            {Name: 'Menu', ID: '554664625'},
+            {Name: 'Menu Screen', ID: '554664625'},
         ];
         const embed = new Discord.MessageEmbed();
         embed.setTitle(`User: ${args[0]}`);
