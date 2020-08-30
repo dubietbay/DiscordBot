@@ -41,6 +41,7 @@ client.on('message', message => {
     }
 
     else if (command === 'servers') {
+        console.log(client.guilds.cache)
        client.guilds.cache.forEach((guild) => {
         message.channel.send(
             `${guild.name} has a total of ${guild.memberCount} members`
