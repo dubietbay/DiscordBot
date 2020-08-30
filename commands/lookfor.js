@@ -18,11 +18,17 @@ module.exports = {
             {Name: 'shikoku', ID: '4620197176'},
             {Name: 'menu', ID: '554664625'},
         ];
+        const embed = new Discord.MessageEmbed();
+        embed.setTitle(`User: ${args[0]}`);
+        embed.setColor('#f4c871');
+        embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
+        embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
         var first = true
-        function a(a) {
+        function a(a, b) {
             if (first) {
                 first = false
-                message.channel.send(a);
+                embed.addField(a, b)
+                message.channel.send(embed)
             }
         }
 
@@ -37,9 +43,9 @@ module.exports = {
                         e.data.forEach(server => {
                             server.playerIds.forEach(ids => {
                                 if (id == ids) {
-                                    a(`${itemin} FOUND AT: ${el.Name} :face_with_monocle: \n ${itemin} is in server  have ${server.playing} players and ${server.ping} avg ping`) 
+                                    a(`${itemin} FOUND AT: ${el.Name} :face_with_monocle:`, `${itemin} is in server  have ${server.playing} players and ${server.ping} avg ping`) 
                                 }else if (el.Name == 'menu' && server.playerIds.length == server.playerIds.indexOf(ids) + 1) {
-                                    a('plr not found on lotrs')
+                                    a('plr not found on lotrs',`\n`)
                                 }
                             });
                         });

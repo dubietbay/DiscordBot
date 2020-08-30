@@ -40,15 +40,6 @@ client.on('message', message => {
         client.commands.get('craft').execute(message, args)
     }
 
-    else if (command === 'servers') {
-        console.log(client.guilds.cache)
-       client.guilds.cache.forEach((guild) => {
-        message.channel.send(
-            `${guild.name} has a total of ${guild.memberCount} members`
-          )
-       }) 
-    }
-
     else if (command === 'lookat') {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);

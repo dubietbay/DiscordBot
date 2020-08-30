@@ -11,6 +11,7 @@ module.exports = {
         embed.addField('>raid','give raids info');
         embed.addField('>hheeggeell','pls dont use');
         embed.addField('>lookat [region name]','gib region info')
+        embed.addField('>lookfor [player name]',`gib player's location if playing lotrs`)
         embed.addField('>craft [item name] [amount]','ex: >craft soshukatana 1')
         embed.addField('Bring timmy home (to ur server)','[click](https://discord.com/oauth2/authorize?client_id=742196390683345014&scope=bot&permissions=318528)')
         embed.addField('need help ?','[my house](https://discord.gg/fB5UUjN)')
