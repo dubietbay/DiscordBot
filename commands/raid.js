@@ -8,6 +8,28 @@ module.exports = {
         let minutes = date_ob.getUTCMinutes();
         var hour = "1 hour :"
         var minute
+        function getNextSunday() {
+            var now = new Date();
+            var nextSaturday = new Date();
+            nextSaturday.setDate(now.getUTCDate() + (7 - now.getUTCDay() + 7) % 7 + 1);
+            nextSaturday.setHours(7, 30, 0, 0);
+            return nextSaturday;
+        }
+         function getTimeRemaining(endtime) {
+           var t = Date.parse(endtime) - Date.parse(new Date());
+           var seconds = Math.floor((t / 1000) % 60);
+           var minutes = Math.floor((t / 1000 / 60) % 60);
+           var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+           var days = Math.floor(t / (1000 * 60 * 60 * 24));
+           return {
+             'total': t,
+             'days': days,
+             'hours': hours,
+             'minutes': minutes,
+             'seconds': seconds
+           };
+        }
+        var time = getTimeRemaining(getNextSunday())
         if(hours > 12) hours = hours - 12;
         const embed = new Discord.MessageEmbed();
         embed.setTitle('Current lotrs raids:');
@@ -53,6 +75,7 @@ module.exports = {
             default:
                 embed.addField("error")
         }
-                message.channel.send(embed);
+        embed.addField("Time left untill week reset: ", `${time.days} days : ${time.hours} hours : ${time.minutes} minutes : ${time.seconds} seconds`)
+        message.channel.send(embed);
     }
 }
