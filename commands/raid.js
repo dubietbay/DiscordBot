@@ -12,7 +12,7 @@ module.exports = {
             var now = new Date();
             var nextSaturday = new Date();
             nextSaturday.setDate(now.getUTCDate() + (7 - now.getUTCDay() + 7) % 7 + 1);
-            nextSaturday.setHours(7, 30, 0, 0);
+            nextSaturday.setHours(7, 0, 0, 0);
             return nextSaturday;
         }
          function getTimeRemaining(endtime) {
