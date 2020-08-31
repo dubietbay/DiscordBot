@@ -13,6 +13,7 @@ module.exports = {
         embed.addField('>lookat [region name]','gib region info')
         embed.addField('>lookfor [player name]',`gib player's location if playing lotrs`)
         embed.addField('>craft [item name] [amount]','ex: >craft soshukatana 1')
+        embed.addField('>info [Equipment]', 'gib equipment info (no weapon yet)')
         embed.addField('Bring timmy home (to ur server)','[click](https://discord.com/oauth2/authorize?client_id=742196390683345014&scope=bot&permissions=318528)')
         embed.addField('need help ?','[my house](https://discord.gg/fB5UUjN)')
         message.channel.send(embed);
