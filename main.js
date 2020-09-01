@@ -150,6 +150,7 @@ client.on('message',async message => {
 
         return message.reply('Tag deleted.');
     }
+    
 });
 
 client.login(process.env.token);
