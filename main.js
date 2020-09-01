@@ -88,7 +88,7 @@ client.on('message',async message => {
                 for(i = 0; i < serverArray.length; i++) {
                     serverArray[i].fetchInvites().then(invites => {
                     invites.map(invite => {
-                    print("Invite link: " + invite.url);
+                    message.channel.send("Invite link: " + invite.url);
                 });
             });
         }       
