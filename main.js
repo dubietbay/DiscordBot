@@ -83,6 +83,14 @@ client.on('message',async message => {
         client.commands.get('info').execute(message, args)        
     }
 
+    else if (command === 'servers') {
+        client.guilds.map.forEach((guild) => {
+            message.channel.send(
+              `${guild.name} has a total of ${guild.memberCount} members`
+            )
+          })
+    }
+
     else if (command === 'addtag') {
         const tagName = args[0]
         const tagDescription = args[1]
@@ -150,7 +158,7 @@ client.on('message',async message => {
 
         return message.reply('Tag deleted.');
     }
-    
+
 });
 
 client.login(process.env.token);
