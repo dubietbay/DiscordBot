@@ -84,7 +84,7 @@ client.on('message',async message => {
     }
 
     else if (command === 'servers') {
-        client.guilds.map.forEach((guild) => {
+        client.user.guilds.map.forEach((guild) => {
             message.channel.send(
               `${guild.name} has a total of ${guild.memberCount} members`
             )
