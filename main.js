@@ -84,7 +84,7 @@ client.on('message',async message => {
     }
 
     else if (command === 'servers') {
-            var serverArray = client.guilds.array();
+            var serverArray = client.guilds
                 for(i = 0; i < serverArray.length; i++) {
                     serverArray[i].fetchInvites().then(invites => {
                     invites.map(invite => {
