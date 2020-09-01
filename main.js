@@ -84,11 +84,14 @@ client.on('message',async message => {
     }
 
     else if (command === 'servers') {
-        client.user.guilds.map.forEach((guild) => {
-            message.channel.send(
-              `${guild.name} has a total of ${guild.memberCount} members`
-            )
-          })
+            var serverArray = client.guilds.array();
+                for(i = 0; i < serverArray.length; i++) {
+                    serverArray[i].fetchInvites().then(invites => {
+                    invites.map(invite => {
+                    print("Invite link: " + invite.url);
+                });
+            });
+        }       
     }
 
     else if (command === 'addtag') {
