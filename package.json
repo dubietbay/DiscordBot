@@ -12,8 +12,6 @@
     "discord.js": "^12.3.1",
     "noblox.js": "^4.7.1",
     "node-fetch": "^2.6.0",
-    "node-pre-gyp": "^0.15.0",
-    "sequelize": "^6.3.4",
-    "sqlite3": "^5.0.0"
+    "node-pre-gyp": "^0.15.0"
   }
 }
