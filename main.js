@@ -26,7 +26,6 @@ pool.query('SELECT table_schema,table_name FROM information_schema.tables;', (er
     pool.end();
   });
 
-
 client.once('ready', () => {
     console.log('checker is online!');
     client.user.setActivity('Prefix: >')
