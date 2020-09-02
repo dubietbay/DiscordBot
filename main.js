@@ -18,13 +18,10 @@ for(const file of commandFiles){
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command)
 }
-pool.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-    if (err) throw err;
-    for (let row of res.rows) {
-      console.log(JSON.stringify(row));
-    }
-    pool.end();
-  });
+pool.query('SELECT NOW()', (err, res) => {
+    console.log(err, res)
+    pool.end()
+})
 
 client.once('ready', () => {
     console.log('checker is online!');
