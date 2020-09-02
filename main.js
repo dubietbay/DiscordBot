@@ -12,18 +12,18 @@ const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
-client.connect();
+pool.connect();
 
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command)
 }
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+pool.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
     if (err) throw err;
     for (let row of res.rows) {
       console.log(JSON.stringify(row));
     }
-    client.end();
+    pool.end();
   });
 
 
