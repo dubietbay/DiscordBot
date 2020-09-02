@@ -165,7 +165,6 @@ const Recipe = [
     {From: "Backpack", NameCall: "birchhandle", Name: "Birch Handle", Materials: "birchlog", Quantity: "1"},
     {From: "Backpack", NameCall: "willowhandle", Name: "Willow Handle", Materials: "willowlog", Quantity: "1"},
     {From: "Backpack", NameCall: "maplehandle", Name: "Maple Handle", Materials: "maplelog", Quantity: "1"},
-    {From: "Backpack", NameCall: "pinehandle", Name: "Pine Handle", Materials: "pinelog", Quantity: "1"},
     {From: "Backpack", NameCall: "cherryhandle", Name: "Cherry Handle", Materials: "cherrylog", Quantity: "1"},
     {From: "Backpack", NameCall: "linen", Name: "Linen", Materials: "flax", Quantity: "10"},
     {From: "Backpack", NameCall: "pinefittings", Name: "Pine Fittings", Materials: "pinelog", Quantity: "5"},
