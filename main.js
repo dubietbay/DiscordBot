@@ -10,31 +10,9 @@ for(const file of commandFiles){
     client.commands.set(command.name, command)
 }
 
-const sequelize = new Sequelize('database', 'user', 'password', {
-	host: 'localhost',
-	dialect: 'sqlite',
-	logging: false, 
-	storage: 'database.sqlite',
-});
-
-const Tags = sequelize.define('tags', {
-	name: {
-		type: Sequelize.STRING,
-		unique: true,
-	},
-	description: Sequelize.TEXT,
-	username: Sequelize.STRING,
-	usage_count: {
-		type: Sequelize.INTEGER,
-		defaultValue: 0,
-		allowNull: false,
-	},
-});
-
 client.once('ready', () => {
     console.log('checker is online!');
     client.user.setActivity('Prefix: >')
-    Tags.sync();
 });
 
 client.on('message',async message => {
