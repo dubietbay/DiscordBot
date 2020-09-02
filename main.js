@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const Sequelize = require('sequelize');
 const client = new Discord.Client();
 const prefix = '>';
 const fs = require('fs');
