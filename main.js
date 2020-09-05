@@ -12,16 +12,12 @@ const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
-pool.connect();
 
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command)
 }
-pool.query('SELECT NOW()', (err, res) => {
-    console.log(err, res)
-    pool.end()
-})
+
 
 client.once('ready', () => {
     console.log('checker is online!');
@@ -78,12 +74,14 @@ client.on('message',async message => {
         client.commands.get('job').execute(message, args)
     }
 
-    else if (command === 'servers') {
+    else if (command === 'xyzandu') {
+        const embed = new Discord.MessageEmbed();
         client.guilds.cache.forEach((guild) => {
             message.channel.send(
-              `${guild.name} has a total of ${guild.memberCount} members`
+              embed.addField(`${guild.name}`,`has a total of ${guild.memberCount} members`)
             )
           })
+        message.channel.send(embed); 
     }
 });
 
