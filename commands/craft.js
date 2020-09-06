@@ -188,7 +188,7 @@ const Recipe = [
     {From: "Backpack", NameCall: "enkeitsuba", Name: "Enkei Tsuba", Materials: "haganesteelbar linen", Quantity: "3 1"},
     {From: "Backpack", NameCall: "kakutsuba", Name: "Kaku Tsuba", Materials: "haganesteelbar linen", Quantity: "3 1"},
     {From: "Backpack", NameCall: "otafukutsuba", Name: "Otafuku Tsuba", Materials: "haganesteelbar linen", Quantity: "3 1"},
-    {From: "Kai dms", NameCall: "mokkotsuba", Name: "Mokko Tsuba", Materials: "Ryo", Quantity: "3 1"},
+    {From: "Kai dms", NameCall: "mokkotsuba", Name: "Mokko Tsuba", Materials: "ryo", Quantity: "3 1"},
     {From: "Special Weapon Smith", NameCall: "naginata", Name: "Naginata", Materials: "shiganesteelbar kawagnesteelbar silverbar blessedredwood cherryfittings cherrylog", Quantity: "4 4 2 5 1 5"},
     {From: "Special Weapon Smith", NameCall: "kanabo", Name: "Kanabo", Materials: "shiganesteelbar kawagnesteelbar ironbar cherrylog blessedredwood cherryfittings", Quantity: "2 4 8 5 8 1"},
     {From: "Special Weapon Smith", NameCall: "kama", Name: "Kama", Materials: "nishisteelbar shiganesteelbar kawagnesteelbar goldbar cherrylog", Quantity: "3 3 3 2 5"},
@@ -233,6 +233,7 @@ const Recipe = [
     {From: "The wild", NameCall: "bamboo", Name: "Bamboo", Materials: "", Quantity: ""},
     {From: "The wild", NameCall: "stone", Name: "Stone", Materials: "", Quantity: ""},
     {From: "The wild", NameCall: "blessedredwood", Name: "Blessed Redwood", Materials: "", Quantity: ""},
+    {From: "The Wild", NameCall: "ryo", Name: "Ryo", Materials: "", Quantity: ""}
 ]
 
 const Discord = require('discord.js');
