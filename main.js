@@ -26,7 +26,7 @@ client.once('ready', () => {
 
 client.on('message',async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
-    if(message.guild.id == 595663296028475393 && message.guild.channel.id == 754335104842858619) 
+    if(message.guild.id == 595663296028475393 && message.channel.id == 754335104842858619) 
     return message.channel.send('mom will spank me if i speak here');
 
     const args = message.content.slice(prefix.length).split(/ +/);
