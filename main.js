@@ -75,11 +75,11 @@ client.on('message',async message => {
     }
 
     else if (command === 'serverss') {
-        const embed = new Discord.MessageEmbed();
+        a = ""
         client.guilds.cache.forEach((guild) => {
-              embed.addField(`${guild.name}`,`has a total of ${guild.memberCount} members`)
+              a = a + `${guild.name} has ${guild.memberCount} members` + '\n'
           })
-        message.channel.send(embed); 
+        message.channel.send(a); 
     }
 });
 
