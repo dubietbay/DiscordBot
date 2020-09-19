@@ -59,6 +59,7 @@ module.exports = {
                     finder(r)
                 })
         }
+        if(args[0] == `lucagamez`) return
         startApp()
     }
 }
