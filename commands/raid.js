@@ -46,7 +46,7 @@ module.exports = {
             case 9:
                 embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
                 embed.addField("Kansai",">lookat Kansai (for more info)",true)
-                embed.addField("Time left and until: " + hour + " " + minute + " minute","Upcomming raids:")
+                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcomming raids:")
                 embed.addField("Kanto",">lookat Kanto (for more info)",true)
                 embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
                 embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
@@ -58,7 +58,7 @@ module.exports = {
                 embed.addField("Kanto",">lookat Kanto (for more info)",true)
                 embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
                 embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
-                embed.addField("Time left and until: " + hour + " " + minute + " minute","Upcomming raids:")
+                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcomming raids:")
                 embed.addField("Chubu",">lookat Chubu (for more info)",true)
                 embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
                 break;
@@ -68,14 +68,14 @@ module.exports = {
             case 1:
                 embed.addField("Chubu",">lookat Chubu (for more info)",true)
                 embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
-                embed.addField("Time left and until: " + hour + " " + minute + " minute","Upcomming raids:")
+                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcomming raids:")
                 embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
                 embed.addField("Kansai",">lookat Kansai (for more info)",true)
                 break;
             default:
                 embed.addField("error")
         }
-        embed.addField("Time left untill week reset: ", `${time.days} days : ${time.hours} hours : ${time.minutes} minutes : ${time.seconds} seconds`)
+        embed.addField("Time until the week resets: ", `${time.days} days : ${time.hours} hours : ${time.minutes} minutes : ${time.seconds} seconds`)
         message.channel.send(embed);
     }
 }
