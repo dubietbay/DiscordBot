@@ -26,7 +26,7 @@ client.once('ready', () => {
 
 client.on('message',async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
-    if(message.guild.channel.id == `748846480768630819` && message.guild.id == `595663296028475393`) return message.reply(`mommy will spank me if i talk here :sob:`)
+    if(message.channel.id == `748846480768630819` && message.guild.id == `595663296028475393`) return message.reply(`mommy will spank me if i talk here :sob:`)
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
