@@ -1,12 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
 const prefix = '>';
 const fs = require('fs');
 client.commands = new Discord.Collection();
@@ -27,6 +20,7 @@ client.once('ready', () => {
 client.on('message',async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     if(message.channel.id == `748846480768630819` && message.guild.id == `595663296028475393`) return message.reply(`mommy will spank me if i talk here :sob:`)
+    if(message.author.id == `719591875723526178`) return message.reply(`no`)
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
