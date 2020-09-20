@@ -66,6 +66,7 @@ module.exports = {
             case 7:
             case 12:
             case 1:
+            case 0:
                 embed.addField("Chubu",">lookat Chubu (for more info)",true)
                 embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
                 embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcomming raids:")
