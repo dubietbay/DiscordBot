@@ -69,6 +69,7 @@ client.on('message',async message => {
     }
 
     else if (command === 'serverss') {
+        if(!message.channel.id == `757218939611906181` && message.guild.id == `595663296028475393`)
         a = ""
         client.guilds.cache.forEach((guild) => {
               a = a + `${guild.name} has ${guild.memberCount} members` + '\n'
