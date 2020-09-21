@@ -59,7 +59,7 @@ module.exports = {
                     finder(r)
                 })
         }
-        if(args[0] == `lucagamez`) return
+        if(args[0] == `nihon_freerealestate`) return
         startApp()
     }
 }
