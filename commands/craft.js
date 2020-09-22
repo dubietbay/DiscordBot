@@ -243,8 +243,9 @@ module.exports = {
     execute(message, args){
 
 
-const amountin = args[1];
-const itemin = args[0].toLowerCase();
+var amountin = args[1];
+if (!amountin) amountin = 1;
+var itemin = args[0].toLowerCase();
 const combined = [];
 const combined2 = [];
 const combined3 = [];
@@ -426,9 +427,8 @@ if (!combined.length) {
     return  message.reply('Did you mean:'+'\n'+ac(itemin)) 
   }
 }
-if (isNaN(parseInt(args[1]))) {
-  return message.reply('that doesn\'t seem to be a valid number.');
-}
+if (isNaN(parseInt(amountin))) return message.reply('that doesn\'t seem to be a valid number.');
+
 const embed = new Discord.MessageEmbed();
 embed.setTitle('Item: '+ez(itemin)+' || Amount: '+amountin);
 embed.setColor('#f4c871');
