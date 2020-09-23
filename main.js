@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '>';
+const prefix = '?';
 const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -31,10 +31,6 @@ client.on('message',async message => {
     else if (command === 'help'){
         client.commands.get('help').execute(message, args);
     }
-
-    else if (command === 'hheeggeell'){
-        message.reply('DONT TOUCH MY WIFE >:(');
-    }
     
     else if (command === 'craft') {
         if (!args.length) {
@@ -64,8 +60,8 @@ client.on('message',async message => {
         client.commands.get('info').execute(message, args)        
     }
 
-    else if (command === 'joblist') {
-        client.commands.get('job').execute(message, args)
+    else if (command === 'req') {
+        client.commands.get('req').execute(message, args)
     }
 
     else if (command === 'serverss') {
@@ -79,5 +75,5 @@ client.on('message',async message => {
     }
 });
 
-client.login(process.env.token);
-//client.login('NzQ3Mjg1MjM4MDY5MDY3ODI2.X0MpnA.Vvq0qUNikCqZnFfq1kmW4lZ1tC4');
+//client.login(process.env.token);
+client.login('NzQ3Mjg1MjM4MDY5MDY3ODI2.X0MpnA.Vvq0qUNikCqZnFfq1kmW4lZ1tC4');
