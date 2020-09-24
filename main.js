@@ -5,6 +5,21 @@ const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
+const { Client } = require('pg');
+
+const pgclient = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+pgclient.connect()
+.then(() => console.log("connected succ to db"))
+.then(() => pgclient.query("testing"))
+.then(results => console.table(results.rows))
+.catch(error => console.log(error + " fuck dub iq"))
+.finally(() => client.end())
 
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
