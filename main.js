@@ -16,7 +16,7 @@ const pgclient = new Client({
 
 pgclient.connect()
 .then(() => console.log("connected succ to db"))
-.then(() => pgclient.query(`SELECT $1::text as message'`, ['Hello world!']))
+.then(() => pgclient.query('SELECT $1::text as message', ['Hello world!']))
 .then(results => console.table(results.rows))
 .catch(error => console.log(error + " fuck dub iq"))
 .finally(() => pgclient.end())
