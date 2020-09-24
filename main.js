@@ -16,10 +16,10 @@ const pgclient = new Client({
 
 pgclient.connect()
 .then(() => console.log("connected succ to db"))
-.then(() => pgclient.query("testing"))
+.then(() => pgclient.query(`SELECT $1::text as message'`, ['Hello world!']))
 .then(results => console.table(results.rows))
 .catch(error => console.log(error + " fuck dub iq"))
-.finally(() => client.end())
+.finally(() => pgclient.end())
 
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
@@ -79,14 +79,16 @@ client.on('message',async message => {
         client.commands.get('req').execute(message, args)
     }
 
-    else if (command === 'serverss') {
-        if(message.channel.id == `757218939611906181` && message.guild.id == `595663296028475393`) {
-        a = ""
-        client.guilds.cache.forEach((guild) => {
-              a = a + `${guild.name} has ${guild.memberCount} members` + '\n'
-          })
-        message.channel.send(a); 
+    else if(message.channel.id == `757218939611906181` && message.guild.id == `595663296028475393`) {
+        if (command === 'serverss') {
+            a = ""
+                client.guilds.cache.forEach((guild) => {
+                a = a + `${guild.name} has ${guild.memberCount} members` + '\n'
+            })
+            message.channel.send(a); 
         }
+
+
     }
 });
 
