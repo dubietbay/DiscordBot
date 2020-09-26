@@ -20,12 +20,6 @@ const Recipe = [
     {From: "Armor Smith", NameCall: "heavydo-maru", Name: "Heavy Do-maru", Materials: "cloth kawagnesteelbar ironbar shiganesteelbar standardfittings higashisteelbar", Quantity: "3 3 3 5 1 2"},
     {From: "Armor Smith", NameCall: "kusarigusoku", Name: "Kusari Gusoku", Materials: "silk shiganesteelbar ironbar standardfittings kawagnesteelbar cloth", Quantity: "2 3 3 1 2 3"},
     {From: "Backpack", NameCall: "pinehandle", Name: "Pine Handle", Materials: "pinelog", Quantity: "1"},
-    {From: "Backpack", NameCall: "tinfittings", Name: "Tin Fittings", Materials: "tinbar", Quantity: "5"},
-    {From: "Backpack", NameCall: "bronzefittings", Name: "Bronze Fittings", Materials: "bronzebar", Quantity: "5"},
-    {From: "Backpack", NameCall: "silverfittings", Name: "Silver Fittings", Materials: "silverbar", Quantity: "5"},
-    {From: "Backpack", NameCall: "goldfittings", Name: "Gold Fittings", Materials: "goldbar", Quantity: "5"},
-    {From: "Backpack", NameCall: "ironfittings", Name: "Iron Fittings", Materials: "ironbar", Quantity: "5"},
-    {From: "Backpack", NameCall: "copperfittings", Name: "Copper Fittings", Materials: "copperbar", Quantity: "5"},
     {From: "Clan Artisan", NameCall: "clanfittings", Name: "Clan Fittings", Materials: "reddye bluedye yellowdye haganesteelbar pinelog flax", Quantity: "1 1 1 1 1 2"},
     {From: "Fabric Weaver", NameCall: "nettleweave", Name: "Nettle Weave", Materials: "ramie", Quantity: "3"},
     {From: "Fabric Weaver", NameCall: "cloth", Name: "Cloth", Materials: "cotton", Quantity: "5"},
@@ -446,3 +440,11 @@ message.channel.send(embed);
 }
 }
 
+
+
+//{From: "Backpack", NameCall: "tinfittings", Name: "Tin Fittings", Materials: "tinbar", Quantity: "5"},
+//{From: "Backpack", NameCall: "bronzefittings", Name: "Bronze Fittings", Materials: "bronzebar", Quantity: "5"},
+//{From: "Backpack", NameCall: "silverfittings", Name: "Silver Fittings", Materials: "silverbar", Quantity: "5"},
+//{From: "Backpack", NameCall: "goldfittings", Name: "Gold Fittings", Materials: "goldbar", Quantity: "5"},
+//{From: "Backpack", NameCall: "ironfittings", Name: "Iron Fittings", Materials: "ironbar", Quantity: "5"},
+//{From: "Backpack", NameCall: "copperfittings", Name: "Copper Fittings", Materials: "copperbar", Quantity: "5"},
