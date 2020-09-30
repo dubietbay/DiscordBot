@@ -5,22 +5,6 @@ const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 
-const { Client } = require('pg');
-
-const pgclient = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
-});
-
-pgclient.connect()
-.then(() => console.log("connected succ to db"))
-.then(() => pgclient.query('SELECT $1::text as message', ['Hello world!']))
-.then(results => console.table(results.rows))
-.catch(error => console.log(error + " fuck dub iq"))
-.finally(() => pgclient.end())
-
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command)
@@ -81,11 +65,17 @@ client.on('message',async message => {
 
     else if(message.channel.id == `757218939611906181` && message.guild.id == `595663296028475393`) {
         if (command === 'serverss') {
-            a = ""
+            b = 0
+            a = {}
+            function E(name, member) {
+                this.name = name;
+                this.member = member;
+              }
                 client.guilds.cache.forEach((guild) => {
-                a = a + `${guild.name} has ${guild.memberCount} members` + '\n'
+                    b = b + 1
+                    a.b = new E(guild.name,guild.memberCount)
             })
-            message.channel.send(a); 
+            console.table(a)
         }
 
 
