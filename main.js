@@ -70,13 +70,11 @@ client.on('message',async message => {
                 this.name = name;
                 this.member = member;
               }
-            client.guilds.cache.forEach((guild) => {
+            client.guilds.cache.forEach((guild, index, array) => {
                     a = new E(guild.name,guild.memberCount)
+                    if (index === array.length -1) console.table(a);
             })
-            .then(console.table(a))
         }
-
-
     }
 });
 
