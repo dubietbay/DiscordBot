@@ -65,15 +65,13 @@ client.on('message',async message => {
 
     else if(message.channel.id == `757218939611906181` && message.guild.id == `595663296028475393`) {
         if (command === 'serverss') {
-            b = 0
             a = {}
             function E(name, member) {
                 this.name = name;
                 this.member = member;
               }
             client.guilds.cache.forEach((guild) => {
-                    b = b + 1
-                    a.b = new E(guild.name,guild.memberCount)
+                    a = new E(guild.name,guild.memberCount)
             })
             .then(console.table(a))
         }
