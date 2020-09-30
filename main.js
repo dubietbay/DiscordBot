@@ -71,11 +71,11 @@ client.on('message',async message => {
                 this.name = name;
                 this.member = member;
               }
-                client.guilds.cache.forEach((guild) => {
+            client.guilds.cache.forEach((guild) => {
                     b = b + 1
                     a.b = new E(guild.name,guild.memberCount)
             })
-            console.table(a)
+            .then(console.table(a))
         }
 
 
