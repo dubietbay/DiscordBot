@@ -130,7 +130,6 @@ const Recipe = [
     {From: "Backpack", NameCall: "preparedclams", Name: "Prepared Clams", Materials: "asariclam saltpeter", Quantity: "3 1"},
     {From: "Backpack", NameCall: "preparedfugu", Name: "Prepared Fugu", Materials: "fugu saltpeter", Quantity: "1 1"},
     {From: "Backpack", NameCall: "soybeans", Name: "Soybeans", Materials: "soypods", Quantity: "3"},
-    {From: "Backpack", NameCall: "smallbed", Name: "Small Bed", Materials: "linen", Quantity: "1"},
     {From: "Backpack", NameCall: "crudetorch", Name: "Crude Torch", Materials: "flax pinelog coal", Quantity: "2 1 1"},
     {From: "Backpack", NameCall: "crudepot", Name: "Crude Pot", Materials: "copperbar pinelog", Quantity: "3 2"},
     {From: "Backpack", NameCall: "mealbox", Name: "Meal Box", Materials: "pinelog", Quantity: "5"},
