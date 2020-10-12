@@ -226,7 +226,8 @@ const Recipe = [
     {From: "The wild", NameCall: "bamboo", Name: "Bamboo", Materials: "", Quantity: ""},
     {From: "The wild", NameCall: "stone", Name: "Stone", Materials: "", Quantity: ""},
     {From: "The wild", NameCall: "blessedredwood", Name: "Blessed Redwood", Materials: "", Quantity: ""},
-    {From: "The Wild", NameCall: "ryo", Name: "Ryo", Materials: "", Quantity: ""}
+    {From: "The Wild", NameCall: "ryo", Name: "Ryo", Materials: "", Quantity: ""},
+    {From: "Adopt me", NameCall: "kai", Name: "Kai", Materials: "ugly horny ragingsexmachine war!", Quantity: "10% 5% 50% 35%"}
 ]
 
 const Discord = require('discord.js');
