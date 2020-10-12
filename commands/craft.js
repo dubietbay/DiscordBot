@@ -230,7 +230,7 @@ const Recipe = [
     {From: "The Wild", NameCall: "ugly", Name: "ugly", Materials: "", Quantity: ""},
     {From: "The Wild", NameCall: "horny", Name: "horny", Materials: "", Quantity: ""},
     {From: "The Wild", NameCall: "ragingsexmachine", Name: "ragingsexmachine", Materials: "", Quantity: ""},
-    {From: "The Wild", NameCall: "war!", Name: "war!", Materials: "", Quantity: ""},
+    {From: "UR MOM", NameCall: "war!", Name: "war!", Materials: "", Quantity: ""},
     {From: "Adopt me", NameCall: "kai", Name: "Kai", Materials: "ugly horny ragingsexmachine war!", Quantity: "10 5 50 35"}
 ]
 
