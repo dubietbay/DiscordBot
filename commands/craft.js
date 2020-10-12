@@ -227,10 +227,10 @@ const Recipe = [
     {From: "The wild", NameCall: "stone", Name: "Stone", Materials: "", Quantity: ""},
     {From: "The wild", NameCall: "blessedredwood", Name: "Blessed Redwood", Materials: "", Quantity: ""},
     {From: "The Wild", NameCall: "ryo", Name: "Ryo", Materials: "", Quantity: ""},
-    {From: "The Wild", NameCall: "ugly", Name: "ugly", Materials: "", Quantity: ""},
-    {From: "The Wild", NameCall: "horny", Name: "horny", Materials: "", Quantity: ""},
-    {From: "The Wild", NameCall: "ragingsexmachine", Name: "ragingsexmachine", Materials: "", Quantity: ""},
-    {From: "UR MOM", NameCall: "war!", Name: "war!", Materials: "", Quantity: ""},
+    {From: "Adopt me", NameCall: "ugly", Name: "ugly", Materials: "", Quantity: ""},
+    {From: "Adopt me", NameCall: "horny", Name: "horny", Materials: "", Quantity: ""},
+    {From: "Adopt me", NameCall: "ragingsexmachine", Name: "ragingsexmachine", Materials: "", Quantity: ""},
+    {From: "Adopt me", NameCall: "war!", Name: "war!", Materials: "", Quantity: ""},
     {From: "Adopt me", NameCall: "kai", Name: "Kai", Materials: "ugly horny ragingsexmachine war!", Quantity: "10 5 50 35"}
 ]
 
