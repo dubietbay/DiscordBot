@@ -21,6 +21,7 @@ const Recipe = [
     {From: "Armor Smith", NameCall: "kusarigusoku", Name: "Kusari Gusoku", Materials: "silk shiganesteelbar ironbar standardfittings kawagnesteelbar cloth", Quantity: "2 3 3 1 2 3"},
     {From: "Backpack", NameCall: "pinehandle", Name: "Pine Handle", Materials: "pinelog", Quantity: "1"},
     {From: "Clan Artisan", NameCall: "clanfittings", Name: "Clan Fittings", Materials: "reddye bluedye yellowdye haganesteelbar pinelog flax", Quantity: "1 1 1 1 1 2"},
+    {From: "Clan Artisan", NameCall: "factionfittings", Name: "Faction Fittings", Materials: "reddye bluedye yellowdye haganesteelbar pinelog flax", Quantity: "1 1 1 1 1 2"},
     {From: "Fabric Weaver", NameCall: "nettleweave", Name: "Nettle Weave", Materials: "ramie", Quantity: "3"},
     {From: "Fabric Weaver", NameCall: "cloth", Name: "Cloth", Materials: "cotton", Quantity: "5"},
     {From: "Fabric Weaver", NameCall: "hachimaki", Name: "Hachimaki", Materials: "linen cloth standardfittings", Quantity: "3 5 1"},
