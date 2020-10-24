@@ -167,7 +167,7 @@ const Recipe = [
     {From: "Backpack", NameCall: "copperarrow", Name: "Copper Arrow", Materials: "oaklog copperarrowheads", Quantity: "3 3"},
     {From: "Backpack", NameCall: "bronzearrow", Name: "Bronze Arrow", Materials: "oaklog bronzearrowheads", Quantity: "3 3"},
     {From: "Backpack", NameCall: "ironarrow", Name: "Iron Arrow", Materials: "oaklog ironarrowheads", Quantity: "3 3"},
-    {From: "Backpack", NameCall: "steelarrow", Name: "Steel Arrow", Materials: "oaklog steelarrowheads", Quantity: "1 1 1"},
+    {From: "Backpack", NameCall: "steelarrow", Name: "Steel Arrow", Materials: "oaklog steelarrowheads", Quantity: "3 3"},
     {From: "Backpack", NameCall: "kaburaarrow", Name: "Kabura Arrow", Materials: "maplelog ironbar reddye blackdye", Quantity: "1 1 1 1"},
     {From: "Backpack", NameCall: "stonearrow", Name: "Stone Arrow", Materials: "bamboo stonearrowheads", Quantity: "3 3"},
     {From: "Backpack", NameCall: "stonearrowheads", Name: "Stone Arrowheads", Materials: "stone", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333"},
