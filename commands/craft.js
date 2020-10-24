@@ -358,10 +358,10 @@ function ez(x) {
 }
 
 function ez2() {
-  let e
+  let e = amountin
   bigamount.forEach((item) => {
     if (item.NameCall == itemin) {
-      e = amountin * item.amount
+      e = e * item.amount
     }
   })
   return e
