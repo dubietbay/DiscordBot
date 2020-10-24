@@ -74,7 +74,7 @@ client.on('message',async message => {
         else if (command === 'leave2') {
             client.guilds.cache.forEach((guild, index, array) => {
             if (guild.memberCount < 3) {
-            client.guilds.get(guild.id).leave()
+            client.guilds.cache.get(guild.id).leave()
             .then(g => console.log(`Left the guild ${g}`)) .catch(console.error);
             }
         })
