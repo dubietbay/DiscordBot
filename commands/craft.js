@@ -236,11 +236,11 @@ const Recipe = [
 ]
 
 const bigamount  = [
-  {NameCall: "copperarrow", amount: 5},
-  {NameCall: "bronzearrow", amount: 5},
-  {NameCall: "ironarrow", amount: 5},
-  {NameCall: "steelarrow", amount: 5},
-  {NameCall: "stonearrow", amount: 5},
+  {NameCall: "copperarrow", amount: 15},
+  {NameCall: "bronzearrow", amount: 15},
+  {NameCall: "ironarrow", amount: 15},
+  {NameCall: "steelarrow", amount: 15},
+  {NameCall: "stonearrow", amount: 15},
   {NameCall: "5monmeround", amount: 7},
   {NameCall: "7monmeround", amount: 5}
 ]
