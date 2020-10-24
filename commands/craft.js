@@ -164,19 +164,19 @@ const Recipe = [
     {From: "Backpack", NameCall: "bluefittings", Name: "Blue Fittings", Materials: "haganesteelbar pinelog flax bluedye", Quantity: "1 1 2 2"},
     {From: "Backpack", NameCall: "yellowfittings", Name: "Yellow Fittings", Materials: "haganesteelbar pinelog flax yellowdye", Quantity: "1 1 2 2"},
     {From: "Backpack", NameCall: "whitefittings", Name: "White Fittings", Materials: "haganesteelbar pinelog flax whitedye", Quantity: "1 1 2 2"},
-    {From: "Backpack", NameCall: "copperarrow", Name: "Copper Arrow", Materials: "pinelog copperarrowheads", Quantity: "1 1"},
-    {From: "Backpack", NameCall: "bronzearrow", Name: "Bronze Arrow", Materials: "pinelog bronzearrowheads", Quantity: "1 1"},
-    {From: "Backpack", NameCall: "ironarrow", Name: "Iron Arrow", Materials: "birchlog ironarrowheads", Quantity: "1 1"},
+    {From: "Backpack", NameCall: "copperarrow", Name: "Copper Arrow", Materials: "pinelog copperarrowheads", Quantity: "3 3"},
+    {From: "Backpack", NameCall: "bronzearrow", Name: "Bronze Arrow", Materials: "pinelog bronzearrowheads", Quantity: "3 3"},
+    {From: "Backpack", NameCall: "ironarrow", Name: "Iron Arrow", Materials: "birchlog ironarrowheads", Quantity: "3 3"},
     {From: "Backpack", NameCall: "steelarrow", Name: "Steel Arrow", Materials: "maplelog brassbar steelarrowheads", Quantity: "1 1 1"},
     {From: "Backpack", NameCall: "kaburaarrow", Name: "Kabura Arrow", Materials: "maplelog ironbar reddye blackdye", Quantity: "1 1 1 1"},
-    {From: "Backpack", NameCall: "stonearrow", Name: "Stone Arrow", Materials: "bamboo stonearrowheads", Quantity: "1 1"},
-    {From: "Backpack", NameCall: "stonearrowheads", Name: "Stone Arrowheads", Materials: "stone", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"},
+    {From: "Backpack", NameCall: "stonearrow", Name: "Stone Arrow", Materials: "bamboo stonearrowheads", Quantity: "3 3"},
+    {From: "Backpack", NameCall: "stonearrowheads", Name: "Stone Arrowheads", Materials: "stone", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333"},
     {From: "Backpack", NameCall: "strawkasa", Name: "Straw Kasa", Materials: "flax pinelog", Quantity: "15 3"},
     {From: "Backpack", NameCall: "strawgasa", Name: "Straw Gasa", Materials: "flax birchlog", Quantity: "15 3"},
-    {From: "Backpack", NameCall: "copperarrowheads", Name: "Copper Arrowheads", Materials: "copperbar", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"},
-    {From: "Backpack", NameCall: "bronzearrowheads", Name: "Bronze Arrowheads", Materials: "bronzebar", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"},
-    {From: "Backpack", NameCall: "ironarrowheads", Name: "Iron Arrowheads", Materials: "ironbar", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"},
-    {From: "Backpack", NameCall: "steelarrowheads", Name: "Steel Arrowheads", Materials: "shiganesteelbar", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"},
+    {From: "Backpack", NameCall: "copperarrowheads", Name: "Copper Arrowheads", Materials: "copperbar", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333"},
+    {From: "Backpack", NameCall: "bronzearrowheads", Name: "Bronze Arrowheads", Materials: "bronzebar", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333"},
+    {From: "Backpack", NameCall: "ironarrowheads", Name: "Iron Arrowheads", Materials: "ironbar", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333"},
+    {From: "Backpack", NameCall: "steelarrowheads", Name: "Steel Arrowheads", Materials: "shiganesteelbar", Quantity: "0.3333333333333333333333333333333333333333333333333333333333333333333333333"},
     {From: "Backpack", NameCall: "5monmeround", Name: "5 Monme Round", Materials: "leadbar gunpowder", Quantity: "1 2"},
     {From: "Backpack", NameCall: "7monmeround", Name: "7 Monme Round", Materials: "leadbar gunpowder", Quantity: "1 2"},
     {From: "Backpack", NameCall: "enkeitsuba", Name: "Enkei Tsuba", Materials: "haganesteelbar linen", Quantity: "3 1"},
@@ -233,6 +233,16 @@ const Recipe = [
     {From: "Adopt me", NameCall: "ragingsexmachine", Name: "ragingsexmachine", Materials: "", Quantity: ""},
     {From: "Adopt me", NameCall: "war!", Name: "war!", Materials: "", Quantity: ""},
     {From: "Adopt me", NameCall: "kai", Name: "Kai", Materials: "ugly horny ragingsexmachine war!", Quantity: "10 5 50 35"}
+]
+
+const bigamount  = [
+  {NameCall: "copperarrow", amount: 5},
+  {NameCall: "bronzearrow", amount: 5},
+  {NameCall: "ironarrow", amount: 5},
+  {NameCall: "steelarrow", amount: 5},
+  {NameCall: "stonearrow", amount: 5},
+  {NameCall: "5monmeround", amount: 7},
+  {NameCall: "7monmeround", amount: 5}
 ]
 
 const Discord = require('discord.js');
@@ -347,6 +357,16 @@ function ez(x) {
   return e
 }
 
+function ez2() {
+  let e
+  bigamount.forEach((item) => {
+    if (item.NameCall == itemin) {
+      e = amountin * item.amount
+    }
+  })
+  return e
+}
+
 function locations(x,y,z,q) {
   base = [];
   base2 = "";
@@ -429,7 +449,7 @@ if (!combined.length) {
 if (isNaN(parseInt(amountin))) return message.reply('that doesn\'t seem to be a valid number.');
 
 const embed = new Discord.MessageEmbed();
-embed.setTitle('Item: '+ez(itemin)+' || Amount: '+amountin);
+embed.setTitle('Item: '+ez(itemin)+` || Amount: ${ez2()}`);
 embed.setColor('#f4c871');
 embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
 embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
