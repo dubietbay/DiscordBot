@@ -31,7 +31,7 @@ const info = [
     {Name: 'Genpei Kabuto', NameCall: 'genpeikabuto', Info: 'Wear: 0.175 \n Defense: 12.5 \n Accuracy: 0.075 \n Speed: -0.5 \n'}, 
     {Name: 'Kusari Gusoku', NameCall: 'kusarigusoku', Info: 'Defense: 77.5 \n Accuracy: -0.125 \n Speed: -2 \n Wear: 0.15 \n'}, 
     {Name: 'Zukin', NameCall: 'zukin', Info: 'Wear: 0.225 \n Speed: 0 \n Defense: 10 \n Accuracy: 0 \n'}, 
-    {Name: 'Balanced Yuigesa', NameCall: 'balancedyuigesa', Info: 'Defense: 2.5 \n Accuracy: 0.05 \n Speed: 0.5 \n Wear: 0 \n EnergyReduction: 25 \n'}, 
+    {Name: 'Balanced Yuigesa', NameCall: 'balancedyuigesa', Info: 'Defense: 2.5 \n Accuracy: 0.05 \n Speed: 0.5 \n Wear: 0 \n EnergyReduction: 25 \n'}
 ];
 const SkillModifications = [
  {Name: 'Heavy Gyorin', Skill: 'Balanced Sojutsu Training', Info: 'Armor: +8 \n Speed: +0.4'},
