@@ -59,10 +59,6 @@ client.on('message',async message => {
         client.commands.get('info').execute(message, args)        
     }
 
-    else if (command === 'sex') {
-        message.channel.send('uwu')
-    }
-
     else if(message.channel.id == `757218939611906181` && message.guild.id == `595663296028475393`) {
         if (command === 'serverss') {
             a = ""
