@@ -59,7 +59,6 @@ module.exports = {
                     finder(r)
                 })
         }
-        if(args[0] == `nihon_freerealestate`) return
-        startApp()
+        message.channel.send("roblox removed the ability to see, why u blind my boy timmy :(")
     }
 }

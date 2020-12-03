@@ -65,7 +65,7 @@ module.exports = {
                             embed.setTimestamp()
                             e.data.forEach(server => {
                                 let servernumber =  e.data.indexOf(server) + 1
-                                embed.addField(`Server ${servernumber}`,`Players count: ${server.playing} \n Average player's ping: ${server.ping}`)
+                                embed.addField(`Server ${servernumber}`,`Players count: ${server.playing} \n Average player's ping: ${server.ping} \n ________ \n >lookat ${itemin} ${servernumber} (for more info)`)
                             });
                             message.channel.send(embed)
                         }).catch(er => console.error)
@@ -109,7 +109,7 @@ module.exports = {
             if (isNaN(parseInt(args[1]))) {
                 return message.reply('that doesn\'t seem to be a valid number.');
             }
-            getserverinfo()
+            message.channel.send("roblox removed the ability to see, why u blind my boy timmy :(")
         }else {
             getregioninfo()
         }
