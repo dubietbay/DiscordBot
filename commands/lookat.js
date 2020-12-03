@@ -65,7 +65,7 @@ module.exports = {
                             embed.setTimestamp()
                             e.data.forEach(server => {
                                 let servernumber =  e.data.indexOf(server) + 1
-                                embed.addField(`Server ${servernumber}`,`Players count: ${server.playing} \n Average player's ping: ${server.ping} \n ________ \n >lookat ${itemin} ${servernumber} (for more info)`)
+                                embed.addField(`Server ${servernumber}`,`Players count: ${server.playing} \n Average player's ping: ${server.ping}`)
                             });
                             message.channel.send(embed)
                         }).catch(er => console.error)
