@@ -52,12 +52,12 @@ client.on('message',async message => {
         client.commands.get('lookfor').execute(message, args)        
     }
 
-    else if (command === 'info') {
-        if (!args.length) {
-            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-        }
-        client.commands.get('info').execute(message, args)        
-    }
+    //else if (command === 'info') {
+    //    if (!args.length) {
+    //        return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+    //    }
+    //    client.commands.get('info').execute(message, args)        
+    //}
 
     else if(message.channel.id == `757218939611906181` && message.guild.id == `595663296028475393`) {
         if (command === 'serverss') {
