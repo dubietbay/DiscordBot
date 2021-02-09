@@ -5,7 +5,13 @@ const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 const fetch = require('node-fetch');
+const noblox = require("noblox.js");
 
+noblox.setCookie(process.env.COOKIE).then(function() {
+    console.log("Logged in!")
+}).catch(function(err) {
+    console.log("Unable to log in!", err)
+})
 
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
@@ -62,18 +68,8 @@ client.on('message',async message => {
     //}
 
     else if (command === 'dubietbay666') {  
-        await fetch(`https://www.roblox.com/games/getgameinstancesjson?placeId=${args[0]}&startIndex=${args[1]}`, {
-            method: 'GET',
-            headers: {
-                cookie: `.ROBLOSECURITY=${process.env.COOKIE}`,
-            }
-        }).then(r => {
-            console.log(r.json())
-        }).catch(ex => {
-            console.error(ex);
-        });
-
-
+        const body = await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${args[0]}&startIndex=${args[1]}`, { method: "GET" })
+        console.log(body)
         
     }
 });
