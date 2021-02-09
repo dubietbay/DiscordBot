@@ -5,6 +5,8 @@ const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 const noblox = require("noblox.js");
+const mergeImages = require('merge-images');
+const { Canvas, Image } = require('canvas');
 
 noblox.setCookie(process.env.COOKIE).then(function() {
     console.log("Logged in!")
@@ -79,6 +81,17 @@ client.on('message',async message => {
                 cock = cock + ez.Thumbnail.Url + '\n'
             });
             message.channel.send(cock)
+            var idk = pee.Collection[0].CurrentPlayers
+            mergeImages([
+            { src: idk[0], x: 0, y: 0 },
+            { src: idk[1], x: 32, y: 0 },
+            { src: idk[2], x: 16, y: 0 }], {
+                width: 432,
+                height: 240,
+                Canvas: Canvas,
+                Image: Image
+              })
+                .then(b64 => console.log(b64));
         })
     }
 });
