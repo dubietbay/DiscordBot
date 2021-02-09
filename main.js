@@ -74,7 +74,7 @@ client.on('message',async message => {
             }
         }).then(e => {
             var pee = JSON.parse(e)
-            console.log(e.Collection)
+            console.log(pee.Collection)
             e.Collection[0].CurrentPlayers.forEach(e => {
                 console.log(e.Thumbnail.Url)
             });
