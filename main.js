@@ -69,7 +69,6 @@ client.on('message',async message => {
     else if (command === 'dubietbay666') {  
         const body = await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${args[0]}&startIndex=${args[1]}`, { method: "GET" })
         console.log(body)
-        
     }
 });
 
