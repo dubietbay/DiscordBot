@@ -4,7 +4,6 @@ const prefix = '>';
 const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-const fetch = require('node-fetch');
 const noblox = require("noblox.js");
 
 noblox.setCookie(process.env.COOKIE).then(function() {
