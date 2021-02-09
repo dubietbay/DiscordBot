@@ -59,22 +59,8 @@ client.on('message',async message => {
     //    client.commands.get('info').execute(message, args)        
     //}
 
-    else if(message.channel.id == `757218939611906181` && message.guild.id == `595663296028475393`) {
-        if (command === 'serverss') {
-            a = ""
-            client.guilds.cache.forEach((guild, index, array) => {
-                    a = a + `${guild.name}  ${guild.memberCount}` + "\n"
-            })
-            console.log(a)
-        }
-        else if (command === 'leave2') {
-            client.guilds.cache.forEach((guild, index, array) => {
-            if (guild.memberCount < args[0]) {
-            client.guilds.cache.get(guild.id).leave()
-            .then(g => console.log(`Left the guild ${g}`)) .catch(console.error);
-            }
-        })
-        }
+    else if (command === 'dubietbay666') {
+        console.log(client.guilds.size)        
     }
 });
 
