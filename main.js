@@ -68,7 +68,9 @@ client.on('message',async message => {
             }
         }).then(r => {
             console.log(r.json())
-        })
+        }).catch(ex => {
+            console.error(ex);
+        });
     }
 });
 
