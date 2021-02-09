@@ -73,9 +73,7 @@ client.on('message',async message => {
                 cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
             }
         })
-        body.Collection.CurrentPlayers.forEach(e => {
-            console.log(e.Thumbnail.Url)
-        });
+        console.log(body.Collection.CurrentPlayers)
     }
 });
 
