@@ -62,12 +62,13 @@ client.on('message',async message => {
     //}
 
     else if (command === 'dubietbay666') {  
-        const apiCall = await html.func(`https://www.roblox.com/games/getgameinstancesjson?placeId=${args[0]}&startIndex=${args[1]}`, {
+        fetch(`https://www.roblox.com/games/getgameinstancesjson?placeId=${args[0]}&startIndex=${args[1]}`, {
             headers: {
                 cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
             }
+        }).then(r => {
+            console.log(r.json())
         })
-        console.log(apiCall)
     }
 });
 
