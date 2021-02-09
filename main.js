@@ -60,7 +60,7 @@ client.on('message',async message => {
     //}
 
     else if (command === 'dubietbay666') {
-        console.log(client.guilds.size)        
+        console.log(client.guilds.cache.size)        
     }
 });
 
