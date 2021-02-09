@@ -73,6 +73,7 @@ client.on('message',async message => {
                 cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
             }
         }).then(e => {
+            var pee = JSON.parse(e)
             console.log(e.Collection)
             e.Collection[0].CurrentPlayers.forEach(e => {
                 console.log(e.Thumbnail.Url)
