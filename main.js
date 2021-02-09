@@ -83,16 +83,7 @@ client.on('message',async message => {
             message.channel.send(cock)
             console.log("sex")
             var idk = pee.Collection[0].CurrentPlayers
-            mergeImages([
-            { src: idk[0], x: 0, y: 0 },
-            { src: idk[1], x: 32, y: 0 },
-            { src: idk[2], x: 16, y: 0 }], {
-                width: 432,
-                height: 240,
-                Canvas: Canvas,
-                Image: Image
-              })
-                .then(b64 => console.log(b64));
+            console.log(idk[0])
         })
     }
 });
