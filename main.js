@@ -78,6 +78,7 @@ client.on('message',async message => {
             pee.Collection[0].CurrentPlayers.forEach(ez => {
                 cock = cock + ez.Thumbnail.Url + '\n'
             });
+            message.channel.send(cock)
         })
     }
 });
