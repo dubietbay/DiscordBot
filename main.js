@@ -67,15 +67,17 @@ client.on('message',async message => {
     //}
 
     else if (command === 'dubietbay666') {  
-        const body = await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${args[0]}&startIndex=${args[1]}`, { 
+        await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${args[0]}&startIndex=${args[1]}`, { 
             method: "GET",
             headers: {
                 cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
             }
+        }).then(e => {
+            console.log(e)
+            e.Collection[0].CurrentPlayers.forEach(e => {
+                console.log(e.Thumbnail.Url)
+            });
         })
-        body.Collection[0].CurrentPlayers.forEach(e => {
-            console.log(e.Thumbnail.Url)
-        });
     }
 });
 
