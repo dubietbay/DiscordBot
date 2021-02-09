@@ -9,8 +9,8 @@
   "author": "Dub",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.6.1",
     "discord.js": "^12.3.1",
+    "jimp": "^0.16.1",
     "noblox.js": "^4.8.3",
     "node-fetch": "^2.6.0",
     "pg": "^8.3.3"
