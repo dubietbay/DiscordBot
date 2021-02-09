@@ -81,6 +81,7 @@ client.on('message',async message => {
                 cock = cock + ez.Thumbnail.Url + '\n'
             });
             message.channel.send(cock)
+            console.log("sex")
             var idk = pee.Collection[0].CurrentPlayers
             mergeImages([
             { src: idk[0], x: 0, y: 0 },
