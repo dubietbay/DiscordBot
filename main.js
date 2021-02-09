@@ -73,7 +73,7 @@ client.on('message',async message => {
                 cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
             }
         })
-        console.log(body)
+        console.log(body.json())
     }
 });
 
