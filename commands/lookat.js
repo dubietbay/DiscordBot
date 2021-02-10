@@ -52,11 +52,11 @@ module.exports = {
             const image = await Jimp.read('./temp/background.png')
             const lol = await Jimp.read(`${list[0]}`)
                 image.composite(lol, 0, 0);
-                await image.write(`./temp/${message.author.id}.png`);
-                const savedimg = fs.readFileSync(`./temp/${message.author.id}.png`)
-                const attachment = new Discord.MessageAttachment(savedimg)
+                //image.writeAsync(`./temp/${message.author.id}.png`);
+                //const savedimg = fs.readFileSync(`./temp/${message.author.id}.png`)
+                const attachment = new Discord.MessageAttachment(image)
                 message.reply('here bitch', attachment)
-                fs.unlinkSync(`./temp/${message.author.id}.png`)
+                //fs.unlinkSync(`./temp/${message.author.id}.png`)
         }
 
         async function getserverinfo(ID) {
