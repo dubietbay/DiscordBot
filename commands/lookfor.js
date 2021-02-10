@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
-const nbx = require("noblox.js");
+const noblox = require("noblox.js");
 module.exports = {
     name: 'lookfor',
     description: "this is a lookfor command!",
@@ -17,48 +17,9 @@ module.exports = {
             {Name: 'Shikoku', ID: '4620197176'},
             {Name: 'Menu Screen', ID: '554664625'},
         ];
-        const embed = new Discord.MessageEmbed();
-        embed.setTitle(`User: ${args[0]}`);
-        embed.setColor('#f4c871');
-        embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
-        embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
-        var first = true
-        function a(a, b) {
-            if (first) {
-                first = false
-                embed.addField(a, b)
-                message.channel.send(embed)
-            }
-        }
 
-        function finder(id) {
-            locations.forEach(el => {
-                fetch(`https://games.roblox.com/v1/games/${el.ID}/servers/Public?limit=100&sortOrder=Asc`)
-                    .then(r => {
-                        if(!r.ok) throw 'invalid response!';
-                        return r.json()
-                    })
-                    .then(e => {
-                        e.data.forEach(server => {
-                            server.playerIds.forEach(ids => {
-                                if (id == ids) {
-                                    a(`${itemin} FOUND AT: ${el.Name} :face_with_monocle:`, `${itemin}'s server  have ${server.playing} players and ${server.ping} avg ping`) 
-                                }else if (el.Name == 'Menu Screen' && server.playerIds.length == server.playerIds.indexOf(ids) + 1) {
-                                    a('plr not found on lotrs',`gl next time`)
-                                }
-                            });
-                        });
-                    }).catch(er => console.error)
-            });
-        }
-        
-        function startApp () {
-            nbx.getIdFromUsername(args[0])
-                .then(r => {
-                    if(!r) throw message.channel.send('user not exist! (wrong name prob)')
-                    finder(r)
-                })
-        }
-        message.channel.send("roblox removed the ability to see, why u blind my boy timmy :(")
+
+        let id = await noblox.getIdFromUsername(args[0])
+        console.log(id)
     }
 }
