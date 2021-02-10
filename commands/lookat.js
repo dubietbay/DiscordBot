@@ -64,7 +64,7 @@ module.exports = {
             }
             const idk = await image.getBufferAsync(Jimp.MIME_PNG);
             const attachment = new Discord.MessageAttachment(idk)
-            message.reply('here bitch', attachment)
+            message.reply(`This is Kansai server: ${args[1]-1} `, attachment)
         }
 
         async function getserverinfo(ID) {
@@ -76,7 +76,7 @@ module.exports = {
             }).then(e => {
                 var pee = JSON.parse(e)
                 if (pee.Collection.length === 0) {
-                    return message.channel.send('ITS EMPTY WTF IS WRONG WITH YOU')
+                    return message.reply('This server is empty!')
                 }
                 var list = [];
                 pee.Collection[0].CurrentPlayers.forEach(plr => {
