@@ -4,8 +4,6 @@ const prefix = '>';
 const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-const noblox = require("noblox.js");
-const Jimp = require('jimp');
 
 noblox.setCookie(process.env.COOKIE).then(function() {
     console.log("Logged in!")
@@ -67,24 +65,6 @@ client.on('message',async message => {
     //    client.commands.get('info').execute(message, args)        
     //}
 
-    else if (command === 'dubietbay666') {  
-        await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${args[0]}&startIndex=${args[1]}`, { 
-            method: "GET",
-            headers: {
-                cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
-            }
-        }).then(e => {
-            var pee = JSON.parse(e)
-            var cock = ''
-            pee.Collection[0].CurrentPlayers.forEach(ez => {
-                cock = cock + ez.Thumbnail.Url + '\n'
-            });
-            message.channel.send(cock)
-            console.log("sex")
-            var idk = pee.Collection[0].CurrentPlayers
-            console.log(idk[0])
-        })
-    }
 });
 
 
