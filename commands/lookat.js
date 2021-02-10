@@ -55,7 +55,7 @@ module.exports = {
             }).then(e => {
                 var pee = JSON.parse(e)
                 var idk = pee.Collection[args[1]].CurrentPlayers
-                console.log(idk[0].Url)
+                console.log(idk[0].Url) 
             }).catch(er => {
                 console.log(er)
             })
