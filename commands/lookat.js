@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
-const nbx = require("noblox.js");
-const nbx = require("noblox.js");
+const noblox = require("noblox.js");
 const Jimp = require('jimp');
 module.exports = {
     name: 'lookat',
@@ -50,7 +49,7 @@ module.exports = {
         function getserverinfo() {
             locations.forEach(el => {
                 if (el.Name == itemin) {
-                    await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${el.ID}&startIndex=${args[1]}`, { 
+                    await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${el.ID}&startIndex=${args[1]-1}`, { 
                         method: "GET",
                         headers: {
                             cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
