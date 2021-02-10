@@ -50,14 +50,15 @@ module.exports = {
 
         async function Imager(list) {
             const image = await Jimp.read('./temp/background.png')
-            const lol = await Jimp.read(`${list[0]}`)
-                image.composite(lol, 0, 0);
-                const idk = await image.getBufferAsync(Jimp.MIME_PNG);
-                //image.writeAsync(`./temp/${message.author.id}.png`);
-                //const savedimg = fs.readFileSync(`./temp/${message.author.id}.png`)
-                const attachment = new Discord.MessageAttachment(idk)
-                message.reply('here bitch', attachment)
-                //fs.unlinkSync(`./temp/${message.author.id}.png`)
+            for (let i = 0; i < list.length; i++) {
+                const idk = await Jimp.read(`${list[i]}`)
+                var a = -48
+                image.composite(lol, a+48, 0);
+                a = a + 48
+            }
+            const idk = await image.getBufferAsync(Jimp.MIME_PNG);
+            const attachment = new Discord.MessageAttachment(idk)
+            message.reply('here bitch', attachment)
         }
 
         async function getserverinfo(ID) {
@@ -69,7 +70,7 @@ module.exports = {
             }).then(e => {
                 var pee = JSON.parse(e)
                 var list = [];
-                pee.Collection[args[1]-1].CurrentPlayers.forEach(plr => {
+                pee.Collection[0].CurrentPlayers.forEach(plr => {
                     list.push(plr.Thumbnail.Url) 
                 })
                 Imager(list)
