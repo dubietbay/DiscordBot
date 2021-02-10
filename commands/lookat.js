@@ -53,7 +53,7 @@ module.exports = {
             for (let i = 0; i < list.length; i++) {
                 const idk = await Jimp.read(`${list[i]}`)
                 var a = -48
-                image.composite(lol, a+48, 0);
+                image.composite(idk, a+48, 0);
                 a = a + 48
             }
             const idk = await image.getBufferAsync(Jimp.MIME_PNG);
