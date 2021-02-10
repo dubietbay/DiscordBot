@@ -50,9 +50,9 @@ module.exports = {
 
         async function Imager(list) {
             const image = await Jimp.read('./temp/background.png')
+            var a = -48
             for (let i = 0; i < list.length; i++) {
                 const idk = await Jimp.read(`${list[i]}`)
-                var a = -48
                 image.composite(idk, a+48, 0);
                 a = a + 48
             }
