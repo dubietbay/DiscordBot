@@ -55,7 +55,7 @@ module.exports = {
             for (let i = 0; i < list.length; i++) {
                 const idk = await Jimp.read(`${list[i]}`)
                 image.composite(idk, a + 48, b);
-                if (i == 8|| i == 9*2 || i == 9*3 || i == 9*4 || i == 9*5) {
+                if (i == 8|| i == 8*2 || i == 8*3 || i == 8*4 || i == 8*5) {
                     a = -48
                     b = b + 48
                 }else {
