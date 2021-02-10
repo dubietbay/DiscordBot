@@ -4,7 +4,12 @@ const prefix = '>';
 const fs = require('fs');
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
-
+const noblox = require("noblox.js");
+noblox.setCookie(process.env.COOKIE).then(function() {
+    console.log("Logged in!")
+}).catch(function(err) {
+    console.log("Unable to log in!", err)
+})
 
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
