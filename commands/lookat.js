@@ -46,7 +46,7 @@ module.exports = {
             });
         }
 
-        function getserverinfo(ID) {
+        async function getserverinfo(ID) {
             await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${ID}&startIndex=${args[1]-1}`, { 
                 method: "GET",
                 headers: {
