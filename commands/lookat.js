@@ -64,7 +64,7 @@ module.exports = {
             }
             const idk = await image.getBufferAsync(Jimp.MIME_PNG);
             const attachment = new Discord.MessageAttachment(idk)
-            message.reply(`This is Kansai server: ${args[1]-1} `, attachment)
+            message.reply(`This is Kansai server: ${args[1]} `, attachment)
         }
 
         async function getserverinfo(ID) {
