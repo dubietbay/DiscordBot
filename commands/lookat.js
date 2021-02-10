@@ -46,30 +46,30 @@ module.exports = {
             });
         }
 
-        function getserverinfo() {
-            locations.forEach(async(el) => {
-                if (el.Name == itemin) {
-                    await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${el.ID}&startIndex=${args[1]-1}`, { 
-                        method: "GET",
-                        headers: {
-                            cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
-                        }
-                    }).then(e => {
-                        var pee = JSON.parse(e)
-                        var idk = pee.Collection[args[1]].CurrentPlayers
-                        console.log(idk[0].Url)
-                    }).catch(er => {
-                        console.log(er)
-                    })
+        function getserverinfo(ID) {
+            await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${ID}&startIndex=${args[1]-1}`, { 
+                method: "GET",
+                headers: {
+                    cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
                 }
-            });
+            }).then(e => {
+                var pee = JSON.parse(e)
+                var idk = pee.Collection[args[1]].CurrentPlayers
+                console.log(idk[0].Url)
+            }).catch(er => {
+                console.log(er)
+            })
         }
 
         if (args[1]) {
             if (isNaN(parseInt(args[1]))) {
                 return message.reply('that doesn\'t seem to be a valid number.');
             }
-            getserverinfo()
+            locations.forEach((el) => {
+                if (el.Name == itemin) {
+                    getserverinfo(el.ID)
+                }
+            });
         }else {
             getregioninfo()
         }
