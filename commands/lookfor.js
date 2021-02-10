@@ -21,5 +21,6 @@ module.exports = {
 
         let id = await noblox.getIdFromUsername(args[0])
         console.log(id)
+        console.log("sex")
     }
 }
