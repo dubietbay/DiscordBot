@@ -55,8 +55,9 @@ module.exports = {
             }).then(e => {
                 var pee = JSON.parse(e)
                 console.log(pee)
+                console.log(args[1]-1)
                 var idk = pee.Collection[args[1]-1].CurrentPlayers
-                message.channel.send(idk[0].Url)
+                console.log(idk)
             }).catch(er => {
                 console.log(er)
             })
