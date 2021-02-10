@@ -46,24 +46,20 @@ module.exports = {
             });
         }
 
-        function getserverinfo() {
+        async function getserverinfo() {
             locations.forEach(el => {
                 if (el.Name == itemin) {
-                    noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${el.ID}&startIndex=${args[1]-1}`, { 
+                    await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${el.ID}&startIndex=${args[1]-1}`, { 
                         method: "GET",
                         headers: {
                             cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
                         }
                     }).then(e => {
                         var pee = JSON.parse(e)
-                        var cock = ''
-                        pee.Collection[0].CurrentPlayers.forEach(ez => {
-                            cock = cock + ez.Thumbnail.Url + '\n'
-                        });
-                        message.channel.send(cock)
-                        console.log("sex")
                         var idk = pee.Collection[args[1]].CurrentPlayers
                         console.log(idk[0].Url)
+                    }).catch(er => {
+                        console.log(er)
                     })
                 }
             });
