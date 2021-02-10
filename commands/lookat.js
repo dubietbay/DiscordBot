@@ -46,8 +46,8 @@ module.exports = {
             });
         }
 
-        async function getserverinfo() {
-            locations.forEach(el => {
+        function getserverinfo() {
+            locations.forEach(async(el) => {
                 if (el.Name == itemin) {
                     await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${el.ID}&startIndex=${args[1]-1}`, { 
                         method: "GET",
