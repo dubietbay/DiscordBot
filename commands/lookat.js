@@ -48,19 +48,15 @@ module.exports = {
             });
         }
 
-        function Imager(list) {
-            Jimp.read('./temp/background.png')
-            .then(image => {
-                image.composite( list[0], 0, 0);
+        async function Imager(list) {
+            const image = await Jimp.read('./temp/background.png')
+            const lol = await Jimp.read(`${list[0]}`)
+                image.composite(lol, 0, 0);
                 image.write(`./temp/${message.author.id}.png`);
                 const savedimg = fs.readFileSync(`./temp/${message.author.id}.png`)
                 const attachment = new Discord.MessageAttachment(savedimg)
                 message.reply('here bitch', attachment)
                 fs.unlinkSync(`./temp/${message.author.id}.png`)
-            })
-            .catch(err => {
-                console.log(err)
-            });
         }
 
         async function getserverinfo(ID) {
