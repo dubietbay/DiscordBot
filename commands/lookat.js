@@ -51,10 +51,16 @@ module.exports = {
         async function Imager(list) {
             const image = await Jimp.read('./temp/background.png')
             var a = -48
+            var b = 0
             for (let i = 0; i < list.length; i++) {
                 const idk = await Jimp.read(`${list[i]}`)
-                image.composite(idk, a+48, 0);
-                a = a + 48
+                image.composite(idk, a + 48, b);
+                if (i == 9|| i == 9*2 || i == 9*3 || i == 9*4 || i == 9*5) {
+                    a = -48
+                    b = b + 48
+                }else {
+                    a = a + 48
+                }
             }
             const idk = await image.getBufferAsync(Jimp.MIME_PNG);
             const attachment = new Discord.MessageAttachment(idk)
