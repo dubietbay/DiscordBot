@@ -69,6 +69,9 @@ module.exports = {
                 }
             }).then(e => {
                 var pee = JSON.parse(e)
+                if (pee.Collection[0].length === 0) {
+                    return message.channel.send('ITS EMPTY WTF IS WRONG WITH YOU')
+                }
                 var list = [];
                 pee.Collection[0].CurrentPlayers.forEach(plr => {
                     list.push(plr.Thumbnail.Url) 
