@@ -54,10 +54,11 @@ module.exports = {
                 }
             }).then(e => {
                 var pee = JSON.parse(e)
-                console.log(pee)
-                console.log(args[1]-1)
-                var idk = pee.Collection[args[1]-1].CurrentPlayers
-                console.log(idk)
+                var list = [];
+                pee.Collection[args[1]-1].CurrentPlayers.forEach(plr => {
+                    list.push(plr.Thumbnail.Url) 
+                })
+                console.log(list)
             }).catch(er => {
                 console.log(er)
             })
