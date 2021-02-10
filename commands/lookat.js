@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
 const noblox = require("noblox.js");
+const fs = require('fs');
 const Jimp = require('jimp');
+const { waitForDebugger } = require('inspector');
 module.exports = {
     name: 'lookat',
     description: "this is a lookat command!",
@@ -46,6 +48,21 @@ module.exports = {
             });
         }
 
+        function Imager(list) {
+            Jimp.read('./temp/background.png')
+            .then(image => {
+                image.composite( list[0], 0, 0);
+                image.write(`./temp/${message.author.id}.png`);
+                const savedimg = fs.readFileSync(`./temp/${message.author.id}.png`)
+                const attachment = new Discord.MessageAttachment(savedimg)
+                message.reply('here bitch', attachment)
+                fs.unlinkSync(`./temp/${message.author.id}.png`)
+            })
+            .catch(err => {
+                console.log(err)
+            });
+        }
+
         async function getserverinfo(ID) {
             await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${ID}&startIndex=${args[1]-1}`, { 
                 method: "GET",
@@ -58,7 +75,7 @@ module.exports = {
                 pee.Collection[args[1]-1].CurrentPlayers.forEach(plr => {
                     list.push(plr.Thumbnail.Url) 
                 })
-                console.log(list)
+                Imager(list)
             }).catch(er => {
                 console.log(er)
             })
