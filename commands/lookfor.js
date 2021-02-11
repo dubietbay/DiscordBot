@@ -36,6 +36,7 @@ module.exports = {
         }
 
         async function findserver(avatar, name) {
+            let b = 0
             locations.forEach(async (e) => {
                 let a = 0
                 while (a>=0) {
@@ -50,7 +51,7 @@ module.exports = {
                         } else {
                             pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
                                 if(plr.Thumbnail.Url == avatar) {
-                                    message.reply(`player ${name} found in ${e.Name} at server ${a+1}`)
+                                    message.reply(`player ${name} found in ${e.Name} at server ${a+1}.`)
                                 }
                             })
                             a = a + 1
@@ -60,6 +61,9 @@ module.exports = {
                     }) 
                 }
             });
+            if (b==0) {
+                message.reply(`player ${name} can't be found this can happen when they in Dojo or Kuni.`)
+            }
         }
 
         async function getAvatar(id, name) {
