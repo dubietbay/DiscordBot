@@ -41,8 +41,9 @@ module.exports = {
         function getAvatar(id, name) {
             if (id == "err" || name == "err") {
                 return
-            }
+            }else{
             message.reply(`${id} and ${name}`)
+            }
         }
 
         async function Start() {
