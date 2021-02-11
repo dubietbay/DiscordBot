@@ -37,9 +37,12 @@ module.exports = {
         }
 
         async function findserver(avatar) {
+            console.log("1")
             locations.forEach(async (e) => {
+                console.log("2")
                 let a = 0
                 while (a>=0) {
+                    console.log("3")
                     await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${e.ID}&startIndex=${a}`, { 
                     method: "GET",
                     headers: {
@@ -50,6 +53,7 @@ module.exports = {
                             a = -1
                         } else {
                             pee.Collection[0].CurrentPlayers.forEach(plr => {
+                                console.log("4")
                                 if(plr.Thumbnail.Url == avatar) {
                                     message.reply(`plr found in ${e.Name} at server ${a+1}`)
                                 }
