@@ -38,7 +38,7 @@ module.exports = {
 
         async function findserver(avatar) {
             exit_loops:
-            locations.forEach(e => {
+            locations.forEach(async (e) => {
                 let a = 0
                 while (a>=0) {
                     await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${e.ID}&startIndex=${a}`, { 
