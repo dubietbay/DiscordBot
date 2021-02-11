@@ -52,6 +52,7 @@ module.exports = {
                             pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
                                 if(plr.Thumbnail.Url == avatar) {
                                     message.reply(`player ${name} found in ${e.Name} at server ${a+1}.`)
+                                    b = 1
                                 }
                             })
                             a = a + 1
