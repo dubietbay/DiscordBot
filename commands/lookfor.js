@@ -66,7 +66,7 @@ module.exports = {
         async function getAvatar(id, name) {
             await fetch(`https://www.roblox.com/headshot-thumbnail/image?userId=${id}&width=48&height=48&format=png`)
             .then((result) => {
-                console.log(result)
+                console.log(result.JSON())
                 findserver(result)
             }).catch((err) => {
                 console.log(err)
