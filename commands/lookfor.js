@@ -28,7 +28,7 @@ module.exports = {
         }
 
         async function getnamefromid() {
-            await noblox.getnamefromid(args[1])
+            await noblox.getUsernameFromId(args[1])
             .then((re) => {
                 return re
             }).catch((er) => {
