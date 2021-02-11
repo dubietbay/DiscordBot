@@ -36,6 +36,7 @@ module.exports = {
         }
 
         async function findserver(avatar, name) {
+            let bitch = 0
             locations.forEach(async (e) => {
                 let a = 0
                 while (a>=0) {
@@ -47,12 +48,13 @@ module.exports = {
                         var pee = JSON.parse(re)
                         if (pee.Collection.length === 0) {
                             a = -1
-                            if (e.Name == 'Menu Screen') {
+                            if (e.Name == 'Menu Screen' && bitch == 0) {
                                 message.reply(`player ${name} can't be found this can happen when they in Dojo or Kuni.`)
                             }
                         } else {
                             pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
                                 if(plr.Thumbnail.Url == avatar) {
+                                    bitch = 1
                                     message.reply(`player ${name} found in ${e.Name} at server ${a+1}.`)
                                 }
                             })
