@@ -40,11 +40,11 @@ module.exports = {
             message.reply(`${id} and ${name}`)
         }
 
-        function Start() {
+        async function Start() {
             if (args[0] == "name"){
                 getidfromname()
             }else if (args[0] == "id"){    
-                getAvatar(args[1], getnamefromid())
+                getAvatar(args[1], await getnamefromid())
             }
         }
 
