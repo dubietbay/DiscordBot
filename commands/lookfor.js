@@ -21,7 +21,7 @@ module.exports = {
         async function getidfromname() {
             await noblox.getIdFromUsername(args[1])
             .then((re) => {
-                return re
+                getAvatar(re, args[1])
             }).catch((er) => {
                 message.reply("Error: User not found")
             });
@@ -30,24 +30,21 @@ module.exports = {
         async function getnamefromid() {
             await noblox.getUsernameFromId(args[1])
             .then((re) => {
-                return re
+                getAvatar(args[1], re)
             }).catch((er) => {
                 message.reply("Error")
             });
         }
 
         function getAvatar(id, name) {
-            message.reply(`${id} pee ${name}`)
-            if (typeof id !== 'undefined' && typeof name !== 'undefined') {
-                message.reply(`${id} and ${name}`)
-            }
+            message.reply(`${id} and ${name}`)
         }
 
         async function Start() {
             if (args[0] == "name"){
-                getAvatar(await getidfromname(), args[1])
+                getidfromname()
             }else if (args[0] == "id"){    
-                getAvatar(args[1], await getnamefromid())
+                getnamefromid()
             }
         }
 
