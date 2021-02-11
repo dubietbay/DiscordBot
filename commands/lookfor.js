@@ -24,7 +24,6 @@ module.exports = {
                 return re
             }).catch((er) => {
                 message.reply("Error: User not found")
-                return "err"
             });
         }
 
@@ -34,15 +33,12 @@ module.exports = {
                 return re
             }).catch((er) => {
                 message.reply("Error")
-                return "err"
             });
         }
 
         function getAvatar(id, name) {
-            if (id == "err" || name == "err") {
-                return
-            }else{
-            message.reply(`${id} and ${name}`)
+            if (id !== undefined || name !== undefined) {
+                message.reply(`${id} and ${name}`)
             }
         }
 
