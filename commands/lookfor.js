@@ -31,7 +31,7 @@ module.exports = {
             }
         }
 
-        if (args[0] !== "name" || args[0] !== "id") {
+        if (args[0] != "name" || args[0] != "id") {
             message.reply(">lookfor [name/id] [name/id]")
         }else {
             Start()
