@@ -37,7 +37,7 @@ module.exports = {
         }
 
         function getAvatar(id, name) {
-            if (id !== undefined || name !== undefined) {
+            if (id === undefined || name === undefined) {
                 message.reply(`${id} and ${name}`)
             }
         }
