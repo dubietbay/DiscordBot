@@ -37,7 +37,6 @@ module.exports = {
         }
 
         async function findserver(avatar) {
-            console.log("1")
             locations.forEach(async (e) => {
                 console.log("2")
                 let a = 0
@@ -54,6 +53,8 @@ module.exports = {
                         } else {
                             pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
                                 console.log("4")
+                                console.log(plr.Thumbnail.Url)
+                                console.log(`---- ${avatar}`)
                                 if(plr.Thumbnail.Url == avatar) {
                                     message.reply(`plr found in ${e.Name} at server ${a+1}`)
                                 }
