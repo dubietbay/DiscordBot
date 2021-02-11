@@ -58,6 +58,7 @@ module.exports = {
                                     message.reply(`plr found in ${e.Name} at server ${a+1}`)
                                 }
                             })
+                            a = a + 1
                         }
                     }).catch((er) => {
                         console.log(er)
