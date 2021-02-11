@@ -21,9 +21,10 @@ module.exports = {
         async function getidfromname() {
             await noblox.getIdFromUsername(args[1])
             .then((re) => {
-                getAvatar(re, args[1])
+                return re
             }).catch((er) => {
                 message.reply("Error: User not found")
+                return "err"
             });
         }
 
@@ -33,16 +34,20 @@ module.exports = {
                 return re
             }).catch((er) => {
                 message.reply("Error")
+                return "err"
             });
         }
 
         function getAvatar(id, name) {
+            if (id == "err" || name == "err") {
+                return
+            }
             message.reply(`${id} and ${name}`)
         }
 
         async function Start() {
             if (args[0] == "name"){
-                getidfromname()
+                getAvatar(await getidfromname(), args[1])
             }else if (args[0] == "id"){    
                 getAvatar(args[1], await getnamefromid())
             }
