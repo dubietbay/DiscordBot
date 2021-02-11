@@ -36,7 +36,7 @@ module.exports = {
             });
         }
 
-        async function findserver(avatar) {
+        async function findserver(avatar, name) {
             locations.forEach(async (e) => {
                 let a = 0
                 while (a>=0) {
@@ -51,7 +51,7 @@ module.exports = {
                         } else {
                             pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
                                 if(plr.Thumbnail.Url == avatar) {
-                                    message.reply(`plr found in ${e.Name} at server ${a+1}`)
+                                    message.reply(`plr ${name} found in ${e.Name} at server ${a+1}`)
                                 }
                             })
                             a = a + 1
@@ -66,8 +66,7 @@ module.exports = {
         async function getAvatar(id, name) {
             await fetch(`https://www.roblox.com/headshot-thumbnail/image?userId=${id}&width=48&height=48&format=png`)
             .then((result) => {
-                console.log(result.url)
-                //findserver(result)
+                findserver(result.url, name)
             }).catch((err) => {
                 console.log(err)
             });
