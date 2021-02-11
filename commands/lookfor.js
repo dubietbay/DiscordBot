@@ -36,34 +36,32 @@ module.exports = {
         }
 
         async function findserver(avatar, name) {
-            var bar = new Promise((resolve, reject) => {
-                locations.forEach(async (e) => {
-                    let a = 0
-                    while (a>=0) {
-                        await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${e.ID}&startIndex=${a}`, { 
-                        method: "GET",
-                        headers: {
-                            cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
-                        }}).then((re) => {
-                            var pee = JSON.parse(re)
-                            if (pee.Collection.length === 0) {
-                                a = -1
-                            } else {
-                                pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
-                                    if(plr.Thumbnail.Url == avatar) {
-                                        message.reply(`player ${name} found in ${e.Name} at server ${a+1}.`)
-                                    }
-                                })
-                                a = a + 1
+            locations.forEach(async (e) => {
+                let a = 0
+                while (a>=0) {
+                    await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${e.ID}&startIndex=${a}`, { 
+                    method: "GET",
+                    headers: {
+                        cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
+                    }}).then((re) => {
+                        var pee = JSON.parse(re)
+                        if (pee.Collection.length === 0) {
+                            a = -1
+                            if (e.Name == 'Menu Screen') {
+                                message.reply(`player ${name} can't be found this can happen when they in Dojo or Kuni.`)
                             }
-                        }).catch((er) => {
-                            console.log(er)
-                        }) 
-                    }
-                });
-            });
-            bar.then(() => {
-                message.reply(`player ${name} can't be found this can happen when they in Dojo or Kuni.`)
+                        } else {
+                            pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
+                                if(plr.Thumbnail.Url == avatar) {
+                                    message.reply(`player ${name} found in ${e.Name} at server ${a+1}.`)
+                                }
+                            })
+                            a = a + 1
+                        }
+                    }).catch((er) => {
+                        console.log(er)
+                    }) 
+                }
             });
         }
 
