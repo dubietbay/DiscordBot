@@ -32,12 +32,45 @@ module.exports = {
             .then((re) => {
                 getAvatar(args[1], re)
             }).catch((er) => {
-                message.reply("Error")
+                message.reply("Error: Id not found")
             });
         }
 
-        function getAvatar(id, name) {
-            message.reply(`${id} and ${name}`)
+        async function findserver(avatar) {
+            exit_loops:
+            locations.forEach(e => {
+                let a = 0
+                while (a>=0) {
+                    await noblox.http(`https://www.roblox.com/games/getgameinstancesjson?placeId=${e.ID}&startIndex=${a}`, { 
+                    method: "GET",
+                    headers: {
+                        cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
+                    }}).then((re) => {
+                        var pee = JSON.parse(re)
+                        if (pee.Collection.length === 0) {
+                            a = -1
+                        } else {
+                            pee.Collection[0].CurrentPlayers.forEach(plr => {
+                                if(plr.Thumbnail.Url == avatar) {
+                                    message.reply(`plr found in ${e.Name} at server ${a+1}`)
+                                    break exit_loops;
+                                }
+                            })
+                        }
+                    }).catch((er) => {
+                        console.log(er)
+                    }) 
+                }
+            });
+        }
+
+        async function getAvatar(id, name) {
+            await fetch(`https://www.roblox.com/headshot-thumbnail/image?userId=${id}&width=48&height=48&format=png`)
+            .then((result) => {
+                findserver(result)
+            }).catch((err) => {
+                console.log(err)
+            });
         }
 
         async function Start() {
