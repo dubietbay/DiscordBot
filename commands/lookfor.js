@@ -19,8 +19,12 @@ module.exports = {
         ];
 
         async function getidfromname() {
-            let id = await noblox.getIdFromUsername(args[1])
-            console.log(id)
+            await noblox.getIdFromUsername(args[1])
+            .then((re) => {
+                message.reply(re)
+            }).catch((er) => {
+                message.reply(er)
+            });
         }
 
         function Start() {
