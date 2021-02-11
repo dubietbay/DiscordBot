@@ -37,7 +37,6 @@ module.exports = {
         }
 
         async function findserver(avatar) {
-            exit_loops:
             locations.forEach(async (e) => {
                 let a = 0
                 while (a>=0) {
@@ -53,7 +52,6 @@ module.exports = {
                             pee.Collection[0].CurrentPlayers.forEach(plr => {
                                 if(plr.Thumbnail.Url == avatar) {
                                     message.reply(`plr found in ${e.Name} at server ${a+1}`)
-                                    break exit_loops;
                                 }
                             })
                         }
