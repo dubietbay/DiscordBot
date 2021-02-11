@@ -5,7 +5,6 @@ module.exports = {
     name: 'lookfor',
     description: "this is a lookfor command!",
     execute(message, args){ 
-        const itemin = args[0].toLowerCase();
         const locations = [
             {Name: 'Kansai/Kyoto', ID: '561872248'},
             {Name: 'Chubu', ID: '554670851'},
