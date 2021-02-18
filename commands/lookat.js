@@ -11,8 +11,8 @@ module.exports = {
         const embed = new Discord.MessageEmbed();
         const itemin = args[0].toLowerCase();
         const locations = [
-            {Name: 'kyoto', ID: '561872248'},
-            {Name: 'kansai', ID: '561872248'},
+            {Name: 'kyoto', ID: '561872251'},
+            {Name: 'kansai', ID: '561872251'},
             {Name: 'chubu', ID: '554670851'},
             {Name: 'tohoku', ID: '903142964'},
             {Name: 'kanto', ID: '1469503587'},
@@ -50,16 +50,16 @@ module.exports = {
 
         async function Imager(list) {
             const image = await Jimp.read('./temp/background.png')
-            var a = -48
+            var a = -51
             var b = 0
             for (let i = 0; i < list.length; i++) {
                 const idk = await Jimp.read(`${list[i]}`)
-                image.composite(idk, a + 48, b);
+                image.composite(idk, a + 51, b);
                 if (i == 8|| i == 17 || i == 26 || i == 35 || i == 44) {
-                    a = -48
-                    b = b + 48
+                    a = -51
+                    b = b + 51
                 }else {
-                    a = a + 48
+                    a = a + 51
                 }
             }
             const idk = await image.getBufferAsync(Jimp.MIME_PNG);
