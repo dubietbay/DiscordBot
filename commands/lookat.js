@@ -56,7 +56,7 @@ module.exports = {
                 const idk = await Jimp.read(`${list[i]}`)
                 image.composite(idk, a + 51, b);
                 if (i == 8|| i == 17 || i == 26 || i == 35 || i == 44) {
-                    a = -51
+                    a = -48
                     b = b + 51
                 }else {
                     a = a + 51
