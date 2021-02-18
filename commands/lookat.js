@@ -74,6 +74,7 @@ module.exports = {
                     cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
                 }
             }).then(e => {
+                console.log(e)
                 var pee = JSON.parse(e)
                 if (pee.Collection.length === 0) {
                     return message.reply('This server is empty!')
