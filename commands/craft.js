@@ -232,6 +232,10 @@ const Recipe = [
     {From: "The wild", NameCall: "stone", Name: "Stone", Materials: "", Quantity: ""},
     {From: "The wild", NameCall: "blessedredwood", Name: "Blessed Redwood", Materials: "", Quantity: ""},
     {From: "The Wild", NameCall: "ryo", Name: "Ryo", Materials: "", Quantity: ""}
+    {From: "The Wild", NameCall: "kai", Name: "Kai", Materials: "unban aki", Quantity: "2 1"},
+    {From: "The Wild", NameCall: "unban", Name: "Unban", Materials: "dub", Quantity: "1"},
+    {From: "The Wild", NameCall: "dub", Name: "Dub", Materials: "u", Quantity: ""}
+    {From: "The Wild", NameCall: "aki", Name: "Aki", Materials: "", Quantity: ""}
 ]
 
 const bigamount  = [
