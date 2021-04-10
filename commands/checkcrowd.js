@@ -30,10 +30,10 @@ module.exports = {
                 })
                 const uri = "mongodb+srv://dubietbay:39611500DUDU@cluster0.vpqpg.mongodb.net/LinkedServers?retryWrites=true&w=majority";
                 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-                    client.connect(err => {
+                    client.connect(async err => {
                     if (err) throw err;
                     const collection = client.db("LinkedServers").collection("server");
-                    const search = collection.findOne({Name:"CrowdCheck"})
+                    const search = await collection.findOne({Name:"CrowdCheck"})
                     console.log(search.IDs)
                     client.close();
                 });
