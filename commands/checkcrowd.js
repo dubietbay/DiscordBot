@@ -4,7 +4,7 @@ module.exports = {
     name: 'checkcrowd',
     description: "this is a check command!",
     execute(message, args){
-        const embed = new Discord.MessageEmbed();
+        let embed = new Discord.MessageEmbed();
         embed.setTitle(`BREAKING NEWS!`);
         embed.setColor('#f4c871');
         embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
@@ -41,7 +41,6 @@ module.exports = {
                     }   
                 }).catch(er => console.error)
         });
-
         message.channel.send(embed)
     }
 }
