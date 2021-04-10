@@ -26,7 +26,6 @@ module.exports = {
             info.forEach(item => {
                 embed.addField(item.Head, item.Tail)
             })
-            console.log (info)
             message.channel.send(embed)
         }
 
