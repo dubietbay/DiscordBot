@@ -22,8 +22,8 @@ client.once('ready', () => {
     client.user.setActivity('Prefix: >')
 });
 
-setInterval (function () {client.commands.get('checkcrowd').execute(client)}, 90000); 
-setInterval (function () {client.commands.get('checkplr').execute(client)}, 120000); 
+setInterval (function () {client.commands.get('checkcrowd').execute(client)}, 300000); 
+setInterval (function () {client.commands.get('checkplr').execute(client)}, 300000); 
 
 client.on('message',async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
