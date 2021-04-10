@@ -4,20 +4,29 @@ module.exports = {
     name: 'link',
     description: "this is a link command!",
     execute(message, args){
-        let data = {IDs: message.channel.id}
         const uri = "mongodb+srv://dubietbay:39611500DUDU@cluster0.vpqpg.mongodb.net/LinkedServers?retryWrites=true&w=majority";
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
             client.connect(err => {
             if (err) throw err;
             const collection = client.db("LinkedServers").collection("server");
             const query = {Name:"CrowdCheck"}
-            collection.updateOne(
-                query,
-                { $push: data },
-            )
-            .then(e => {
-                client.close();
-            })
+            if (args == "add"){
+                collection.updateOne(
+                    query,
+                    { $push: {IDs: message.channel.id} },
+                )
+                .then(e => {
+                    client.close();
+                })
+            }else if (args == "remove") {
+                collection.updateOne(
+                    query,
+                    { $pull: {IDs: message.channel.id} },
+                )
+                .then(e => {
+                    client.close();
+                })
+            }
         });
         message.reply("Linked!")
     }

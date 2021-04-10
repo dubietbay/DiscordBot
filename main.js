@@ -63,6 +63,9 @@ client.on('message',async message => {
     }
 
     else if (command === 'link') {
+        if (!args.length) {
+            return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        }
         client.commands.get('link').execute(message, args) 
     }
 
