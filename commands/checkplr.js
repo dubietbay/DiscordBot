@@ -37,12 +37,16 @@ module.exports = {
                         cookie: `.ROBLOSECURITY=${process.env.COOKIE}`
                     }}).then((re) => {
                         var pee = JSON.parse(re)
+                        if (pee.Collection.length === 0) {
+                            a = -1
+                        }else{
                             pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
                                 if(plr.Thumbnail.Url == avatar) {
                                     Dclient.channels.cache.get("775352026862977031").send(`player ${await getnamefromid(id)} found in ${e.Name} at server ${a+1}.`)
                                 }
                             })
                             a = a + 1
+                        }
                     }).catch((er) => {
                         console.log(er)
                     }) 
