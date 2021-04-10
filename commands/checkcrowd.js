@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
 module.exports = {
-    name: 'lookat',
-    description: "this is a lookat command!",
+    name: 'checkcrowd',
+    description: "this is a check command!",
     execute(message, args){
         const locations = [
             {Name: 'kyoto', ID: '561872248'},
