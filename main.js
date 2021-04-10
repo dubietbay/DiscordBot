@@ -23,6 +23,7 @@ client.once('ready', () => {
 });
 
 setInterval (function () {client.commands.get('checkcrowd').execute(client)}, 90000); 
+//setInterval (function () {client.commands.get('checkplr').execute(client)}, 90000); 
 
 client.on('message',async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -67,6 +68,10 @@ client.on('message',async message => {
             return message.channel.send('no permission sir')
         }
         client.commands.get('link').execute(message, args) 
+    }
+
+    else if (commandFiles === 'check'){
+        client.commands.get('checkplr').execute(client)
     }
 
     //else if (command === 'info') {

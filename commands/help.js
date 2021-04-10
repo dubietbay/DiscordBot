@@ -10,7 +10,7 @@ module.exports = {
         embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
         embed.addField('>raid','give raids info');
         embed.addField('>lookat [region name]','give region info')
-        embed.addField(`>lookfor [name/id] [player's name/player's id]`, `give player's location if playing lotrs and not in kuni or dojo`)
+        embed.addField(`>lookfor [name/id] [player's name/player's id]`, `ex: >lookfor name dubietbay`)
         embed.addField('>craft [item name] [amount]','ex: >craft soshukatana 1')
         embed.addField('________________', 'admin cmd:')
         embed.addField('>link [add/remove]', `this link the channel to the bot's news system`)
