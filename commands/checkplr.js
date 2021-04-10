@@ -29,7 +29,6 @@ module.exports = {
         
         function two() {
             if (info.length > 0 && already == 0){
-                console.log(info)
                 info.forEach(item => {
                     embed.addField(item.Head, item.Tail)
                 })
@@ -120,11 +119,7 @@ module.exports = {
                     userIds: [282009961]
             }})
             .then(r => {
-                if(!r.ok) throw 'Invalid response!';
-                return r.json()
-            })
-            .then(a =>{
-                console.log(a)
+                console.log(r)
             })
             .catch((err) => {
                 console.log(err)
