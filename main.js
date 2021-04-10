@@ -22,6 +22,8 @@ client.once('ready', () => {
     client.user.setActivity('Prefix: >')
 });
 
+//setInterval (function () {client.commands.get('checkcrowd').execute(message, args)}, 600000); 
+
 client.on('message',async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     if(message.channel.id == `748846480768630819` && message.guild.id == `595663296028475393`) return message.reply(`mommy will spank me if i talk here :sob:`)
@@ -58,15 +60,15 @@ client.on('message',async message => {
         client.commands.get('lookfor').execute(message, args)        
     }
 
-    else if (command === 'testing') {
-        client.commands.get('checkcrowd').execute(message, args) 
-    }
-
     else if (command === 'link') {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
         client.commands.get('link').execute(message, args) 
+    }
+
+    else if (command === 'c') {
+        client.commands.get('checkcrowd').execute(message, args) 
     }
 
     //else if (command === 'info') {

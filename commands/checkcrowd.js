@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
+const MongoClient = require('mongodb').MongoClient;
 module.exports = {
     name: 'checkcrowd',
     description: "this is a check command!",
@@ -23,10 +24,24 @@ module.exports = {
         ];
 
         function two() {
-            info.forEach(item => {
-                embed.addField(item.Head, item.Tail)
-            })
-            message.channel.send(embed)
+            if (info.length > 0){
+                info.forEach(item => {
+                    embed.addField(item.Head, item.Tail)
+                })
+                const uri = "mongodb+srv://dubietbay:39611500DUDU@cluster0.vpqpg.mongodb.net/LinkedServers?retryWrites=true&w=majority";
+                const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+                    client.connect(err => {
+                    if (err) throw err;
+                    const collection = client.db("LinkedServers").collection("server");
+                    const search = collection.find({Name:"CrowdCheck"})
+                        console.log(search)
+                        .then(e => {
+                            client.close();
+                            message.reply("Linked!")
+                        })
+                });
+                client.channels.cache.get('CHANNEL ID').send(embed)
+            }
         }
 
         locations.forEach(async (el) =>  {

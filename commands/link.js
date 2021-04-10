@@ -13,10 +13,11 @@ module.exports = {
             if (args == "add"){
                 collection.updateOne(
                     query,
-                    { $push: {IDs: message.channel.id} },
+                    { $addToSet: {IDs: message.channel.id} },
                 )
                 .then(e => {
                     client.close();
+                    message.reply("Linked!")
                 })
             }else if (args == "remove") {
                 collection.updateOne(
@@ -25,9 +26,9 @@ module.exports = {
                 )
                 .then(e => {
                     client.close();
+                    message.reply("Removed!")
                 })
             }
         });
-        message.reply("Linked!")
     }
 }
