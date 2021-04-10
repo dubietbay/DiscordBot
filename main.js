@@ -64,7 +64,7 @@ client.on('message',async message => {
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }else if(!message.member.hasPermission("ADMINISTRATOR")){
-            return message.channel.send('no perm sir')
+            return message.channel.send('no permission sir')
         }
         client.commands.get('link').execute(message, args) 
     }
