@@ -29,6 +29,7 @@ module.exports = {
                         embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
                         embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
                         embed.setTimestamp()
+                        message.channel.send("why")
                         e.data.forEach(server => {
                             let servernumber =  e.data.indexOf(server) + 1
                             let PlrCount = server.playing 
