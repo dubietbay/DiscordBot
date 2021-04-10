@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const noblox = require("noblox.js");
 const MongoClient = require('mongodb').MongoClient;
 module.exports = {
-    name: 'checkcrowd',
+    name: 'checkplr',
     description: "this is a check command!",
     execute(Dclient){
         const id = ['29266804','92916701','331776088','52698609','8412597','749327','282009961'];
