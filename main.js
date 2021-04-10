@@ -70,7 +70,7 @@ client.on('message',async message => {
         client.commands.get('link').execute(message, args) 
     }
 
-    else if (commandFiles === 'check'){
+    else if (command === 'check'){
         client.commands.get('checkplr').execute(client)
     }
 
