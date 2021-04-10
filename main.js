@@ -68,7 +68,7 @@ client.on('message',async message => {
     }
 
     else if (command === 'c') {
-        client.commands.get('checkcrowd').execute(message, args) 
+        client.commands.get('checkcrowd').execute(message, args, client) 
     }
 
     //else if (command === 'info') {

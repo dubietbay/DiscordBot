@@ -1,11 +1,10 @@
 const Discord = require('discord.js');
-const Dclient = new Discord.Client();
 const fetch = require('node-fetch');
 const MongoClient = require('mongodb').MongoClient;
 module.exports = {
     name: 'checkcrowd',
     description: "this is a check command!",
-    execute(message, args){
+    execute(message, args, Dclient){
         const embed = new Discord.MessageEmbed();
         let info = []
         embed.setTitle(`BREAKING NEWS!`);
@@ -38,7 +37,7 @@ module.exports = {
                     IDlist = search.IDs
                     client.close();
                     search.IDs.forEach(ID => {
-                        Dclient.channels.cache.get(ID).send(embed)
+                        Dclient.channels.cache.get(ID.toString()).send(embed)
                     })
                 });
             }
