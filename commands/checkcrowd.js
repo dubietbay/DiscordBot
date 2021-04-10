@@ -4,7 +4,8 @@ module.exports = {
     name: 'checkcrowd',
     description: "this is a check command!",
     execute(message, args){
-        let embed = new Discord.MessageEmbed();
+        const embed = new Discord.MessageEmbed();
+        let info = []
         embed.setTitle(`BREAKING NEWS!`);
         embed.setColor('#f4c871');
         embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
@@ -35,12 +36,16 @@ module.exports = {
                             let Ping = server.ping
                             let Place = el.Name
                             if (PlrCount >= 15){
-                                embed.addField(`Server ${servernumber} in ${Place}`,`Players count: ${PlrCount} \n Average player's ping: ${Ping}`)
+                                var object = {Head: `Server ${servernumber} in ${Place}`, Tail: `Players count: ${PlrCount} \n Average player's ping: ${Ping}`}
+                                info.push(object)
                             }
                         });
                     }   
                 }).catch(er => console.error)
         });
+        info.forEach(item => {
+            embed.addField(item.Head, item.Tail)
+        })
         message.channel.send(embed)
     }
 }
