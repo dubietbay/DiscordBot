@@ -42,7 +42,8 @@ module.exports = {
                         }else{
                             pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
                                 if(plr.Thumbnail.Url == avatar) {
-                                    Dclient.channels.cache.get("775352026862977031").send(`player ${await getnamefromid(id)} found in ${e.Name} at server ${a+1}.`)
+                                    let name = await getnamefromid(id)
+                                    Dclient.channels.cache.get("775352026862977031").send(`player ${name} found in ${e.Name} at server ${a+1}.`)
                                 }
                             })
                             a = a + 1
