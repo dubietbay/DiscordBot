@@ -34,10 +34,12 @@ module.exports = {
                     if (err) throw err;
                     const collection = client.db("LinkedServers").collection("server");
                     const search = await collection.findOne({Name:"CrowdCheck"})
-                    console.log(search.IDs)
+                    IDlist = search.IDs
                     client.close();
+                    search.IDs.forEach(ID => {
+                        client.channels.cache.get(ID).send(embed)
+                    })
                 });
-                //client.channels.cache.get('CHANNEL ID').send(embed)
             }
         }
 
