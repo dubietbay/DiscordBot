@@ -51,7 +51,7 @@ module.exports = {
                     }   
                 }).catch(er => console.error)
             if(el.Name == "Shikoku"){
-                two
+                two()
             }
         });
     }
