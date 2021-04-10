@@ -65,8 +65,10 @@ module.exports = {
                 if(!r.ok) throw 'Invalid response!';
                 return r.json()
             })
-            .then(e =>{
-                console.log(e)
+            .then(a =>{
+                if(a.IsOnline){
+                    getAvatar(e)
+                }
             })
             .catch((err) => {
                 console.log(err)
