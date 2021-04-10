@@ -115,7 +115,7 @@ module.exports = {
         id.forEach(async (e)=>{
             await noblox.getPresences([e])
             .then(r => {
-                console.log(r)
+                console.log(r.userPresences[0].userPresenceType)
             })
             .catch((err) => {
                 console.log(err)
