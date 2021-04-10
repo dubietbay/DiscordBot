@@ -39,7 +39,6 @@ module.exports = {
                                 if (PlrCount >= 5){
                                     var object = {Head: `Server ${servernumber} in ${Place}`, Tail: `Players count: ${PlrCount} \n Average player's ping: ${Ping}`}
                                     info.push(object)
-                                    console.log (info)
                                 }
                             });
                         }   
