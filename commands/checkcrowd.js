@@ -28,7 +28,7 @@ module.exports = {
                 info.forEach(item => {
                     embed.addField(item.Head, item.Tail)
                 })
-                const uri = "mongodb+srv://dubietbay:39611500DUDU@cluster0.vpqpg.mongodb.net/LinkedServers?retryWrites=true&w=majority";
+                const uri = process.env.DATABASE_URL;
                 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
                     client.connect(async err => {
                     if (err) throw err;

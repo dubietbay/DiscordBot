@@ -4,7 +4,7 @@ module.exports = {
     name: 'link',
     description: "this is a link command!",
     execute(message, args){
-        const uri = "mongodb+srv://dubietbay:39611500DUDU@cluster0.vpqpg.mongodb.net/LinkedServers?retryWrites=true&w=majority";
+        const uri = process.env.DATABASE_URL;
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
             client.connect(err => {
             if (err) throw err;
