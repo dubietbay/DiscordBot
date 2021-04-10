@@ -72,8 +72,10 @@ module.exports = {
                         console.log(er)
                     }) 
                 }
+                if (e.Name == "Menu Screen"){
+                    two()
+                }
             });
-            two()
         }
 
         async function getAvatar(id, name) {
