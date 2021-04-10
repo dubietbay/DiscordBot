@@ -62,9 +62,7 @@ module.exports = {
         id.forEach(async (e)=>{
             await fetch(`https://api.roblox.com/users/${e}/onlinestatus/`)
             .then((result) => {
-               if(result.IsOnline){
-                   getAvatar(e)
-               }
+                console.log(result)
             }).catch((err) => {
                 console.log(err)
             });
