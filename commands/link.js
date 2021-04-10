@@ -11,7 +11,9 @@ module.exports = {
             if (err) throw err;
             const collection = client.db("LinkedServers").collection("server");
             collection.insertOne(data)
-            client.close();
+            .then(e => {
+                client.close();
+            })
         });
         message.reply("Linked!")
     }
