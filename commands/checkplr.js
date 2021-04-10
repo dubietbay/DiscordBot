@@ -71,7 +71,7 @@ module.exports = {
                         console.log(er)
                     }) 
                 }
-                if(el.Name == "Shikoku"){
+                if(e.Name == "Menu Screen"){
                     two()
                 }
             });
