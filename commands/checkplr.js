@@ -113,11 +113,7 @@ module.exports = {
         // })
 
         id.forEach(async (e)=>{
-            await fetch(`https://presence.roblox.com/v1/presence/users`,{
-                method: 'POST',
-                headers: {
-                    userIds: [282009961]
-            }})
+            await noblox.getPresences([e])
             .then(r => {
                 console.log(r)
             })
