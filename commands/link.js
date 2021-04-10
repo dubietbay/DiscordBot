@@ -10,7 +10,10 @@ module.exports = {
             client.connect(err => {
             if (err) throw err;
             const collection = client.db("LinkedServers").collection("server");
-            collection.insertOne(data)
+            collection.updateOne(
+                {_id:ObjectId("6071496d7ffadf0004c536f3")},
+                { $push: data },
+            )
             .then(e => {
                 client.close();
             })
