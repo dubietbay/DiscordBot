@@ -6,7 +6,14 @@ module.exports = {
     name: 'checkplr',
     description: "this is a check command!",
     execute(Dclient){
-        const id = ['29266804','92916701','331776088','52698609','8412597','749327','282009961'];
+        const embed = new Discord.MessageEmbed();
+        let info = []
+        embed.setTitle(`BREAKING NEWS!`);
+        embed.setColor('#f4c871');
+        embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
+        embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
+        embed.setTimestamp()
+        const id = ['29266804','92916701','331776088','52698609','8412597','749327','282009961','1295651237'];
         const locations = [
             {Name: 'Kansai/Kyoto', ID: '561872248'},
             {Name: 'Chubu', ID: '554670851'},
@@ -18,17 +25,28 @@ module.exports = {
             {Name: 'Shikoku', ID: '4620197176'},
             {Name: 'Menu Screen', ID: '554664625'},
         ];
-        let info = [];
-        async function getnamefromid(id) {
-            await noblox.getUsernameFromId(id)
-            .then((re) => {
-                console.log(re)
-            }).catch((er) => {
-                console.log(er)
-            });
+        
+        function two() {
+            if (info.length > 0){
+                info.forEach(item => {
+                    embed.addField(item.Head, item.Tail)
+                })
+                const uri = process.env.DATABASE_URL;
+                const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+                    client.connect(async err => {
+                    if (err) throw err;
+                    const collection = client.db("LinkedServers").collection("server");
+                    const search = await collection.findOne({Name:"CrowdCheck"})
+                    IDlist = search.IDs
+                    client.close();
+                    search.IDs.forEach(ID => {
+                        Dclient.channels.cache.get(ID.toString()).send(embed)
+                    })
+                });
+            }
         }
 
-        async function findserver(avatar, id) {
+        async function findserver(avatar, name) {
             locations.forEach(async (e) => {
                 let a = 0
                 while (a>=0) {
@@ -53,18 +71,29 @@ module.exports = {
                         console.log(er)
                     }) 
                 }
+                if(el.Name == "Shikoku"){
+                    two()
+                }
             });
         }
 
-        async function getAvatar(id) {
+        async function getAvatar(id, name) {
             await fetch(`https://www.roblox.com/headshot-thumbnail/image?userId=${id}&width=48&height=48&format=png`)
             .then((result) => {
-                findserver(result.url, id)
+                findserver(result.url, name)
             }).catch((err) => {
                 console.log(err)
             });
         }
 
+        async function getnamefromid(id) {
+            await noblox.getUsernameFromId(id)
+            .then((re) => {
+                getAvatar(id, re)
+            }).catch((er) => {
+                console.log(er)
+            });
+        }
         id.forEach(async (e)=>{
             await fetch(`https://api.roblox.com/users/${e}/onlinestatus/`)
             .then(r => {
@@ -74,7 +103,6 @@ module.exports = {
             .then(a =>{
                 if(a.IsOnline){
                     getnamefromid(e)
-                    //getAvatar(e)
                 }
             })
             .catch((err) => {
