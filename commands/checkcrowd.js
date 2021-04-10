@@ -22,32 +22,38 @@ module.exports = {
             {Name: 'Shikoku', ID: '4620197176'},
         ];
 
-        locations.forEach(el => {
-            fetch(`https://games.roblox.com/v1/games/${el.ID}/servers/Public?limit=100&sortOrder=Asc`)
-                .then(r => {
-                    if(!r.ok) throw 'Invalid response!';
-                    return r.json()
-                })
-                .then(e => {
-                    if (e.data.length >= 1){
-                        e.data.forEach(server => {
-                            let servernumber =  e.data.indexOf(server) + 1
-                            let PlrCount = server.playing 
-                            let Ping = server.ping
-                            let Place = el.Name
-                            if (PlrCount >= 5){
-                                var object = {Head: `Server ${servernumber} in ${Place}`, Tail: `Players count: ${PlrCount} \n Average player's ping: ${Ping}`}
-                                info.push(object)
-                                console.log (info)
-                            }
-                        });
-                    }   
-                }).catch(er => console.error)
-        });
-        info.forEach(item => {
-            embed.addField(item.Head, item.Tail)
-        })
-        console.log (info)
-        message.channel.send(embed)
+        async function one() {
+            locations.forEach(el => {
+                fetch(`https://games.roblox.com/v1/games/${el.ID}/servers/Public?limit=100&sortOrder=Asc`)
+                    .then(r => {
+                        if(!r.ok) throw 'Invalid response!';
+                        return r.json()
+                    })
+                    .then(e => {
+                        if (e.data.length >= 1){
+                            e.data.forEach(server => {
+                                let servernumber =  e.data.indexOf(server) + 1
+                                let PlrCount = server.playing 
+                                let Ping = server.ping
+                                let Place = el.Name
+                                if (PlrCount >= 5){
+                                    var object = {Head: `Server ${servernumber} in ${Place}`, Tail: `Players count: ${PlrCount} \n Average player's ping: ${Ping}`}
+                                    info.push(object)
+                                    console.log (info)
+                                }
+                            });
+                        }   
+                    }).catch(er => console.error)
+            });
+        };
+        async function two() {
+            await one()
+            info.forEach(item => {
+                embed.addField(item.Head, item.Tail)
+            })
+            console.log (info)
+            message.channel.send(embed)
+        }
+        two()
     }
 }
