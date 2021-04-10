@@ -4,7 +4,7 @@ const MongoClient = require('mongodb').MongoClient;
 module.exports = {
     name: 'checkcrowd',
     description: "this is a check command!",
-    execute(message, args, Dclient){
+    execute(Dclient){
         const embed = new Discord.MessageEmbed();
         let info = []
         embed.setTitle(`BREAKING NEWS!`);

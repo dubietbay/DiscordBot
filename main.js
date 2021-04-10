@@ -22,7 +22,7 @@ client.once('ready', () => {
     client.user.setActivity('Prefix: >')
 });
 
-//setInterval (function () {client.commands.get('checkcrowd').execute(message, args)}, 600000); 
+setInterval (function () {client.commands.get('checkcrowd').execute(client)}, 600000); 
 
 client.on('message',async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -65,10 +65,6 @@ client.on('message',async message => {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
         client.commands.get('link').execute(message, args) 
-    }
-
-    else if (command === 'c') {
-        client.commands.get('checkcrowd').execute(message, args, client) 
     }
 
     //else if (command === 'info') {
