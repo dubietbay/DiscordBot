@@ -18,6 +18,7 @@ module.exports = {
             {Name: 'Shikoku', ID: '4620197176'},
             {Name: 'Menu Screen', ID: '554664625'},
         ];
+        let info = [];
         async function getnamefromid(id) {
             await noblox.getUsernameFromId(id)
             .then((re) => {
@@ -42,7 +43,8 @@ module.exports = {
                         }else{
                             pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
                                 if(plr.Thumbnail.Url == avatar) {
-                                    let name = await getnamefromid(id)
+                                    let object = ''
+                                    info.push(object)
                                     Dclient.channels.cache.get("775352026862977031").send(`player ${name} found in ${e.Name} at server ${a+1}.`)
                                 }
                             })
@@ -72,7 +74,8 @@ module.exports = {
             })
             .then(a =>{
                 if(a.IsOnline){
-                    getAvatar(e)
+                    console.log(getnamefromid(e))
+                    //getAvatar(e)
                 }
             })
             .catch((err) => {
