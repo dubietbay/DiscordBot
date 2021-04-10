@@ -28,6 +28,7 @@ module.exports = {
         
         function two() {
             if (info.length > 0){
+                console.log(info)
                 info.forEach(item => {
                     embed.addField(item.Head, item.Tail)
                 })
