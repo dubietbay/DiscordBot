@@ -34,11 +34,11 @@ module.exports = {
                     if (err) throw err;
                     const collection = client.db("LinkedServers").collection("server");
                     const search = collection.find({Name:"CrowdCheck"})
-                        console.log(search)
                         .then(e => {
                             client.close();
                             message.reply("Linked!")
                         })
+                    console.log(search)
                 });
                 client.channels.cache.get('CHANNEL ID').send(embed)
             }
