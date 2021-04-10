@@ -4,17 +4,16 @@ module.exports = {
     name: 'checkcrowd',
     description: "this is a check command!",
     execute(message, args){
+        const embed = new Discord.MessageEmbed();
         const locations = [
-            {Name: 'kyoto', ID: '561872248'},
-            {Name: 'kansai', ID: '561872248'},
-            {Name: 'chubu', ID: '554670851'},
-            {Name: 'tohoku', ID: '903142964'},
-            {Name: 'kanto', ID: '1469503587'},
-            {Name: 'chugoku', ID: '2329809976'},          
-            {Name: 'mura', ID: '2763010111'},
-            {Name: 'kyushu', ID: '1251162439'},
-            {Name: 'shikoku', ID: '4620197176'},
-            {Name: 'menu', ID: '554664625'},
+            {Name: 'Kansai', ID: '561872248'},
+            {Name: 'Chubu', ID: '554670851'},
+            {Name: 'Tohoku', ID: '903142964'},
+            {Name: 'Kanto', ID: '1469503587'},
+            {Name: 'Chugoku', ID: '2329809976'},          
+            {Name: 'Mura', ID: '2763010111'},
+            {Name: 'Kyushu', ID: '1251162439'},
+            {Name: 'Shikoku', ID: '4620197176'},
         ];
 
         locations.forEach(el => {
@@ -25,13 +24,19 @@ module.exports = {
                 })
                 .then(e => {
                     if (e.data.length >= 1){
+                        embed.setTitle(`BREAKING NEWS!`);
+                        embed.setColor('#f4c871');
+                        embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
+                        embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
+                        embed.setTimestamp()
                         e.data.forEach(server => {
                             let servernumber =  e.data.indexOf(server) + 1
                             let PlrCount = server.playing 
                             let Ping = server.ping
                             let Place = el.Name
                             if (PlrCount >= 15){
-                                message.channel.send(`${PlrCount} ${servernumber} ${Ping} ${Place}`)
+                                message.channel.send(`Server ${servernumber} in ${Place} is having ${PlrCount} Players \n with average player's ping: ${Ping}`)
+
                             }
                         });
                     }   
