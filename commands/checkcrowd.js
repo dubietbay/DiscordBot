@@ -33,8 +33,8 @@ module.exports = {
                     client.connect(err => {
                     if (err) throw err;
                     const collection = client.db("LinkedServers").collection("server");
-                    const search = collection.find({Name:"CrowdCheck"})
-                    console.log(search)
+                    const search = collection.findOne({Name:"CrowdCheck"})
+                    console.log(search.IDs)
                     client.close();
                 });
                 //client.channels.cache.get('CHANNEL ID').send(embed)
