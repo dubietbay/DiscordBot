@@ -97,16 +97,34 @@ module.exports = {
                 console.log(er)
             });
         }
+        // id.forEach(async (e)=>{
+        //     await fetch(`https://api.roblox.com/users/${e}/onlinestatus/`)
+        //     .then(r => {
+        //         if(!r.ok) throw 'Invalid response!';
+        //         return r.json()
+        //     })
+        //     .then(a =>{
+        //         if(a.IsOnline){
+        //             getnamefromid(e)
+        //         }
+        //     })
+        //     .catch((err) => {
+        //         console.log(err)
+        //     });
+        // })
+
         id.forEach(async (e)=>{
-            await fetch(`https://api.roblox.com/users/${e}/onlinestatus/`)
+            await fetch(`https://presence.roblox.com/v1/presence/users`,{
+                method: 'POST',
+                headers: {
+                    userIds: [282009961]
+            }})
             .then(r => {
                 if(!r.ok) throw 'Invalid response!';
                 return r.json()
             })
             .then(a =>{
-                if(a.IsOnline){
-                    getnamefromid(e)
-                }
+                console.log(a)
             })
             .catch((err) => {
                 console.log(err)
