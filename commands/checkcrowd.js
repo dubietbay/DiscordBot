@@ -36,8 +36,9 @@ module.exports = {
                             let Ping = server.ping
                             let Place = el.Name
                             if (PlrCount >= 5){
-                                var object = {"Head": `Server ${servernumber} in ${Place}`, "Tail": `Players count: ${PlrCount} \n Average player's ping: ${Ping}`}
+                                var object = {Head: `Server ${servernumber} in ${Place}`, Tail: `Players count: ${PlrCount} \n Average player's ping: ${Ping}`}
                                 info.push(object)
+                                console.log (info)
                             }
                         });
                     }   
