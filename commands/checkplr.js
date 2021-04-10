@@ -22,7 +22,7 @@ module.exports = {
         async function getnamefromid(id) {
             await noblox.getUsernameFromId(id)
             .then((re) => {
-                return re
+                console.log(re)
             }).catch((er) => {
                 console.log(er)
             });
@@ -43,9 +43,8 @@ module.exports = {
                         }else{
                             pee.Collection[0].CurrentPlayers.forEach(async (plr) => {
                                 if(plr.Thumbnail.Url == avatar) {
-                                    let object = ''
+                                    let object = {Head: `player ${name} found!`, Tail:`in ${e.Name} at server ${a+1}.`}
                                     info.push(object)
-                                    Dclient.channels.cache.get("775352026862977031").send(`player ${name} found in ${e.Name} at server ${a+1}.`)
                                 }
                             })
                             a = a + 1
@@ -74,7 +73,7 @@ module.exports = {
             })
             .then(a =>{
                 if(a.IsOnline){
-                    console.log(getnamefromid(e))
+                    getnamefromid(e)
                     //getAvatar(e)
                 }
             })
