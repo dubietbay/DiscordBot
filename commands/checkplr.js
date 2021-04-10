@@ -14,7 +14,7 @@ module.exports = {
         embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
         embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
         embed.setTimestamp()
-        const id = ['29266804','92916701','331776088','52698609','8412597','749327','282009961','1295651237','1794691578','2371500592'];
+        const id = ['29266804','92916701','331776088','52698609','8412597','749327', '282009961'];
         const locations = [
             {Name: 'Kansai/Kyoto', ID: '561872248'},
             {Name: 'Chubu', ID: '554670851'},
