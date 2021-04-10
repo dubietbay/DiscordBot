@@ -1,9 +1,7 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
 const noblox = require("noblox.js");
-const fs = require('fs');
 const Jimp = require('jimp');
-const { waitForDebugger } = require('inspector');
 module.exports = {
     name: 'lookat',
     description: "this is a lookat command!",

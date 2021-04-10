@@ -58,6 +58,10 @@ client.on('message',async message => {
         client.commands.get('lookfor').execute(message, args)        
     }
 
+    else if (command === 'testing') {
+        client.commands.get('checkcrowd').execute(message, args) 
+    }
+
     //else if (command === 'info') {
     //    if (!args.length) {
     //        return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
