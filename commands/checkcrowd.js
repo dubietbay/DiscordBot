@@ -24,7 +24,7 @@ module.exports = {
 
         async function one() {
             locations.forEach(el => {
-                fetch(`https://games.roblox.com/v1/games/${el.ID}/servers/Public?limit=100&sortOrder=Asc`)
+                await fetch(`https://games.roblox.com/v1/games/${el.ID}/servers/Public?limit=100&sortOrder=Asc`)
                     .then(r => {
                         if(!r.ok) throw 'Invalid response!';
                         return r.json()
@@ -43,9 +43,6 @@ module.exports = {
                             });
                         }   
                     }).catch(er => console.error)
-                if (el.Name == "Shikoku") { 
-                    return;
-                }
             });
         };
         async function two() {
