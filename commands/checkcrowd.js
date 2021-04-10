@@ -23,7 +23,7 @@ module.exports = {
         ];
 
         async function one() {
-            locations.forEach(el => {
+            locations.forEach(async (el) =>  {
                 await fetch(`https://games.roblox.com/v1/games/${el.ID}/servers/Public?limit=100&sortOrder=Asc`)
                     .then(r => {
                         if(!r.ok) throw 'Invalid response!';
