@@ -8,6 +8,7 @@ module.exports = {
     execute(Dclient){
         const embed = new Discord.MessageEmbed();
         let info = []
+        let already = 0
         embed.setTitle(`BREAKING NEWS!`);
         embed.setColor('#f4c871');
         embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
@@ -27,7 +28,7 @@ module.exports = {
         ];
         
         function two() {
-            if (info.length > 0){
+            if (info.length > 0 && already == 0){
                 console.log(info)
                 info.forEach(item => {
                     embed.addField(item.Head, item.Tail)
@@ -44,6 +45,7 @@ module.exports = {
                         Dclient.channels.cache.get(ID.toString()).send(embed)
                     })
                 });
+                already = 1
             }
         }
 
