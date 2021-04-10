@@ -44,9 +44,9 @@ module.exports = {
                 }).catch(er => console.error)
         });
         info.forEach(item => {
-            console.log (`${item.Head} ${item.Tail}`)
             embed.addField(item.Head, item.Tail)
         })
+        console.log (info)
         message.channel.send(embed)
     }
 }
