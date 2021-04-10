@@ -61,9 +61,14 @@ module.exports = {
 
         id.forEach(async (e)=>{
             await fetch(`https://api.roblox.com/users/${e}/onlinestatus/`)
-            .then((result) => {
-                   console.log(result.json())
-            }).catch((err) => {
+            .then(r => {
+                if(!r.ok) throw 'Invalid response!';
+                return r.json()
+            })
+            .then(e =>{
+                console.log(e)
+            })
+            .catch((err) => {
                 console.log(err)
             });
         })
