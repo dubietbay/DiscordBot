@@ -10,7 +10,7 @@ module.exports = {
         let info = []
         let already = 0
         embed.setTitle(`BREAKING NEWS!`);
-        embed.setColor('#f4c871');
+        embed.setColor('#bc13fe');
         embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
         embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
         embed.setTimestamp()
