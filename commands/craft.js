@@ -6,10 +6,11 @@ const Recipe = [
     { From: 'Armor Smith', NameCall: 'lighto-yoroi', Name: 'Light O-yoroi', Materials: ' silk haganesteelbar bronzebar standardfittings ironbar', Quantity: ' 3 4 4 1 4' },
     { From: 'Armor Smith', NameCall: 'heavyo-yoroi', Name: 'Heavy O-yoroi', Materials: ' silk kawagnesteelbar ironbar shiganesteelbar standardfittings goldbar', Quantity: ' 4 2 3 5 1 3' },
     { From: 'Armor Smith', NameCall: 'tatamikabuto', Name: 'Tatami Kabuto', Materials: ' linen bronzebar haganesteelbar standardfittings', Quantity: ' 2 4 3 1' },
-    { From: 'Armor Smith', NameCall: 'sujibachikabuto', Name: 'Sujibachi Kabuto', Materials: ' cloth ironbar kawagnesteelbar shiganesteelbar silk standardfittings', Quantity: ' 2 2 1 2 1 1' },
+    { From: 'Armor Smith', NameCall: 'zunarikabuto', Name: 'Zunari Kabuto', Materials: ' cloth ironbar kawagnesteelbar shiganesteelbar silk standardfittings', Quantity: ' 2 2 1 2 1 1' },
     { From: 'Armor Smith', NameCall: 'samekabuto', Name: 'Same Kabuto', Materials: ' cloth ironbar kawagnesteelbar shiganesteelbar higashisteelbar standardfittings', Quantity: ' 2 3 2 3 1 1' },
     { From: 'Armor Smith', NameCall: 'hishiodoshikabuto', Name: 'Hishiodoshi Kabuto', Materials: ' cloth ironbar kawagnesteelbar shiganesteelbar higashisteelbar standardfittings', Quantity: ' 2 3 2 3 1 1' },
     { From: 'Armor Smith', NameCall: 'genpeikabuto', Name: 'Genpei Kabuto', Materials: ' silk goldbar kawagnesteelbar shiganesteelbar standardfittings ironbar', Quantity: ' 2 3 2 3 1 3' },
+    { From: 'Armor Smith', NameCall: 'sujibachikabuto', Name: 'Sujibachi Kabuto', Materials: ' cloth ironbar kawagnesteelbar shiganesteelbar silk standardfittings', Quantity: ' 2 2 1 2 1 1' },
     { From: 'Armor Smith', NameCall: 'lightgyorin', Name: 'Light Gyorin', Materials: ' cloth shiganesteelbar ironbar standardfittings kawagnesteelbar higashisteelbar', Quantity: ' 3 4 4 1 2 2' },
     { From: 'Armor Smith', NameCall: 'heavygyorin', Name: 'Heavy Gyorin', Materials: ' cloth shiganesteelbar silverbar kawagnesteelbar standardfittings higashisteelbar', Quantity: ' 4 5 2 3 1 3' },
     { From: 'Armor Smith', NameCall: 'lighttatami', Name: 'Light Tatami', Materials: ' flax haganesteelbar copperbar standardfittings', Quantity: ' 15 7 3 1' },
@@ -165,13 +166,13 @@ const Recipe = [
     { From: 'Backpack', NameCall: 'steelarrow', Name: 'Steel Arrow', Materials: ' oaklog steelarrowheads', Quantity: ' 1 1' },
     { From: 'Backpack', NameCall: 'kaburaarrow', Name: 'Kabura Arrow', Materials: ' maplelog ironbar reddye blackdye', Quantity: ' 1 1 1 1' },
     { From: 'Backpack', NameCall: 'stonearrow', Name: 'Stone Arrow', Materials: ' bamboo stonearrowheads', Quantity: ' 1 1' },
-    { From: 'Backpack', NameCall: 'stonearrowheads', Name: 'Stone Arrowheads', Materials: ' stone', Quantity: ' 0.3333333333333333333333333333333333333333333333333333' },
+    { From: 'Backpack', NameCall: 'stonearrowheads', Name: 'Stone Arrowheads', Materials: ' stone', Quantity: ' 0.3333333333333333333333333333' },
     { From: 'Backpack', NameCall: 'strawkasa', Name: 'Straw Kasa', Materials: ' flax pinelog', Quantity: ' 15 3' },
     { From: 'Backpack', NameCall: 'strawgasa', Name: 'Straw Gasa', Materials: ' flax birchlog', Quantity: ' 15 3' },
-    { From: 'Backpack', NameCall: 'copperarrowheads', Name: 'Copper Arrowheads', Materials: ' copperbar', Quantity: ' 0.3333333333333333333333333333333333333333333333333333' },
-    { From: 'Backpack', NameCall: 'bronzearrowheads', Name: 'Bronze Arrowheads', Materials: ' bronzebar', Quantity: ' 0.3333333333333333333333333333333333333333333333333333' },
-    { From: 'Backpack', NameCall: 'ironarrowheads', Name: 'Iron Arrowheads', Materials: ' ironbar', Quantity: ' 0.3333333333333333333333333333333333333333333333333333' },
-    { From: 'Backpack', NameCall: 'steelarrowheads', Name: 'Steel Arrowheads', Materials: ' shiganesteelbar', Quantity: ' 0.3333333333333333333333333333333333333333333333333333' },
+    { From: 'Backpack', NameCall: 'copperarrowheads', Name: 'Copper Arrowheads', Materials: ' copperbar', Quantity: ' 0.3333333333333333333333333333' },
+    { From: 'Backpack', NameCall: 'bronzearrowheads', Name: 'Bronze Arrowheads', Materials: ' bronzebar', Quantity: ' 0.3333333333333333333333333333' },
+    { From: 'Backpack', NameCall: 'ironarrowheads', Name: 'Iron Arrowheads', Materials: ' ironbar', Quantity: ' 0.3333333333333333333333333333' },
+    { From: 'Backpack', NameCall: 'steelarrowheads', Name: 'Steel Arrowheads', Materials: ' shiganesteelbar', Quantity: ' 0.3333333333333333333333333333' },
     { From: 'Backpack', NameCall: '5monmeround', Name: '5 Monme Round', Materials: ' leadbar gunpowder', Quantity: ' 1 2' },
     { From: 'Backpack', NameCall: '7monmeround', Name: '7 Monme Round', Materials: ' leadbar gunpowder', Quantity: ' 1 2' },
     { From: 'Backpack', NameCall: 'enkeitsuba', Name: 'Enkei Tsuba', Materials: ' haganesteelbar linen', Quantity: ' 3 1' },
@@ -222,10 +223,7 @@ const Recipe = [
     { From: "The wild", NameCall: "bamboo", Name: "Bamboo", Materials: "", Quantity: "" },
     { From: "The wild", NameCall: "stone", Name: "Stone", Materials: "", Quantity: "" },
     { From: "The wild", NameCall: "blessedredwood", Name: "Blessed Redwood", Materials: "", Quantity: "" },
-    { From: "The Wild", NameCall: "ryo", Name: "Ryo", Materials: "", Quantity: "" },
-    { From: "The Wild", NameCall: "kai", Name: "Kai", Materials: "unban aki", Quantity: "2 1" },
-    { From: "The Wild", NameCall: "unban", Name: "Unban", Materials: "", Quantity: "" },
-    { From: "The Wild", NameCall: "aki", Name: "Aki", Materials: "", Quantity: "" }
+    { From: "The Wild", NameCall: "ryo", Name: "Ryo", Materials: "", Quantity: "" }
 ]
 
 const bigamount = [
