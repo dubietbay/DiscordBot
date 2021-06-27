@@ -6,7 +6,7 @@ const Recipe = [
     { From: 'Armor Smith', NameCall: 'lighto-yoroi', Name: 'Light O-yoroi', Materials: ' silk haganesteelbar bronzebar standardfittings ironbar', Quantity: ' 3 4 4 1 4' },
     { From: 'Armor Smith', NameCall: 'heavyo-yoroi', Name: 'Heavy O-yoroi', Materials: ' silk kawagnesteelbar ironbar shiganesteelbar standardfittings goldbar', Quantity: ' 4 2 3 5 1 3' },
     { From: 'Armor Smith', NameCall: 'tatamikabuto', Name: 'Tatami Kabuto', Materials: ' linen bronzebar haganesteelbar standardfittings', Quantity: ' 2 4 3 1' },
-    { From: 'Armor Smith', NameCall: 'zunarikabuto', Name: 'Zunari Kabuto', Materials: ' cloth ironbar kawagnesteelbar shiganesteelbar silk standardfittings', Quantity: ' 2 2 1 2 1 1' },
+    { From: 'Armor Smith', NameCall: 'zunarikabuto', Name: 'Zunari Kabuto', Materials: ' cloth ironbar kawagnesteelbar shiganesteelbar standardfittings', Quantity: ' 2 2 1 2 1' },
     { From: 'Armor Smith', NameCall: 'samekabuto', Name: 'Same Kabuto', Materials: ' cloth ironbar kawagnesteelbar shiganesteelbar higashisteelbar standardfittings', Quantity: ' 2 3 2 3 1 1' },
     { From: 'Armor Smith', NameCall: 'hishiodoshikabuto', Name: 'Hishiodoshi Kabuto', Materials: ' cloth ironbar kawagnesteelbar shiganesteelbar higashisteelbar standardfittings', Quantity: ' 2 3 2 3 1 1' },
     { From: 'Armor Smith', NameCall: 'genpeikabuto', Name: 'Genpei Kabuto', Materials: ' silk goldbar kawagnesteelbar shiganesteelbar standardfittings ironbar', Quantity: ' 2 3 2 3 1 3' },

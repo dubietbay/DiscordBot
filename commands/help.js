@@ -12,8 +12,6 @@ module.exports = {
         embed.addField('>lookat [region name]','give region info')
         embed.addField(`>lookfor [name/id] [player's name/player's id]`, `ex: >lookfor name dubietbay`)
         embed.addField('>craft [item name] [amount]','ex: >craft soshukatana 1')
-        embed.addField('________________', 'admin cmd:')
-        embed.addField('>link [add/remove]', `this link the channel to the bot's news system`)
         //embed.addField('>info [Equipment]', 'gib equipment info (no weapon yet) (delayed)')
         embed.addField('Bring timmy home (to ur server)','[click](https://discord.com/oauth2/authorize?client_id=750371529015165009&scope=bot&permissions=326720)')
         embed.addField('need help ?','[my house](https://discord.gg/Zkjb55q3RK)')
