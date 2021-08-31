@@ -1,6 +1,6 @@
 const Recipe = [
-    { From: 'Armor Smith', NameCall: 'lightkikko', Name: 'Light Kikko', Materials: ' linen haganesteelbar bronzebar standardfittings', Quantity: ' 3 5 5 1' },
-    { From: 'Armor Smith', NameCall: 'heavykikko', Name: 'Heavy Kikko', Materials: ' nettleweave haganesteelbar ironbar standardfittings brassbar', Quantity: ' 3 6 6 1 4' },
+    { From: 'Armor Smith', NameCall: 'lightmogami', Name: 'Light Mogami', Materials: ' nettleweave haganesteelbar bronzebar standardfittings higashisteelbar', Quantity: ' 3 6 4 1 1' },
+    { From: 'Armor Smith', NameCall: 'heavymogami', Name: 'Heavy Mogami', Materials: ' cloth kawagnesteelbar ironbar shiganesteelbar standardfittings higashisteelbar', Quantity: ' 3 3 3 5 1 2' },
     { From: 'Armor Smith', NameCall: 'tetsujingasa', Name: 'Tetsu Jingasa', Materials: ' flax haganesteelbar copperbar standardfittings', Quantity: ' 5 4 1 1' },
     { From: 'Armor Smith', NameCall: 'bajojingasa', Name: 'Bajo Jingasa', Materials: ' flax haganesteelbar copperbar standardfittings', Quantity: ' 5 5 2 1' },
     { From: 'Armor Smith', NameCall: 'lighto-yoroi', Name: 'Light O-yoroi', Materials: ' silk haganesteelbar bronzebar standardfittings ironbar', Quantity: ' 3 4 4 1 4' },
@@ -21,6 +21,8 @@ const Recipe = [
     { From: 'Armor Smith', NameCall: 'heavydo-maru', Name: 'Heavy Do-maru', Materials: ' cloth kawagnesteelbar ironbar shiganesteelbar standardfittings higashisteelbar', Quantity: ' 3 3 3 5 1 2' },
     { From: 'Armor Smith', NameCall: 'kusarigusoku', Name: 'Kusari Gusoku', Materials: ' silk shiganesteelbar ironbar standardfittings kawagnesteelbar cloth', Quantity: ' 2 3 3 1 2 3' },
     { From: 'Armor Smith', NameCall: 'hotokedou', Name: 'Hotoke Dou', Materials: ' flax haganesteelbar standardfittings', Quantity: ' 15 8 1' },
+    { From: 'Armor Smith', NameCall: 'lightkikko', Name: 'Light Kikko', Materials: ' linen haganesteelbar bronzebar standardfittings', Quantity: ' 3 5 5 1' },
+    { From: 'Armor Smith', NameCall: 'heavykikko', Name: 'Heavy Kikko', Materials: ' nettleweave haganesteelbar ironbar standardfittings brassbar', Quantity: ' 3 6 6 1 4' },
     { From: 'Clan Artisan', NameCall: 'clanfittings', Name: 'Clan Fittings', Materials: ' reddye bluedye yellowdye haganesteelbar pinelog flax', Quantity: ' 1 1 1 1 1 2' },
     { From: 'Clan Artisan', NameCall: 'factionfittings', Name: 'Faction Fittings', Materials: ' reddye bluedye yellowdye haganesteelbar pinelog flax', Quantity: ' 1 1 1 1 1 2' },
     { From: 'Fabric Weaver', NameCall: 'nettleweave', Name: 'Nettle Weave', Materials: ' ramie', Quantity: ' 3' },
