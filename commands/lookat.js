@@ -53,7 +53,7 @@ module.exports = {
             for (let i = 0; i < list.length; i++) {
                 const idk = await Jimp.read(`${list[i]}`)
                 image.composite(idk, a + 51, b);
-                if (i == 8|| i == 17 || i == 26 || i == 35 || i == 44) {
+                if (i == 9|| i == 19 || i == 29 || i == 39 || i == 49 || i == 59) {   //this indicate the last pic in drow
                     a = -48
                     b = b + 51
                 }else {
