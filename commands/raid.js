@@ -77,6 +77,6 @@ module.exports = {
                 embed.addField("error")
         }
         embed.addField("Time until the week resets: ", `${time.days} days : ${time.hours} hours : ${time.minutes} minutes : ${time.seconds} seconds`)
-        message.channel.send(embed);
+        message.channel.send("ill update after school yes yes");//embed);
     }
 }
