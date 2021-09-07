@@ -48,7 +48,7 @@ module.exports = {
             case 3:
             case 4:
                 embed.addField("Kansai",">lookat Kansai (for more info)",true)
-                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcomming raids:")
+                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
                 embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
                 embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
                 break;
@@ -60,7 +60,7 @@ module.exports = {
             case 6:
                 embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
                 embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
-                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcomming raids:")
+                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
                 embed.addField("Kanto",">lookat Kanto (for more info)",true)
                 embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
                 break;
@@ -72,7 +72,7 @@ module.exports = {
             case 8:
                 embed.addField("Kanto",">lookat Kanto (for more info)",true)
                 embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
-                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcomming raids:")
+                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
                 embed.addField("Chubu",">lookat Chubu (for more info)",true)
                 embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
                 break;
@@ -84,7 +84,7 @@ module.exports = {
             case 10:
                 embed.addField("Chubu",">lookat Chubu (for more info)",true)
                 embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
-                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcomming raids:")
+                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
                 embed.addField("Kansai",">lookat Kansai (for more info)",true)
                 break;
             default:
