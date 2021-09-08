@@ -7,7 +7,7 @@ module.exports = {
         let hours = date_ob.getUTCHours();
         let minutes = date_ob.getUTCMinutes();
         var hour = "1 hour :"
-        var minute
+        var minute = minutes
         function getNextSunday() {
             var now = new Date();
             var nextSaturday = new Date();
@@ -36,7 +36,7 @@ module.exports = {
         embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
         embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
         embed.setTimestamp()
-        if(hours == 12 || hours == 20 || hours == 4 || hours == 14 || hours == 22 || hours == 6 || hours == 16 || hours == 24 || hours == 8 || hours == 18 || hours == 2 || hours == 10) {
+        if(hours == 12 || hours == 20 || hours == 4 || hours == 14 || hours == 22 || hours == 6 || hours == 16 || hours == 0 || hours == 8 || hours == 18 || hours == 2 || hours == 10) {
             hour = ""
             minute = 60 - minutes
         };
