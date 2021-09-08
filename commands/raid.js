@@ -67,7 +67,7 @@ module.exports = {
             case 15:
             case 16:
             case 23:
-            case 24:
+            case 0:
             case 7:
             case 8:
                 embed.addField("Kanto",">lookat Kanto (for more info)",true)
