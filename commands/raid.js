@@ -15,7 +15,7 @@ module.exports = {
             nextSaturday.setHours(7, 0, 0, 0);
             return nextSaturday;
         }
-         function getTimeRemaining(endtime) {
+        function getTimeRemaining(endtime) {
            var t = Date.parse(endtime) - Date.parse(new Date());
            var seconds = Math.floor((t / 1000) % 60);
            var minutes = Math.floor((t / 1000 / 60) % 60);
@@ -29,68 +29,113 @@ module.exports = {
              'seconds': seconds
            };
         }
-        var time = getTimeRemaining(getNextSunday())
-        const embed = new Discord.MessageEmbed();
-        embed.setTitle('Current lotrs raids:');
-        embed.setColor('#f4c871');
-        embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
-        embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
-        embed.setTimestamp()
-        if(hours == 12 || hours == 20 || hours == 4 || hours == 14 || hours == 22 || hours == 6 || hours == 16 || hours == 0 || hours == 8 || hours == 18 || hours == 2 || hours == 10) {
-            hour = ""
-            minute = 60 - minutes
-        };
-        switch (hours) {
-            case 11:
-            case 12:
-            case 19:
-            case 20:
-            case 3:
-            case 4:
-                embed.addField("Kansai",">lookat Kansai (for more info)",true)
-                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
-                embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
-                embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
-                break;
-            case 13:
-            case 14:
-            case 21:
-            case 22:
-            case 5:
-            case 6:
-                embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
-                embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
-                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
-                embed.addField("Kanto",">lookat Kanto (for more info)",true)
-                embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
-                break;
-            case 15:
-            case 16:
-            case 23:
-            case 0:
-            case 7:
-            case 8:
-                embed.addField("Kanto",">lookat Kanto (for more info)",true)
-                embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
-                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
-                embed.addField("Chubu",">lookat Chubu (for more info)",true)
-                embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
-                break;
-            case 17:
-            case 18:
-            case 1:
-            case 2:
-            case 9:
-            case 10:
-                embed.addField("Chubu",">lookat Chubu (for more info)",true)
-                embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
-                embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
-                embed.addField("Kansai",">lookat Kansai (for more info)",true)
-                break;
-            default:
-                embed.addField("error")
+        function getHourCloseto(first,second,third){
+            a = 0
+            for (let i = hours; i < 24; i++) {
+                a++
+                if (i == 24) i = 0;
+                if (i == first) {return a;}
+                if (i == second) {return a;}
+                if (i == third) {return b;}
+            }
         }
-        embed.addField("Time until the week resets: ", `${time.days} days : ${time.hours} hours : ${time.minutes} minutes : ${time.seconds} seconds`)
+        function timeConvert(n) {
+            var num = n;
+            var hours = (num / 60);
+            var rhours = Math.floor(hours);
+            var minutes = (hours - rhours) * 60;
+            var rminutes = Math.round(minutes);
+            return rhours + " hour(s) and " + rminutes + " minute(s).";
+        }
+        const embed = new Discord.MessageEmbed();
+            embed.setTitle('Current lotrs raids:');
+            embed.setColor('#f4c871');
+            embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
+            embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
+            embed.setTimestamp()
+        if (args) {
+            var region = args[0].toLowerCase();
+            switch (region) {
+                case "Kansai":
+                    embed.addField("Kansai",">lookat Kansai (for more info)",true)
+                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(11,19,3) * 60 - minutes)))
+                case "Tohoku":
+                case "Kyushu":
+                    embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
+                    embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
+                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(13,21,5) * 60 - minutes)))
+                case "Kanto":
+                case "Shikoku":
+                    embed.addField("Kanto",">lookat Kanto (for more info)",true)
+                    embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
+                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(15,23,7) * 60 - minutes)))
+                case "Chubu":
+                case "Chugoku":
+                    embed.addField("Chubu",">lookat Chubu (for more info)",true)
+                    embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
+                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(17,1,9) * 60 - minutes)))
+                default:
+                    embed.addField("error");
+            }
+        }
+        else{
+            var time = getTimeRemaining(getNextSunday())
+            if(hours == 12 || hours == 20 || hours == 4 || hours == 14 || hours == 22 || hours == 6 || hours == 16 || hours == 0 || hours == 8 || hours == 18 || hours == 2 || hours == 10) {
+                hour = ""
+                minute = 60 - minutes
+            };
+            switch (hours) {
+                case 11:
+                case 12:
+                case 19:
+                case 20:
+                case 3:
+                case 4:
+                    embed.addField("Kansai",">lookat Kansai (for more info)",true)
+                    embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
+                    embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
+                    embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
+                    break;
+                case 13:
+                case 14:
+                case 21:
+                case 22:
+                case 5:
+                case 6:
+                    embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
+                    embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
+                    embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
+                    embed.addField("Kanto",">lookat Kanto (for more info)",true)
+                    embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
+                    break;
+                case 15:
+                case 16:
+                case 23:
+                case 0:
+                case 7:
+                case 8:
+                    embed.addField("Kanto",">lookat Kanto (for more info)",true)
+                    embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
+                    embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
+                    embed.addField("Chubu",">lookat Chubu (for more info)",true)
+                    embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
+                    break;
+                case 17:
+                case 18:
+                case 1:
+                case 2:
+                case 9:
+                case 10:
+                    embed.addField("Chubu",">lookat Chubu (for more info)",true)
+                    embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
+                    embed.addField("Time left until raid: " + hour + " " + minute + " minute","Upcoming raids:")
+                    embed.addField("Kansai",">lookat Kansai (for more info)",true)
+                    break;
+                default:
+                    embed.addField("error")
+            }
+            embed.addField("Time until the week resets: ", `${time.days} days : ${time.hours} hours : ${time.minutes} minutes : ${time.seconds} seconds`)
+        }
         message.channel.send(embed);
     }
 }
