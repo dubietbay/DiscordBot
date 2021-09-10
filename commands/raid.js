@@ -56,21 +56,21 @@ module.exports = {
         if (args[0]) {
             var region = args[0].toLowerCase();
             switch (region) {
-                case "Kansai":
+                case "kansai":
                     embed.addField("Kansai",">lookat Kansai (for more info)",true)
                     embed.addField("Time left until raid: " + timeConvert((getHourCloseto(11,19,3) * 60 - minutes)))
-                case "Tohoku":
-                case "Kyushu":
+                case "tohoku":
+                case "kyushu":
                     embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
                     embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
                     embed.addField("Time left until raid: " + timeConvert((getHourCloseto(13,21,5) * 60 - minutes)))
-                case "Kanto":
-                case "Shikoku":
+                case "kanto":
+                case "shikoku":
                     embed.addField("Kanto",">lookat Kanto (for more info)",true)
                     embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
                     embed.addField("Time left until raid: " + timeConvert((getHourCloseto(15,23,7) * 60 - minutes)))
-                case "Chubu":
-                case "Chugoku":
+                case "chubu":
+                case "chugoku":
                     embed.addField("Chubu",">lookat Chubu (for more info)",true)
                     embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
                     embed.addField("Time left until raid: " + timeConvert((getHourCloseto(17,1,9) * 60 - minutes)))
