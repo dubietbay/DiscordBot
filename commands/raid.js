@@ -30,6 +30,9 @@ module.exports = {
            };
         }
         function getHourCloseto(first,second,third){
+            var firstp = (first++ === 24) ? 0 : first++
+            var secondp = (second++ === 24) ? 0 : first++
+            var thirdp = (third++ === 24) ? 0 : first++
             if (hours == first || hours == first + 1 || hours == second || hours == second + 1 || hours == third || hours == third + 1) {return minutes/60}
             else{
                 a = 1
