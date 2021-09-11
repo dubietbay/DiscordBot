@@ -37,7 +37,7 @@ module.exports = {
                     IDlist = search.IDs
                     client.close();
                     search.IDs.forEach(ID => {
-                        Dclient.channels.cache.get(ID.toString()).send(embed)
+                        client.channels.cache.get(ID.toString()).send(embed)
                     })
                 });
             }
