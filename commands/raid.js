@@ -51,7 +51,6 @@ module.exports = {
             return rhours + " hour(s) and " + rminutes + " minute(s).";
         }
         const embed = new Discord.MessageEmbed();
-            embed.setTitle('Current lotrs raids:');
             embed.setColor('#f4c871');
             embed.setAuthor('made by Dub', 'https://i.imgur.com/Rn9muMO.png', 'https://www.roblox.com/users/93839005/profile');
             embed.setThumbnail('https://t1.rbxcdn.com/1194a83cefa36aae9055f96b0165858e');
@@ -86,6 +85,7 @@ module.exports = {
             }
         }
         else{
+            embed.setTitle('Current lotrs raids:');
             var time = getTimeRemaining(getNextSunday())
             minute = 60 - minutes
             if(hours == 12 || hours == 20 || hours == 4 || hours == 14 || hours == 22 || hours == 6 || hours == 16 || hours == 0 || hours == 8 || hours == 18 || hours == 2 || hours == 10) {
