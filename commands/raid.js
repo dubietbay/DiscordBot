@@ -61,25 +61,25 @@ module.exports = {
             switch (region) {
                 case "kansai":
                     embed.addField("Kansai",">lookat Kansai (for more info)",true)
-                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(11,12,19,20,3,4) * 60 - minutes))),".")
+                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(11,12,19,20,3,4) * 60 - minutes)),".")
                     break;
                 case "tohoku":
                 case "kyushu":
                     embed.addField("Tohoku",">lookat Tohoku (for more info)",true)
                     embed.addField("Kyushu",">lookat Kyushu (for more info)",true)
-                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(13,14,21,22,5,6) * 60 - minutes))),".")
+                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(13,14,21,22,5,6) * 60 - minutes)),".")
                     break;
                 case "kanto":
                 case "shikoku":
                     embed.addField("Kanto",">lookat Kanto (for more info)",true)
                     embed.addField("Shikoku",">lookat Shikoku (for more info)",true)
-                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(15,16,23,0,7,8) * 60 - minutes))),".")
+                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(15,16,23,0,7,8) * 60 - minutes)),".")
                     break;
                 case "chubu":
                 case "chugoku":
                     embed.addField("Chubu",">lookat Chubu (for more info)",true)
                     embed.addField("Chugoku",">lookat Chugoku (for more info)",true)
-                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(17,18,1,2,9,10) * 60 - minutes))),".")
+                    embed.addField("Time left until raid: " + timeConvert((getHourCloseto(17,18,1,2,9,10) * 60 - minutes)),".")
                     break;
                 default:
                     embed.addField("error");
