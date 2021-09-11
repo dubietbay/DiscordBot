@@ -33,7 +33,7 @@ module.exports = {
             var firstp = (first++ === 24) ? 0 : first++
             var secondp = (second++ === 24) ? 0 : first++
             var thirdp = (third++ === 24) ? 0 : first++
-            if (hours == first || hours == first + 1 || hours == second || hours == second + 1 || hours == third || hours == third + 1) {return minutes/60}
+            if (hours == first || hours == firstp || hours == second || hours == secondp || hours == third || hours == thirdp) {return minutes/60}
             else{
                 a = 1
                 for (let i = hours; i < 24; i++) {
