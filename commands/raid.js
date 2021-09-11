@@ -32,13 +32,13 @@ module.exports = {
         function getHourCloseto(first,firstp,second,secondp,third,thirdp){
             if (hours == first || hours == firstp || hours == second || hours == secondp || hours == third || hours == thirdp) {return minutes/60}
             else{
-                a = 1
+                a = 0
                 for (let i = hours; i <= 24; i++) {
-                    a++
                     if (i == 24) i = 0;
                     if (i == first) {return a;}
                     if (i == second) {return a;}
                     if (i == third) {return a;}
+                    a++
                 }
             }
         }
