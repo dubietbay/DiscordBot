@@ -10,7 +10,7 @@ module.exports = {
         embed.setThumbnail('https://tr.rbxcdn.com/b70af9a2cc32a6fa307f7dd046c5b4f7/150/150/Image/Png');
         embed.addField('/raid','give raids info');
         embed.addField('/craft [item name] [amount]','give recipe')
-        embed.addField('Bring timmy home (to ur server)','[click](https://discord.com/oauth2/authorize?client_id=750371529015165009&scope=bot&permissions=326720)')
+        embed.addField('Bring timmy home (to ur server)','[click](https://discord.com/api/oauth2/authorize?client_id=750371529015165009&permissions=59392&scope=applications.commands%20bot)')
         embed.addField('need help ?','[my house](https://discord.gg/Zkjb55q3RK)')
         interaction.reply({embeds: [embed]});
     }
