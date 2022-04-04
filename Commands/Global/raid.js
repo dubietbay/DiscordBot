@@ -158,7 +158,6 @@ module.exports = {
                 if(collected.message.interaction.id === interaction.id) {
                     if (collected.isSelectMenu()) {
                         if(collected.user.id !== interaction.user.id){
-                            await collected.reply({content: "This menu is not for you!", ephemeral: true})
                             return;
                         }
                         beforetime = parseInt(collected.values[0]);     
@@ -166,7 +165,6 @@ module.exports = {
                     }
                     if (collected.isButton()) {
                         if(collected.user.id !== interaction.user.id){
-                            await collected.reply({content: "This menu is not for you!", ephemeral: true})
                             return;
                         }
                         if (collected.customId === 'nextraid') {
