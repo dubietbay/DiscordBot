@@ -38,7 +38,8 @@ module.exports = async (client, PG, Ascii) => {
 
   client.on("guildCreate", guild => {
     client.guilds.cache.forEach((g) => {
-      g.commands.set(CommandsArray).then(async (command) => {
+      g.commands.set(CommandsArray)
+      .then(async (command) => {
         const Roles = (commandName) => {
           const cmdPerms = CommandsArray.find(
             (c) => c.name === commandName
@@ -62,7 +63,8 @@ module.exports = async (client, PG, Ascii) => {
         }, []);
 
         await g.commands.permissions.set({ fullPermissions });
-      });
+      })
+      .catch(er => {console.log(er)})
     });
   })
 
