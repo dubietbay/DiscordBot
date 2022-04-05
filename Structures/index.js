@@ -13,12 +13,6 @@ client.commands = new Collection();
     require(`./Handlers/${handler}`)(client, PG, Ascii);
 });
 
-client.on("guildCreate", guild => {
-    ["Events", "Commands"].forEach(handler => {
-        require(`./Handlers/${handler}`)(client, PG, Ascii);
-    });
-})
-
 // client.on("ready", () => {
 //     const Guilds = client.guilds.cache.map(guild => guild.id);
 //     console.log(Guilds)
