@@ -71,7 +71,8 @@ module.exports = async (client, PG, Ascii) => {
   client.on("ready", async () => {
     //const MainGuild = await client.guilds.cache.get("775352026422181889");
     client.guilds.cache.forEach((g) => {
-      g.commands.set(CommandsArray).then(async (command) => {
+      g.commands.set(CommandsArray)
+      .then(async (command) => {
         const Roles = (commandName) => {
           const cmdPerms = CommandsArray.find(
             (c) => c.name === commandName
@@ -95,7 +96,8 @@ module.exports = async (client, PG, Ascii) => {
         }, []);
 
         await g.commands.permissions.set({ fullPermissions });
-      });
+      })
+      .catch(er => {console.log(er)})
     });
   });
 };
