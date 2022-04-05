@@ -1,7 +1,8 @@
 const { MessageActionRow, MessageButton, MessageAttachment, MessageSelectMenu, Client} = require("discord.js");
 const { loadImage, createCanvas } = require('canvas');
+const mongoose = require("mongoose")
 const fetch = require('node-fetch');
-
+const Remind = require("../../Schema/remind")
 module.exports = {
     name: "raid",
     description: "Displays raid time.",
@@ -13,7 +14,7 @@ module.exports = {
         var minutes = date_ob.getUTCMinutes();
         var hour = 1
         var minute = 60 - minutes
-        var timeEnd = ""
+        var regions = {}
         var region = ""
         if(hours == 12 || hours == 20 || hours == 4 || hours == 14 || hours == 22 || hours == 6 || hours == 16 || hours == 0 || hours == 8 || hours == 18 || hours == 2 || hours == 10) {
             hour = 0
@@ -25,6 +26,7 @@ module.exports = {
             case 20:
             case 3:
             case 4:
+                regions = {next:"Tohoku and Kyushu", nextnext:"Kanto and Shikoku", nextnextnext:"Chubu and Chugoku"}
                 region = "./Temp/Kansai.png"
                 break;
             case 13:
@@ -33,6 +35,7 @@ module.exports = {
             case 22:
             case 5:
             case 6:
+                regions = {next:"Kanto and Shikoku", nextnext:"Chubu and Chugoku", nextnextnext:"Kansai"}
                 region = "./Temp/Tohoku Kyushu.png"
                 break;
             case 15:
@@ -41,6 +44,7 @@ module.exports = {
             case 0:
             case 7:
             case 8:
+                regions = {next:"Chubu and Chugoku", nextnext:"Kansai", nextnextnext:"Tohoku and Kyushu"}
                 region = "./Temp/Kanto Shikoku.png"
                 break;
             case 17:
@@ -49,6 +53,7 @@ module.exports = {
             case 2:
             case 9:
             case 10:
+                regions = {next:"Kansai", nextnext:"Tohoku and Kyushu", nextnextnext:"Kanto and Shikoku"}
                 region = "./Temp/Chubu Chugoku.png"
                 break;
             default:
@@ -158,20 +163,26 @@ module.exports = {
                         if (collected.customId === 'nextraid') {
                             row.components[0].setDisabled(true)
                             await interaction.editReply({ files: [attachment], components: [row2,row]})
-                            interaction.followUp({content: "this command have been halted for fixing!", ephemeral: true})
-                            //remindSetup(collected.user.id,"next", hour*3600000 + (minute-1)*60000 - beforetime - 60000)
+                            interaction.followUp({content: `I will dm you for `+regions.next+` soon!`, ephemeral: true})
+                            if ((await Remind.find({User: collected.user.id, Type: "next"})).length === 0) {
+                                const user = await Remind.create({User: collected.user.id, Time: Date.now() + hour*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "next", Region: regions.next})
+                            }
                         }
                         if (collected.customId === 'nextnextraid') {
                             row.components[1].setDisabled(true)
                             await interaction.editReply({ files: [attachment], components: [row2,row]})
-                            interaction.followUp({content: "this command have been halted for fixing!", ephemeral: true})
-                            //remindSetup(collected.user.id,"nextnext", (hour+2)*3600000 + (minute-1)*60000 - beforetime)
+                            interaction.followUp({content: `I will dm you for `+regions.nextnext+` soon!`, ephemeral: true})
+                            if ((await Remind.find({User: collected.user.id, Type: "nextnext"})).length === 0) {
+                                const user = await Remind.create({User: collected.user.id, Time: Date.now() + (hour+2)*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "nextnext", Region: regions.nextnext})
+                            }
                         }
                         if (collected.customId === 'nextnextnextraid') {
                             row.components[2].setDisabled(true)
                             await interaction.editReply({ files: [attachment], components: [row2,row]})
-                            interaction.followUp({content: "this command have been halted for fixing!", ephemeral: true})
-                            //remindSetup(collected.user.id,"nextnextnext", (hour+4)*3600000 + (minute-1)*60000 - beforetime)
+                            interaction.followUp({content: `I will dm you for `+regions.nextnextnext+` soon!`, ephemeral: true})
+                            if ((await Remind.find({User: collected.user.id, Type: "nextnextnext"})).length === 0) {
+                                const user = await Remind.create({User: collected.user.id, Time: Date.now() + (hour+4)*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "nextnextnext", Region: regions.nextnextnext})
+                            }
                         }
                         await collected.deferUpdate();
                     }
