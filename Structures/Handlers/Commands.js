@@ -37,8 +37,7 @@ module.exports = async (client, PG, Ascii) => {
   console.log(Table.toString());
 
   client.on("guildCreate", guild => {
-    client.guilds.cache.forEach((g) => {
-      g.commands.set(CommandsArray)
+    guild.commands.set(CommandsArray)
       .then(async (command) => {
         const Roles = (commandName) => {
           const cmdPerms = CommandsArray.find(
@@ -46,7 +45,7 @@ module.exports = async (client, PG, Ascii) => {
           ).permission;
           if (!cmdPerms) return null;
 
-          return g.roles.cache
+          return guild.roles.cache
           .filter((r) => r.permissions.has(cmdPerms) && !r.managed)
           .first(10);
         };
@@ -62,10 +61,9 @@ module.exports = async (client, PG, Ascii) => {
           return [...accumulator, { id: r.id, permissions }];
         }, []);
 
-        await g.commands.permissions.set({ fullPermissions });
+        await guild.commands.permissions.set({ fullPermissions });
       })
       .catch(er => {console.log(er)})
-    });
   })
 
   client.on("ready", async () => {

@@ -1,23 +1,11 @@
 const { MessageActionRow, MessageButton, MessageAttachment, MessageSelectMenu, Client} = require("discord.js");
 const { loadImage, createCanvas } = require('canvas');
 const fetch = require('node-fetch');
-const db = require("quick.db");
 
 module.exports = {
     name: "raid",
     description: "Displays raid time.",
     async execute(interaction, client) {
-        function remindSetup(id, type, time) {
-            db.set(`remind.${id}${type}`,Date.now() + time)
-            const interval = setInterval(() => {
-                if(Date.now() > db.fetch(`remind.${id}${type}`)){
-                    db.delete(`remind.${id}${type}`)
-                    client.users.cache.get(`${id}`).send(`Wake the 🤬 up samurai! We have a city to burn.. \n https://media.discordapp.net/attachments/744248081398366288/816514189811777577/reface-2021-03-03-10-33-52.gif`)
-                    .catch(e => console.log(e))
-                    clearInterval(interval)
-                }
-            }, 1000);
-        }
 
         //time stuff
         var date_ob = new Date();
@@ -170,20 +158,20 @@ module.exports = {
                         if (collected.customId === 'nextraid') {
                             row.components[0].setDisabled(true)
                             await interaction.editReply({ files: [attachment], components: [row2,row]})
-                            interaction.followUp({content: "I will remind you in dms soon!", ephemeral: true})
-                            remindSetup(collected.user.id,"next", hour*3600000 + (minute-1)*60000 - beforetime - 60000)
+                            interaction.followUp({content: "this command have been halted for fixing!", ephemeral: true})
+                            //remindSetup(collected.user.id,"next", hour*3600000 + (minute-1)*60000 - beforetime - 60000)
                         }
                         if (collected.customId === 'nextnextraid') {
                             row.components[1].setDisabled(true)
                             await interaction.editReply({ files: [attachment], components: [row2,row]})
-                            interaction.followUp({content: "I will remind you in dms soon!", ephemeral: true})
-                            remindSetup(collected.user.id,"nextnext", (hour+2)*3600000 + (minute-1)*60000 - beforetime)
+                            interaction.followUp({content: "this command have been halted for fixing!", ephemeral: true})
+                            //remindSetup(collected.user.id,"nextnext", (hour+2)*3600000 + (minute-1)*60000 - beforetime)
                         }
                         if (collected.customId === 'nextnextnextraid') {
                             row.components[2].setDisabled(true)
                             await interaction.editReply({ files: [attachment], components: [row2,row]})
-                            interaction.followUp({content: "I will remind you in dms soon!", ephemeral: true})
-                            remindSetup(collected.user.id,"nextnextnext", (hour+4)*3600000 + (minute-1)*60000 - beforetime)
+                            interaction.followUp({content: "this command have been halted for fixing!", ephemeral: true})
+                            //remindSetup(collected.user.id,"nextnextnext", (hour+4)*3600000 + (minute-1)*60000 - beforetime)
                         }
                         await collected.deferUpdate();
                     }
