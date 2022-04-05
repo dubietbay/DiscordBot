@@ -237,7 +237,7 @@ function checkItemExist(item) {
 function getRecipe(item, amount) {
     var output = ""
     for (let i = 0; i < item.Materials.length; i++) {
-        output = output + item.Materials[i] + ": "+ (item.MaterialQuantity[i]*amount).toString() + "\n"
+        output = output + item.Materials[i] + ": "+ (item.MaterialQuantity[i]*amount/item.Quantity).toString() + "\n"
     }
     return output
 }
@@ -260,18 +260,18 @@ function buildRecipe(object, amount) {
                 outputRecipe.push({name: element.Object.Name+": "+Math.ceil(element.Amount/element.Object.Quantity)*element.Object.Quantity.toString(), value: getRecipe(element.Object, element.Amount), inline: false})
                 outputRecipe.push({name: "----------------------------------", value: "Sub-recipe(s): ",inline: false})
             } else {
-                outputRecipe.push({name: element.Object.Name+": "+Math.ceil(element.Amount/element.Object.Quantity)*element.Object.Quantity.toString(), value: getRecipe(element.Object, element.Amount), inline: true})
+                outputRecipe.push({name: element.Object.Name+": "+Math.ceil(element.Amount/element.Object.Quantity)*element.Object.Quantity.toString(), value: getRecipe(element.Object, Math.ceil(element.Amount/element.Object.Quantity)*element.Object.Quantity), inline: true})
             }
             for (let i = 0; i < element.Object.Materials.length; i++) {
                 var found = false
                 Recipe.find(e => {
                     if (e.Name === element.Object.Materials[i]) {
                         found = true
-                        temp.push({Amount: Math.ceil(element.Amount*element.Object.MaterialQuantity[i]/element.Object.Quantity)*element.Object.Quantity, Object: e})
+                        temp.push({Amount: Math.ceil(element.Amount*element.Object.MaterialQuantity[i]/element.Object.Quantity), Object: e})
                     }
                 })
                 if (!found) { 
-                    raw.push({Amount: element.Amount*element.Object.MaterialQuantity[i], Name: element.Object.Materials[i]})
+                    raw.push({Amount:  Math.ceil(element.Amount*element.Object.MaterialQuantity[i]/element.Object.Quantity), Name: element.Object.Materials[i]})
                 }
             }
         }); 
