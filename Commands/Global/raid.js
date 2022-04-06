@@ -167,7 +167,6 @@ module.exports = {
                             if ((await Remind.find({User: collected.user.id, Type: "next"})).length === 0) {
                                 await Remind.create({User: collected.user.id, Time: Date.now() + hour*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "next", Region: regions.next})
                             } else {
-                                console.log("a")
                                 await Remind.findOneAndUpdate({User: collected.user.id, Type: "next"}, {User: collected.user.id, Time: Date.now() + hour*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "next", Region: regions.next})
                             }
                         }

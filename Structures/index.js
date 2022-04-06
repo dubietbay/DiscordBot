@@ -8,7 +8,6 @@ require("dotenv").config();
 
 client.commands = new Collection();
 
-
 ["Events", "Commands"].forEach(handler => {
     require(`./Handlers/${handler}`)(client, PG, Ascii);
 });
