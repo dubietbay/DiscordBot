@@ -165,7 +165,10 @@ module.exports = {
                             await interaction.editReply({ files: [attachment], components: [row2,row]})
                             interaction.followUp({content: `I will dm you for `+regions.next+` soon!`, ephemeral: true})
                             if ((await Remind.find({User: collected.user.id, Type: "next"})).length === 0) {
-                                const user = await Remind.create({User: collected.user.id, Time: Date.now() + hour*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "next", Region: regions.next})
+                                await Remind.create({User: collected.user.id, Time: Date.now() + hour*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "next", Region: regions.next})
+                            } else {
+                                console.log("a")
+                                await Remind.findOneAndUpdate({User: collected.user.id, Type: "next"}, {User: collected.user.id, Time: Date.now() + hour*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "next", Region: regions.next})
                             }
                         }
                         if (collected.customId === 'nextnextraid') {
@@ -173,7 +176,9 @@ module.exports = {
                             await interaction.editReply({ files: [attachment], components: [row2,row]})
                             interaction.followUp({content: `I will dm you for `+regions.nextnext+` soon!`, ephemeral: true})
                             if ((await Remind.find({User: collected.user.id, Type: "nextnext"})).length === 0) {
-                                const user = await Remind.create({User: collected.user.id, Time: Date.now() + (hour+2)*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "nextnext", Region: regions.nextnext})
+                                await Remind.create({User: collected.user.id, Time: Date.now() + (hour+2)*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "nextnext", Region: regions.nextnext})
+                            } else {
+                                await Remind.findOneAndUpdate({User: collected.user.id, Type: "nextnext"},{User: collected.user.id, Time: Date.now() + (hour+2)*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "nextnext", Region: regions.nextnext}) 
                             }
                         }
                         if (collected.customId === 'nextnextnextraid') {
@@ -181,7 +186,9 @@ module.exports = {
                             await interaction.editReply({ files: [attachment], components: [row2,row]})
                             interaction.followUp({content: `I will dm you for `+regions.nextnextnext+` soon!`, ephemeral: true})
                             if ((await Remind.find({User: collected.user.id, Type: "nextnextnext"})).length === 0) {
-                                const user = await Remind.create({User: collected.user.id, Time: Date.now() + (hour+4)*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "nextnextnext", Region: regions.nextnextnext})
+                                await Remind.create({User: collected.user.id, Time: Date.now() + (hour+4)*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "nextnextnext", Region: regions.nextnextnext})
+                            } else {
+                                await Remind.findOneAndUpdate({User: collected.user.id, Type: "nextnextnext"},{User: collected.user.id, Time: Date.now() + (hour+4)*3600000 + (minute-1)*60000 - beforetime - 60000, Type: "nextnextnext", Region: regions.nextnextnext})
                             }
                         }
                         await collected.deferUpdate();
