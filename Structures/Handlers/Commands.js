@@ -50,7 +50,7 @@ module.exports = async (client, PG, Ascii) => {
           .first(10);
         };
 
-        const fullPermissions = command.reduce((accumulator, r) => {
+       /*  const fullPermissions = command.reduce((accumulator, r) => {
           const roles = Roles(r.name);
           if (!roles) return accumulator;
 
@@ -61,7 +61,7 @@ module.exports = async (client, PG, Ascii) => {
           return [...accumulator, { id: r.id, permissions }];
         }, []);
 
-        await guild.commands.permissions.set({ fullPermissions });
+        await guild.commands.permissions.set({ fullPermissions }); */
       })
       .catch(er => {console.log(er)})
   })
@@ -81,8 +81,8 @@ module.exports = async (client, PG, Ascii) => {
           .filter((r) => r.permissions.has(cmdPerms) && !r.managed)
           .first(10);
         };
-
-        const fullPermissions = command.reduce((accumulator, r) => {
+        //future me if u looking at this section of code its for role setting but it was removed by discord in 2022 so it no longer needed and i dont use it anyway...
+        /* const fullPermissions = command.reduce((accumulator, r) => {
           const roles = Roles(r.name);
           if (!roles) return accumulator;
 
@@ -93,7 +93,7 @@ module.exports = async (client, PG, Ascii) => {
           return [...accumulator, { id: r.id, permissions }];
         }, []);
 
-        await g.commands.permissions.set({ fullPermissions });
+        await g.commands.permissions.set({ fullPermissions }); */
       })
       .catch(er => {console.log(er)})
     });
