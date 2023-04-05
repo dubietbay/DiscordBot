@@ -93,7 +93,7 @@ module.exports = {
             const backGround = await loadImage(region)
             ctx.drawImage(backGround,0,0)
             ctx.fillStyle = "white"
-            ctx.font = "36px Helvetica"
+            ctx.font = "36px Arial"
             ctx.fillText(hour.toString() + " hour : " + minute + " minute(s)",501,110)
             ctx.fillText((hour + 2).toString() + " hour : " + minute + " minute(s)",501,163)
             ctx.fillText((hour + 4).toString() + " hour : " + minute + " minute(s)",501,216)
